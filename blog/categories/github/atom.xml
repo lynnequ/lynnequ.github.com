@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[If you see it]]></title>
-  <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: github | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
   <updated>2013-01-31T17:10:31+08:00</updated>
   <id>http://lynnequ.github.com/</id>
@@ -19,15 +19,6 @@
     <updated>2013-01-31T17:07:00+08:00</updated>
     <id>http://lynnequ.github.com/blog/2013/01/31/blog-log</id>
     <content type="html"><![CDATA[<p>试试中文的博文 tag</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Zero]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/01/30/zero/"/>
-    <updated>2013-01-30T18:49:00+08:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/01/30/zero</id>
-    <content type="html"><![CDATA[<p>Hello, 不免俗的.</p>
 ]]></content>
   </entry>
   
