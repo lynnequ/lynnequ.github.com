@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-03-20T12:30:02-07:00</updated>
+  <updated>2013-03-20T12:37:22-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -29,7 +29,7 @@
     <link href="http://lynnequ.github.com/blog/2013/01/31/blog-log/"/>
     <updated>2013-01-31T17:07:00-08:00</updated>
     <id>http://lynnequ.github.com/blog/2013/01/31/blog-log</id>
-    <content type="html"><![CDATA[<p>试试中文的博文 tag</p>
+    <content type="html"><![CDATA[<p>Just testing Chinese characters for the moment, will update the process for generating this blog later. =)</p>
 ]]></content>
   </entry>
   
