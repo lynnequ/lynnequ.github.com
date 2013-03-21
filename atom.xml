@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-03-21T03:06:58-07:00</updated>
+  <updated>2013-03-21T03:26:19-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -14,11 +14,19 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Android Google Map v2 App tutorial]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/03/20/android-google-map-v2-app-tutorial/"/>
-    <updated>2013-03-20T14:35:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/03/20/android-google-map-v2-app-tutorial</id>
-    <content type="html"><![CDATA[
+    <title type="html"><![CDATA[Android with Google Map API v2 notes]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/03/21/android-plus-google-map-api-v2/"/>
+    <updated>2013-03-21T03:09:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/03/21/android-plus-google-map-api-v2</id>
+    <content type="html"><![CDATA[<h1>Get things out of your way</h1>
+
+<p>I assume you have your Google Android SDK downloaded.</p>
+
+<p>Setting up these in .bash_profile to enable you using command like <code>adb</code> and <code>emulator</code>.</p>
+
+<p><code>export ANDROID_HOME='/path/to/adt-bundle-mac-x86_64/sdk'</code></p>
+
+<p><code>export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools</code></p>
 ]]></content>
   </entry>
   
