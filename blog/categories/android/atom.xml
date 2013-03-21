@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-03-21T03:26:19-07:00</updated>
+  <updated>2013-03-21T03:28:38-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -14,11 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Android with Google Map API v2 notes]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/03/21/android-plus-google-map-api-v2/"/>
+    <title type="html"><![CDATA[Android app with Google Map API v2]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/03/21/android-app-with-google-map-api-v2-tutorial/"/>
     <updated>2013-03-21T03:09:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/03/21/android-plus-google-map-api-v2</id>
-    <content type="html"><![CDATA[<h1>Get things out of your way</h1>
+    <id>http://lynnequ.github.com/blog/2013/03/21/android-app-with-google-map-api-v2-tutorial</id>
+    <content type="html"><![CDATA[<h3>Get things out of your way</h3>
 
 <p>I assume you have your Google Android SDK downloaded.</p>
 
