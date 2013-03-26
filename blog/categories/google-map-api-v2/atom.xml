@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Google Map API v2 | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/google-map-api-v2/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-03-25T23:42:17-07:00</updated>
+  <updated>2013-03-26T00:15:01-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -91,8 +91,19 @@
 
 <h5>Generate your Google Map API Key</h5>
 
-<p>Find your Google APIS Console, under left sidebar "Services", choose the Google Maps Android API v2. Like the following picture shows. This is <strong>important</strong>
-<img src="http://i.imgur.com/mGCG23z.png" alt="alt text" /></p>
+<p>Find your Google APIS Console, under left sidebar "Services", choose the Google Maps Android API v2. Like the following picture shows. This is <strong>important</strong>.</p>
+
+<p><img src="http://i.imgur.com/mGCG23z.png" alt="alt text" /></p>
+
+<p>Then under "API Access", choose "Create new Android key…" button. You can follow the instruction there and paste your <strong>SHA-1</strong> along with your <strong>package name</strong> there to get a production key, but for debugging purpose, I did the following.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd ~/.android &lt;br/>
+</span><span class='line'>$ keytool -list -v -alias androiddebugkey -keystore debug.keystore \
+</span><span class='line'>-storepass android -keypass android # using debug.keystore to discover the SHA-1</span></code></pre></td></tr></table></div></figure></notextile></div><br/>
+More read on : <a href="https://developers.google.com/console/help/#generatingdevkeys">Google: generate dev keys</a></p>
 ]]></content>
   </entry>
   

@@ -154,8 +154,21 @@
 
 <h5>Generate your Google Map API Key</h5>
 
-<p>Find your Google APIS Console, under left sidebar &#8220;Services&#8221;, choose the Google Maps Android API v2. Like the following picture shows. This is <strong>important</strong>
-<img src="http://i.imgur.com/mGCG23z.png" alt="alt text" /></p>
+<p>Find your Google APIS Console, under left sidebar &#8220;Services&#8221;, choose the Google Maps Android API v2. Like the following picture shows. This is <strong>important</strong>.</p>
+
+<p><img src="http://i.imgur.com/mGCG23z.png" alt="alt text" /></p>
+
+<p>Then under &#8220;API Access&#8221;, choose &#8220;Create new Android key…&#8221; button. You can follow the instruction there and paste your <strong>SHA-1</strong> along with your <strong>package name</strong> there to get a production key, but for debugging purpose, I did the following.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd ~/.android   
+</span><span class='line'>$ keytool -list -v -alias androiddebugkey -keystore debug.keystore \
+</span><span class='line'>-storepass android -keypass android # using debug.keystore to discover the SHA-1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>More read on : <a href="https://developers.google.com/console/help/#generatingdevkeys">Google: generate dev keys</a></p>
 </div>
 
 
