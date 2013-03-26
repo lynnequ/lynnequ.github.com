@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-03-25T22:58:37-07:00</updated>
+  <updated>2013-03-25T23:42:17-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -26,9 +26,7 @@
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-<span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>export ANDROID_HOME='/path/to/adt-bundle-mac-x86_64/sdk'
-</span><span class='line'>
 </span><span class='line'>export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools</span></code></pre></td></tr></table></div></figure>
 
 
@@ -80,7 +78,10 @@
 
 <h3>Build your app</h3>
 
-<h5>Generate your Google API Key</h5>
+<h5>Generate your Google Map API Key</h5>
+
+<p>Find your Google APIS Console, under left sidebar &#8220;Services&#8221;, choose the Google Maps Android API v2. Like the following picture shows. This is <strong>important</strong>
+<img src="http://i.imgur.com/mGCG23z.png" alt="alt text" /></p>
 ]]></content>
   </entry>
   
