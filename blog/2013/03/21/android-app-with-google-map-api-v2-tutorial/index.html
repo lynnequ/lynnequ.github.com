@@ -126,36 +126,26 @@
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-<span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>echo no  | android create avd -n emulator -t android-17 --skin WVGA800 --force --abi armeabi-v7a
-</span><span class='line'>
 </span><span class='line'>emulator -avd BiteMoi -partition-size 512 -no-audio -no-boot-anim</span></code></pre></td></tr></table></div></figure>
 
 
 <h6>Debuging notes</h6>
 
-<p><strong>Install and uninstall apk through adb</strong></p>
+<p><strong>Installation and uninstall by apk or package name</strong></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>adb install target/bitemoi-1.0.apk</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb install target/bitemoi-1.0.apk  #Install and uninstall apk through adb
+</span><span class='line'>adb uninstall com.thoughtworks.bitemoi #Unistall by given package name</span></code></pre></td></tr></table></div></figure>
 
 
-<p><strong>Unistall by given package name</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>adb uninstall com.thoughtworks.bitemoi</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Clean logcat log</strong></p>
+<p><strong>Logcat</strong></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>adb logcat -c</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Start monitoring logcat, live version</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>adb logcat</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb logcat -c    #Clean logcat log
+</span><span class='line'>adb logcat    #Start monitoring logcat, live version</span></code></pre></td></tr></table></div></figure>
 
 
 <h6>References</h6>
