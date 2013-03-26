@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-03-25T22:56:13-07:00</updated>
+  <updated>2013-03-25T22:58:37-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -62,16 +62,16 @@
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>adb install target/bitemoi-1.0.apk  #Install and uninstall apk through adb
-</span><span class='line'>adb uninstall com.thoughtworks.bitemoi #Unistall by given package name</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb install target/bitemoi-1.0.apk  # Install and uninstall apk through adb
+</span><span class='line'>adb uninstall com.thoughtworks.bitemoi # Unistall by given package name</span></code></pre></td></tr></table></div></figure>
 
 
 <p><strong>Logcat</strong></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>adb logcat -c    #Clean logcat log
-</span><span class='line'>adb logcat    #Start monitoring logcat, live version</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb logcat -c    # Clean logcat log
+</span><span class='line'>adb logcat    # Start monitoring logcat, live version</span></code></pre></td></tr></table></div></figure>
 
 
 <h6>References</h6>

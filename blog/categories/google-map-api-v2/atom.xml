@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Google Map API v2 | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/google-map-api-v2/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-03-25T22:56:13-07:00</updated>
+  <updated>2013-03-25T22:58:37-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -76,14 +76,14 @@
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>adb install target/bitemoi-1.0.apk  #Install and uninstall apk through adb
-</span><span class='line'>adb uninstall com.thoughtworks.bitemoi #Unistall by given package name&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'>adb install target/bitemoi-1.0.apk  # Install and uninstall apk through adb
+</span><span class='line'>adb uninstall com.thoughtworks.bitemoi # Unistall by given package name&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>Logcat</strong><br/>
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>adb logcat -c   #Clean logcat log
-</span><span class='line'>adb logcat  #Start monitoring logcat, live version &lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb logcat -c   # Clean logcat log
+</span><span class='line'>adb logcat  # Start monitoring logcat, live version &lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h6>References</h6>
 
