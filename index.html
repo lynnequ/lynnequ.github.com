@@ -9,7 +9,7 @@
   <meta name="author" content="Lynne Qu">
 
   
-  <meta name="description" content="Get things out of your way I assume you have your Google Android SDK downloaded. Setting up these in .bash_profile to enable you using command like &hellip;">
+  <meta name="description" content="Get logistic things out of your way I assume you have your Google Android SDK downloaded. Setting up these in .bash_profile to enable you using &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,13 +18,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lynnequ.github.com/">
+  <link rel="canonical" href="http://lynnequ.github.com">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="If you see it" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -94,15 +95,79 @@
   </header>
 
 
-  <div class="entry-content"><h3>Get things out of your way</h3>
+  <div class="entry-content"><h3>Get logistic things out of your way</h3>
 
-<p>I assume you have your Google Android SDK downloaded.</p>
+<p>I assume you have your <a href="http://developer.android.com/sdk/index.html">Google Android SDK</a> downloaded.</p>
 
 <p>Setting up these in .bash_profile to enable you using command like <code>adb</code> and <code>emulator</code>.</p>
 
-<p><code>export ANDROID_HOME='/path/to/adt-bundle-mac-x86_64/sdk'</code></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export ANDROID_HOME='/path/to/adt-bundle-mac-x86_64/sdk'
+</span><span class='line'>
+</span><span class='line'>export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools</span></code></pre></td></tr></table></div></figure>
 
-<p><code>export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools</code></p>
+
+<h4>Build your environment</h4>
+
+<p>Running your Android SDK Manager from your teminal:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>android sdk</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Select Android 4.2.2 (API 17), Google Play Services under extra(scroll down to the bottom)
+<img src="http://i.imgur.com/3ONXSei.png" alt="alt text" />
+<img src="http://i.imgur.com/Xiq4CR3.png" alt="alt text" /></p>
+
+<p>Install the packages, it will probably take a while… Coffee?</p>
+
+<p>More details about: <a href="http://developer.android.com/tools/devices/managing-avds-cmdline.html" title="More infor form Google site">Managing avds from command line</a></p>
+
+<h5>Create Device Emulator from your command</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo no  | android create avd -n emulator -t android-17 --skin WVGA800 --force --abi armeabi-v7a
+</span><span class='line'>
+</span><span class='line'>emulator -avd BiteMoi -partition-size 512 -no-audio -no-boot-anim</span></code></pre></td></tr></table></div></figure>
+
+
+<h6>Debuging notes</h6>
+
+<p><strong>Install and uninstall apk through adb</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb install target/bitemoi-1.0.apk</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Unistall by given package name</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb uninstall com.thoughtworks.bitemoi</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Clean logcat log</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb logcat -c</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Start monitoring logcat, live version</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb logcat</span></code></pre></td></tr></table></div></figure>
+
+
+<h6>References</h6>
+
+<p><a href="http://developer.android.com/tools/help/adb.html">Command line help from Google SDK</a></p>
+
+<h3>Build your app</h3>
+
+<h5>Generate your Google API Key</h5>
 </div>
   
   
