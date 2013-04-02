@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Google Map API v2 | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/google-map-api-v2/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-04-01T19:34:09-07:00</updated>
+  <updated>2013-04-01T19:36:04-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -266,11 +266,13 @@ Add this between <code>&lt;RelativeLayout&gt;&lt;/RelativeLayout&gt;</code>, you
 </span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p><strong>Add Google Play Service Support</strong><br/>
-/{YOUR_PATH_TO_ADK}/adt-bundle-mac-x86_64/sdk/extras/google/google_play_services/libproject/google-play-services_lib</p>
+<p><strong>Add Google Play Service Support</strong></p>
 
-<p><img src="http://i.imgur.com/786ZXC7.png" alt="alt text" />
-<img src="http://i.imgur.com/JE0amaI.png" alt="alt text" />
+<p>Import->Android->Existing Android->Find the following path to Play Service Lib</p>
+
+<p>/{YOUR_PATH_TO_ADK}/adt-bundle-mac-x86_64/sdk/extras/google/google_play_services/libproject/google-play-services_lib</p>
+
+<p><img src="http://i.imgur.com/JE0amaI.png" alt="alt text" />
 <img src="http://i.imgur.com/beHg0FI.png" alt="alt text" /></p>
 
 <p><img src="http://i.imgur.com/mQEPHID.png" alt="alt text" /></p>
