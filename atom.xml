@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-04-01T18:29:27-07:00</updated>
+  <updated>2013-04-01T18:56:04-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -76,11 +76,109 @@
 
 <p><a href="http://developer.android.com/tools/help/adb.html">Command line help from Google SDK</a></p>
 
+<hr />
+
 <h3>2. Build your app</h3>
+
+<p><strong>Create new Android Application</strong></p>
+
+<p><strong>AndroidManifest.xml</strong></p>
+
+<figure class='code'><figcaption><span>AndroidManifest.xml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>  <span class="na">package=</span><span class="s">&quot;com.thoughtworks.bitemoi&quot;</span> <span class="na">android:versionCode=</span><span class="s">&quot;1&quot;</span> <span class="na">android:versionName=</span><span class="s">&quot;1.0-SNAPSHOT&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;uses-sdk</span> <span class="na">android:minSdkVersion=</span><span class="s">&quot;8&quot;</span>
+</span><span class='line'>            <span class="na">android:targetSdkVersion=</span><span class="s">&quot;16&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.INTERNET&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;com.thoughtworks.bitemoi.permission.MAPS_RECEIVE&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;com.google.android.providers.gsf.permission.READ_GSERVICES&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="c">&lt;!-- The following two permissions are not required to use</span>
+</span><span class='line'><span class="c">     Google Maps Android API v2, but are recommended. --&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.ACCESS_COARSE_LOCATION&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.ACCESS_FINE_LOCATION&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;uses-feature</span>
+</span><span class='line'>        <span class="na">android:glEsVersion=</span><span class="s">&quot;0x00020000&quot;</span>
+</span><span class='line'>        <span class="na">android:required=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>      
+</span><span class='line'>  <span class="nt">&lt;permission</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;com.thoughtworks.bitemoi.permission.MAPS_RECEIVE&quot;</span>
+</span><span class='line'>        <span class="na">android:protectionLevel=</span><span class="s">&quot;signature&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;application</span> <span class="na">android:allowBackup=</span><span class="s">&quot;true&quot;</span>
+</span><span class='line'>        <span class="na">android:icon=</span><span class="s">&quot;@drawable/ic_launcher&quot;</span>
+</span><span class='line'>        <span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span>
+</span><span class='line'>        <span class="na">android:theme=</span><span class="s">&quot;@style/AppTheme&quot;</span> <span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&quot;.HelloAndroidActivity&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;intent-filter&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.MAIN&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.LAUNCHER&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/intent-filter&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/activity&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&quot;.LocationActivity&quot;</span><span class="nt">&gt;&lt;/activity&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&quot;.YelpSearchActivity&quot;</span><span class="nt">&gt;&lt;/activity&gt;</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">&quot;com.google.android.maps.v2.API_KEY&quot;</span> <span class="na">android:value=</span><span class="s">&quot;AIzaSyDXHJXzjSv7X3r_BATFRfv9bfjB_lG6gns&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;/application&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/manifest&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h5>Generate your Google Map API Key</h5>
 
-<p>Find your Google APIS Console, under left sidebar &#8220;Services&#8221;, choose the Google Maps Android API v2. Like the following picture shows. This is <strong>important</strong>.</p>
+<p>Find your Google API Console, under left sidebar &#8220;Services&#8221;, choose the Google Maps Android API v2. Like the following picture shows. This is <strong>important</strong>.</p>
 
 <p><img src="http://i.imgur.com/mGCG23z.png" alt="alt text" /></p>
 
