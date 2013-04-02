@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-04-01T19:10:52-07:00</updated>
+  <updated>2013-04-01T19:13:38-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -217,19 +217,22 @@ After you created, you will see a new section under &#8220;API Access&#8221;.
 <img src="http://i.imgur.com/w9vi18b.png" alt="alt text" />
 Note: this is a debug key for my app, will not work on yours.</p>
 
-<p><strong>Layout/activity_map.xml</strong>
-Add this between <RelativeLayout></RelativeLayout>, you can preview the fragment in &#8220;Graphical Layout&#8221; tab.</p>
+<p><strong>Add the map to your layout</strong></p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>Add this between <code>&lt;RelativeLayout&gt;&lt;/RelativeLayout&gt;</code>, you can preview the fragment in &#8220;Graphical Layout&#8221; tab.</p>
+
+<figure class='code'><figcaption><span>Layout/activity_map.xml (partial)</span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;fragment
-</span><span class='line'>        android:id="@+id/map"
-</span><span class='line'>        android:layout_width="match_parent"
-</span><span class='line'>        android:layout_height="match_parent"
-</span><span class='line'>        class="com.google.android.gms.maps.MapFragment" /></span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'>    <span class="nt">&lt;fragment</span>
+</span><span class='line'>        <span class="na">android:id=</span><span class="s">&quot;@+id/map&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>        <span class="na">class=</span><span class="s">&quot;com.google.android.gms.maps.MapFragment&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p><strong>Reference <a href="http://www.vogella.com/articles/AndroidGoogleMaps/article.html">Google Maps Android API v2 - Tutorial
