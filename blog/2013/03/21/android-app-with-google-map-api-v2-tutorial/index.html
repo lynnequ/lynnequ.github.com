@@ -268,7 +268,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h5>Generate your Google Map API Key</h5>
+<h5>Generate your Google Android Map API Key</h5>
 
 <p>Find your Google API Console, under left sidebar &#8220;Services&#8221;, choose the Google Maps Android API v2. Like the following picture shows. This is <strong>important</strong>.</p>
 
@@ -290,6 +290,21 @@
 After you created, you will see a new section under &#8220;API Access&#8221;.
 <img src="http://i.imgur.com/w9vi18b.png" alt="alt text" />
 Note: this is a debug key for my app, will not work on yours.</p>
+
+<p><strong>Layout/activity_map.xml</strong>
+Add this between <RelativeLayout></RelativeLayout>, you can preview the fragment in &#8220;Graphical Layout&#8221; tab.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;fragment
+</span><span class='line'>        android:id="@+id/map"
+</span><span class='line'>        android:layout_width="match_parent"
+</span><span class='line'>        android:layout_height="match_parent"
+</span><span class='line'>        class="com.google.android.gms.maps.MapFragment" /></span></code></pre></td></tr></table></div></figure>
+
 
 <p><strong>Reference <a href="http://www.vogella.com/articles/AndroidGoogleMaps/article.html">Google Maps Android API v2 - Tutorial
 </a></strong></p>

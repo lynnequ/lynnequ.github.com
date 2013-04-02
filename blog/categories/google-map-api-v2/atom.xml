@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Google Map API v2 | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/google-map-api-v2/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-04-01T19:03:31-07:00</updated>
+  <updated>2013-04-01T19:10:52-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -212,7 +212,7 @@
 </span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h5>Generate your Google Map API Key</h5>
+<h5>Generate your Google Android Map API Key</h5>
 
 <p>Find your Google API Console, under left sidebar "Services", choose the Google Maps Android API v2. Like the following picture shows. This is <strong>important</strong>.</p>
 
@@ -234,7 +234,29 @@ After you created, you will see a new section under "API Access".
 <img src="http://i.imgur.com/w9vi18b.png" alt="alt text" />
 Note: this is a debug key for my app, will not work on yours.</p>
 
-<p><strong>Reference <a href="http://www.vogella.com/articles/AndroidGoogleMaps/article.html">Google Maps Android API v2 - Tutorial
+<p><strong>Layout/activity_map.xml</strong>
+Add this between <RelativeLayout></RelativeLayout>, you can preview the fragment in "Graphical Layout" tab.<br/>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>&lt;fragment
+</span><span class='line'>    android:id="@+id/map"
+</span><span class='line'>    android:layout_width="match_parent"
+</span><span class='line'>    android:layout_height="match_parent"
+</span><span class='line'>    class="com.google.android.gms.maps.MapFragment" /&gt;
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div>
+<strong>Reference <a href="http://www.vogella.com/articles/AndroidGoogleMaps/article.html">Google Maps Android API v2 - Tutorial
 </a></strong></p>
 
 <p><a href="https://github.com/JakeWharton/gms-mvn-install">GIT REPO: GMS MVN INSTALL</a></p>
