@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-04-01T18:56:04-07:00</updated>
+  <updated>2013-04-01T19:03:31-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -152,58 +152,60 @@
 <span class='line-number'>54</span>
 <span class='line-number'>55</span>
 <span class='line-number'>56</span>
+<span class='line-number'>57</span>
 </pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;p&gt;</span><span class="ni">&amp;lt;</span>?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-</span><span class='line'><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-</span><span class='line'>  <span class="na">package=</span><span class="s">&quot;com.thoughtworks.bitemoi&quot;</span> <span class="na">android:versionCode=</span><span class="s">&quot;1&quot;</span> <span class="na">android:versionName=</span><span class="s">&quot;1.0-SNAPSHOT&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;<span class="nt">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="ni">&amp;lt;</span>uses-sdk android:minSdkVersion=&quot;8&quot;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>package=&quot;com.thoughtworks.bitemoi&quot;
+</span><span class='line'>android:versionCode=&quot;1&quot;
+</span><span class='line'>android:versionName=&quot;1.0&quot; <span class="ni">&amp;gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>        android:targetSdkVersion=&quot;16&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-sdk
+</span><span class='line'>    android:minSdkVersion=&quot;15&quot;
+</span><span class='line'>    android:targetSdkVersion=&quot;17&quot; /<span class="ni">&amp;gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.INTERNET&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;com.thoughtworks.bitemoi.permission.MAPS_RECEIVE&quot;</span><span class="nt">/&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span><span class="nt">/&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span><span class="nt">/&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;com.google.android.providers.gsf.permission.READ_GSERVICES&quot;</span><span class="nt">/&gt;</span>
-</span><span class='line'>  <span class="ni">&amp;lt;</span>!-- The following two permissions are not required to use<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;android.permission.INTERNET&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;com.thoughtworks.bitemoi.permission.MAPS_RECEIVE&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;com.google.android.providers.gsf.permission.READ_GSERVICES&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>!--
+</span><span class='line'> The following two permissions are not required to use
+</span><span class='line'> Google Maps Android API v2, but are recommended.
+</span><span class='line'>--<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot; /<span class="ni">&amp;gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span> Google Maps Android API v2, but are recommended. --<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>permission
+</span><span class='line'>    android:name=&quot;com.thoughtworks.bitemoi.permission.MAPS_RECEIVE&quot;
+</span><span class='line'>    android:protectionLevel=&quot;signature&quot; /<span class="ni">&amp;gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.ACCESS_COARSE_LOCATION&quot;</span><span class="nt">/&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.ACCESS_FINE_LOCATION&quot;</span><span class="nt">/&gt;&lt;/p&gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-feature
+</span><span class='line'>    android:glEsVersion=&quot;0x00020000&quot;
+</span><span class='line'>    android:required=&quot;true&quot; /<span class="ni">&amp;gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="ni">&amp;lt;</span>uses-feature<span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>    android:glEsVersion=&quot;0x00020000&quot;
-</span><span class='line'>    android:required=&quot;true&quot;/<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="ni">&amp;lt;</span>permission<span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>    android:name=&quot;com.thoughtworks.bitemoi.permission.MAPS_RECEIVE&quot;
-</span><span class='line'>    android:protectionLevel=&quot;signature&quot;/<span class="ni">&amp;gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>application android:allowBackup=&quot;true&quot;
+</span><span class='line'><span class="ni">&amp;lt;</span>application
+</span><span class='line'>    android:allowBackup=&quot;true&quot;
 </span><span class='line'>    android:icon=&quot;@drawable/ic_launcher&quot;
 </span><span class='line'>    android:label=&quot;@string/app_name&quot;
 </span><span class='line'>    android:theme=&quot;@style/AppTheme&quot; <span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>activity android:name=&quot;.HelloAndroidActivity&quot;<span class="ni">&amp;gt;</span>
-</span><span class='line'>  <span class="ni">&amp;lt;</span>intent-filter<span class="ni">&amp;gt;</span>
-</span><span class='line'>    <span class="ni">&amp;lt;</span>action android:name=&quot;android.intent.action.MAIN&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'>    <span class="ni">&amp;lt;</span>category android:name=&quot;android.intent.category.LAUNCHER&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'>  <span class="ni">&amp;lt;</span>/intent-filter<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>/activity<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>activity android:name=&quot;.LocationActivity&quot;<span class="ni">&amp;gt;&amp;lt;</span>/activity<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>activity android:name=&quot;.YelpSearchActivity&quot;<span class="ni">&amp;gt;&amp;lt;</span>/activity<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>activity
+</span><span class='line'>        android:name=&quot;com.thoughtworks.bitemoi.MapActivity&quot;
+</span><span class='line'>        android:label=&quot;@string/app_name&quot; <span class="ni">&amp;gt;</span>
+</span><span class='line'>        <span class="ni">&amp;lt;</span>intent-filter<span class="ni">&amp;gt;</span>
+</span><span class='line'>            <span class="ni">&amp;lt;</span>action android:name=&quot;android.intent.action.MAIN&quot; /<span class="ni">&amp;gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>meta-data android:name=&quot;com.google.android.maps.v2.API_KEY&quot; android:value=&quot;AIzaSyDXHJXzjSv7X3r_BATFRfv9bfjB_lG6gns&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>            <span class="ni">&amp;lt;</span>category android:name=&quot;android.intent.category.LAUNCHER&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>        <span class="ni">&amp;lt;</span>/intent-filter<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>/activity<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>meta-data
+</span><span class='line'>        android:name=&quot;com.google.android.maps.v2.API_KEY&quot;
+</span><span class='line'>        android:value=&quot;YOU_GOOGLE_ANDROID_MAP_API_KEY&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>/application<span class="ni">&amp;gt;</span>
 </span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/application&gt;&lt;/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;p&gt;&lt;/manifest&gt;&lt;/p&gt;</span>
 </span><span class='line'>
