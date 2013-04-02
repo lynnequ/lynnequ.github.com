@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Google Map API v2 | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/google-map-api-v2/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-04-01T19:13:38-07:00</updated>
+  <updated>2013-04-01T19:34:09-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -93,6 +93,12 @@
 
 <p><strong>Create new Android Application</strong></p>
 
+<p><img src="http://i.imgur.com/cJap8Qc.png" alt="alt text" /></p>
+
+<p><img src="http://i.imgur.com/kCoo5eE.png" alt="alt text" /></p>
+
+<p><img src="http://i.imgur.com/lz1eC92.png" alt="alt text" /></p>
+
 <p><strong>AndroidManifest.xml</strong></p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>AndroidManifest.xml </span></figcaption>
@@ -152,10 +158,8 @@
 <span class='line-number'>54</span>
 <span class='line-number'>55</span>
 <span class='line-number'>56</span>
-<span class='line-number'>57</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span><span class="ni">&amp;lt;</span>?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;br/&gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 </span><span class='line'><span class="ni">&amp;lt;</span>manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;<span class="nt">&lt;/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>package=&quot;com.thoughtworks.bitemoi&quot;
@@ -234,9 +238,10 @@ After you created, you will see a new section under "API Access".
 <img src="http://i.imgur.com/w9vi18b.png" alt="alt text" />
 Note: this is a debug key for my app, will not work on yours.</p>
 
-<p><strong>Add the map to your layout</strong></p>
+<p>Put this key to your AndroidManifest.xml.</p>
 
-<p>Add this between <code>&lt;RelativeLayout&gt;&lt;/RelativeLayout&gt;</code>, you can preview the fragment in "Graphical Layout" tab.</p>
+<p><strong>Add the map fragment to your layout</strong><br/>
+Add this between <code>&lt;RelativeLayout&gt;&lt;/RelativeLayout&gt;</code>, you can preview the fragment in "Graphical Layout" tab.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Layout/activity_map.xml (partial)</span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -260,6 +265,17 @@ Note: this is a debug key for my app, will not work on yours.</p>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><strong>Add Google Play Service Support</strong><br/>
+/{YOUR_PATH_TO_ADK}/adt-bundle-mac-x86_64/sdk/extras/google/google_play_services/libproject/google-play-services_lib</p>
+
+<p><img src="http://i.imgur.com/786ZXC7.png" alt="alt text" />
+<img src="http://i.imgur.com/JE0amaI.png" alt="alt text" />
+<img src="http://i.imgur.com/beHg0FI.png" alt="alt text" /></p>
+
+<p><img src="http://i.imgur.com/mQEPHID.png" alt="alt text" /></p>
+
+<p><img src="http://i.imgur.com/hc2RHzQ.png" alt="alt text" /></p>
 
 <p><strong>Reference <a href="http://www.vogella.com/articles/AndroidGoogleMaps/article.html">Google Maps Android API v2 - Tutorial
 </a></strong></p>

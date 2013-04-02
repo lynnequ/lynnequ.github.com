@@ -159,6 +159,12 @@
 
 <p><strong>Create new Android Application</strong></p>
 
+<p><img src="http://i.imgur.com/cJap8Qc.png" alt="alt text" /></p>
+
+<p><img src="http://i.imgur.com/kCoo5eE.png" alt="alt text" /></p>
+
+<p><img src="http://i.imgur.com/lz1eC92.png" alt="alt text" /></p>
+
 <p><strong>AndroidManifest.xml</strong></p>
 
 <figure class='code'><figcaption><span>AndroidManifest.xml </span></figcaption>
@@ -214,9 +220,7 @@
 <span class='line-number'>50</span>
 <span class='line-number'>51</span>
 <span class='line-number'>52</span>
-<span class='line-number'>53</span>
 </pre></td><td class='code'><pre><code class='xml'><span class='line'>
-</span><span class='line'>
 </span><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 </span><span class='line'><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 </span><span class='line'>    <span class="na">package=</span><span class="s">&quot;com.thoughtworks.bitemoi&quot;</span>
@@ -294,9 +298,10 @@ After you created, you will see a new section under &#8220;API Access&#8221;.
 <img src="http://i.imgur.com/w9vi18b.png" alt="alt text" />
 Note: this is a debug key for my app, will not work on yours.</p>
 
-<p><strong>Add the map to your layout</strong></p>
+<p>Put this key to your AndroidManifest.xml.</p>
 
-<p>Add this between <code>&lt;RelativeLayout&gt;&lt;/RelativeLayout&gt;</code>, you can preview the fragment in &#8220;Graphical Layout&#8221; tab.</p>
+<p><strong>Add the map fragment to your layout</strong><br/>
+Add this between <code>&lt;RelativeLayout&gt;&lt;/RelativeLayout&gt;</code>, you can preview the fragment in &#8220;Graphical Layout&#8221; tab.</p>
 
 <figure class='code'><figcaption><span>Layout/activity_map.xml (partial)</span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -311,6 +316,17 @@ Note: this is a debug key for my app, will not work on yours.</p>
 </span><span class='line'>        <span class="na">class=</span><span class="s">&quot;com.google.android.gms.maps.MapFragment&quot;</span> <span class="nt">/&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<p><strong>Add Google Play Service Support</strong><br/>
+/{YOUR_PATH_TO_ADK}/adt-bundle-mac-x86_64/sdk/extras/google/google_play_services/libproject/google-play-services_lib</p>
+
+<p><img src="http://i.imgur.com/786ZXC7.png" alt="alt text" />
+<img src="http://i.imgur.com/JE0amaI.png" alt="alt text" />
+<img src="http://i.imgur.com/beHg0FI.png" alt="alt text" /></p>
+
+<p><img src="http://i.imgur.com/mQEPHID.png" alt="alt text" /></p>
+
+<p><img src="http://i.imgur.com/hc2RHzQ.png" alt="alt text" /></p>
 
 <p><strong>Reference <a href="http://www.vogella.com/articles/AndroidGoogleMaps/article.html">Google Maps Android API v2 - Tutorial
 </a></strong></p>
