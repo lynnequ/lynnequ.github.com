@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-04-09T04:25:21-07:00</updated>
+  <updated>2013-04-09T04:29:29-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -412,6 +412,54 @@ After imported, google-play-service_lib is shown up as a project module.
 
 <p><strong>Reference <a href="http://www.vogella.com/articles/AndroidGoogleMaps/article.html">Google Maps Android API v2 - Tutorial
 </a></strong></p>
+
+<p>In addition:</p>
+
+<p>This side project I'm working on has maven support build in.
+You still need to create right AVD and install two apks.</p>
+
+<p><a href="https://github.com/BiteMoi/BiteMeAndroid">GIT REPO: BiteMeAndroid </a></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>mvn clean install
+</span><span class='line'>mvn eclipse:clean eclipse:eclipse
+</span><span class='line'>open .
+</span><span class='line'>mkdir ../BiteMeAndroidWorkspace
+</span><span class='line'>open regular Eclipse(Juno for mine)
+</span><span class='line'>import -> existing maven project (You need maven plugin for Eclipse first, you can install from marketPlace or some other way you can find)
+</span><span class='line'>choose ../BiteMeAndroid (the original github repo)
+</span><span class='line'>next-> see maven-compiler-plugin:2.5.1:compile/testCompile
+</span><span class='line'>finish
+</span><span class='line'>right click on project if there is red cross -> maven -> update project
+</span><span class='line'>echo no  | android create avd -n BiteMoiCMD -t android-17 --skin WVGA800 --force --abi armeabi-v7a
+</span><span class='line'>android sdk -> tools -> manage avds -> change to Intel Atom(x86) -> start&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>propertities -> builders -> uncheck Java Builder&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ adb uninstall com.thoughtworks.bitemoi
+</span><span class='line'>$ mvn clean install
+</span><span class='line'>$ adb install target/bitemoi-1.0.apk</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><a href="https://github.com/JakeWharton/gms-mvn-install">GIT REPO: GMS MVN INSTALL</a></p>
 ]]></content>
