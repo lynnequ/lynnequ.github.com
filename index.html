@@ -335,16 +335,21 @@ Add this between <code>&lt;RelativeLayout&gt;&lt;/RelativeLayout&gt;</code>, you
 
 <p><strong>Add Google Play Service Support</strong></p>
 
-<p>Import->Android->Existing Android->Find the following path to Play Service Lib</p>
+<p>File -> Import -> Android -> Existing Android->Find the following path to Play Service Lib</p>
 
 <p>/{YOUR_PATH_TO_ADK}/adt-bundle-mac-x86_64/sdk/extras/google/google_play_services/libproject/google-play-services_lib</p>
 
 <p><img src="http://i.imgur.com/JE0amaI.png" alt="alt text" />
-<img src="http://i.imgur.com/beHg0FI.png" alt="alt text" /></p>
+<img src="http://i.imgur.com/beHg0FI.png" alt="alt text" />
+After imported, google-play-service_lib is shown up as a project module.
+<img src="http://i.imgur.com/cTgwojN.png" alt="alt text" /></p>
 
-<p><img src="http://i.imgur.com/mQEPHID.png" alt="alt text" /></p>
+<p>Right click on Your app, here is AndroidGoogleMap, choose properties, add the new lib support we just had.
+<img src="http://i.imgur.com/mQEPHID.png" alt="alt text" />
+<img src="http://i.imgur.com/54fbp4X.png" alt="alt text" />
+<img src="http://i.imgur.com/hc2RHzQ.png" alt="alt text" /></p>
 
-<p><img src="http://i.imgur.com/hc2RHzQ.png" alt="alt text" /></p>
+<p><strong>Now we can use Goolge Android Map v2 api to build our app</strong></p>
 
 <figure class='code'><figcaption><span>MapActivity.java </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -393,9 +398,6 @@ Add this between <code>&lt;RelativeLayout&gt;&lt;/RelativeLayout&gt;</code>, you
 <span class='line-number'>44</span>
 <span class='line-number'>45</span>
 <span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
 </pre></td><td class='code'><pre><code class='java'><span class='line'>
 </span><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">thoughtworks</span><span class="o">.</span><span class="na">bitemoi</span><span class="o">;</span>
 </span><span class='line'>
@@ -433,9 +435,6 @@ Add this between <code>&lt;RelativeLayout&gt;&lt;/RelativeLayout&gt;</code>, you
 </span><span class='line'>      <span class="n">uiSettings</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">getUiSettings</span><span class="o">();</span>
 </span><span class='line'>      <span class="n">map</span><span class="o">.</span><span class="na">setMyLocationEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
 </span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>
 </span><span class='line'>
 </span><span class='line'>    <span class="nd">@Override</span>
 </span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onCreateOptionsMenu</span><span class="o">(</span><span class="n">Menu</span> <span class="n">menu</span><span class="o">)</span> <span class="o">{</span>
