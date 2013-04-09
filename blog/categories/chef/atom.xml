@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: chef | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/chef/atom.xml" rel="self"/>
+  <link href="http://lynnequ.github.com/"/>
+  <updated>2013-04-09T14:17:31-07:00</updated>
+  <id>http://lynnequ.github.com/</id>
+  <author>
+    <name><![CDATA[Lynne Qu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Chef Day 1]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/04/09/chef-day-1/"/>
+    <updated>2013-04-09T14:14:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/04/09/chef-day-1</id>
+    <content type="html"><![CDATA[<h2>Chef Day 1</h2>
+]]></content>
+  </entry>
+  
+</feed>
