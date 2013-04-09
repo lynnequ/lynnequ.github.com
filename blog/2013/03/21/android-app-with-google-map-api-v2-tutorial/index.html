@@ -444,7 +444,17 @@ After imported, google-play-service_lib is shown up as a project module.
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><strong>We need to import com.google.android.gms.maps.* </strong></p>
+<p>Build and run your application while your AVD is running.</p>
+
+<p><img src="http://i.imgur.com/ALFLE1D.png" alt="alt text" /></p>
+
+<p>There may be some issues with Google Play Services not found or not updated. Till Apr 09, the hacky way which are intall these two apks works for me.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ adb install com.android.vending-1.apk
+</span><span class='line'>$ adb install com.google.android.gms-3025110-v3.0.25\ \(583950-10\).apk</span></code></pre></td></tr></table></div></figure>
+
 
 <p><strong>Reference <a href="http://www.vogella.com/articles/AndroidGoogleMaps/article.html">Google Maps Android API v2 - Tutorial
 </a></strong></p>
