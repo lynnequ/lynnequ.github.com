@@ -4,7 +4,7 @@
   <title><![CDATA[Category: chef | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/chef/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-04-09T14:17:31-07:00</updated>
+  <updated>2013-04-16T19:27:06-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -19,6 +19,24 @@
     <updated>2013-04-09T14:14:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/04/09/chef-day-1</id>
     <content type="html"><![CDATA[<h2>Chef Day 1</h2>
+
+<h3>Terminology</h3>
+
+<p>Node<br/>
+Chef server<br/>
+Chef client<br/>
+Chef solo<br/>
+recipe<br/>
+resource<br/>
+cookbook<br/>
+role<br/>
+run list<br/>
+attribute</p>
+
+<h2>Install VM</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install vagrant</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

@@ -9,8 +9,17 @@
   <meta name="author" content="Lynne Qu">
 
   
-  <meta name="description" content="Chef Day 1
-">
+  <meta name="description" content="Chef Day 1 Terminology Node
+Chef server
+Chef client
+Chef solo
+recipe
+resource
+cookbook
+role
+run list
+attribute Install VM 1
+gem install vagrant ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,6 +106,27 @@
 
 
   <div class="entry-content"><h2>Chef Day 1</h2>
+
+<h3>Terminology</h3>
+
+<p>Node<br/>
+Chef server<br/>
+Chef client<br/>
+Chef solo<br/>
+recipe<br/>
+resource<br/>
+cookbook<br/>
+role<br/>
+run list<br/>
+attribute</p>
+
+<h2>Install VM</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install vagrant</span></code></pre></td></tr></table></div></figure>
+
+
+
 </div>
   
   
@@ -524,6 +554,9 @@ You still need to create right AVD and install two apks.</p>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
 <span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>mvn clean install
 </span><span class='line'>mvn eclipse:clean eclipse:eclipse
 </span><span class='line'>open .
@@ -539,10 +572,17 @@ You still need to create right AVD and install two apks.</p>
 </span><span class='line'>
 </span><span class='line'>propertities -> builders -> uncheck Java Builder
 </span><span class='line'>
+</span><span class='line'>If you see missing gms ish, install apks from google-apk under BiteMoi git-repo
+</span><span class='line'>adb install XXX
+</span><span class='line'>
 </span><span class='line'>$ adb uninstall com.thoughtworks.bitemoi
 </span><span class='line'>$ mvn clean install
 </span><span class='line'>$ adb install target/bitemoi-1.0.apk</span></code></pre></td></tr></table></div></figure>
 
+
+<p>Regarding Eclipse plugin, this is what I have for my Eclipse
+<img src="http://i.imgur.com/Q4M3bNq.png" alt="alt text" />
+<img src="http://i.imgur.com/MShtWRA.png" alt="alt text" /></p>
 
 <p><a href="https://github.com/JakeWharton/gms-mvn-install">GIT REPO: GMS MVN INSTALL</a></p>
 </div>
