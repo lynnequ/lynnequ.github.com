@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-04-16T19:27:06-07:00</updated>
+  <updated>2013-04-16T20:48:29-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -420,7 +420,10 @@ You still need to create right AVD and install two apks.</p>
 
 <p><a href="https://github.com/BiteMoi/BiteMeAndroid">GIT REPO: BiteMeAndroid </a></p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>Android sdk configured, installed mvn plugins(see pics below.), installed google play services apks dependencies.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>steps for making BiteMoi working locally </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -443,25 +446,57 @@ You still need to create right AVD and install two apks.</p>
 <span class='line-number'>21</span>
 <span class='line-number'>22</span>
 <span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>mvn clean install
+</span><span class='line'>&lt;p>git clone git@github.com:BiteMoi/BiteMeAndroid.git
+</span><span class='line'>Visit here : https://github.com/JakeWharton/gms-mvn-install, download the repo, follow the readme instruction, it will eventually added to your .m2/repository/com/google/android/ directory.
+</span><span class='line'>mvn clean install
 </span><span class='line'>mvn eclipse:clean eclipse:eclipse
-</span><span class='line'>open .
-</span><span class='line'>mkdir ../BiteMeAndroidWorkspace
+</span><span class='line'>mkdir ../BiteMeAndroidWorkspace (Your new eclipse workspace)
 </span><span class='line'>open regular Eclipse(Juno for mine)
 </span><span class='line'>import -> existing maven project (You need maven plugin for Eclipse first, you can install from marketPlace or some other way you can find)
 </span><span class='line'>choose ../BiteMeAndroid (the original github repo)
-</span><span class='line'>next-> see maven-compiler-plugin:2.5.1:compile/testCompile
+</span><span class='line'>next-> You should see maven-compiler-plugin:2.5.1:compile; maven-compiler-plugin:2.5.1:testCompile with two green check
 </span><span class='line'>finish
-</span><span class='line'>right click on project if there is red cross -> maven -> update project
-</span><span class='line'>echo no  | android create avd -n BiteMoiCMD -t android-17 --skin WVGA800 --force --abi armeabi-v7a
+</span><span class='line'>right click on project if there is red cross -> maven -> update project&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;hr />
+</span><span class='line'>
+</span><span class='line'>&lt;p>echo no  | android create avd -n BiteMoiCMD -t android-17 --skin WVGA800 --force --abi armeabi-v7a
 </span><span class='line'>android sdk -> tools -> manage avds -> change to Intel Atom(x86) -> start&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;hr />
+</span><span class='line'>
+</span><span class='line'>&lt;p>Troubleshooting, not in order:&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>propertities -> builders -> uncheck Java Builder&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>If you see missing gms ish, install apks from google-apk under BiteMoi git-repo
+</span><span class='line'>&lt;p>If you see missing gms ish, install two apks from google-apk folder under BiteMoi git-repo by this:
 </span><span class='line'>adb install XXX&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>check Propertities -> Java Build Path -> Source tab -> check target/unpack/apklibs/com.google.android.gms_google-play-services_apklib_5/src&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>project -> clean, clean and clean!!!&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>Disable Maven Nature -> mvn eclipse:clean eclipse:eclipse -> add Maven back&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>-----Install and run&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>$ adb uninstall com.thoughtworks.bitemoi
 </span><span class='line'>$ mvn clean install
