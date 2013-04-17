@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-04-16T20:48:29-07:00</updated>
+  <updated>2013-04-16T22:03:23-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -462,11 +462,17 @@ You still need to create right AVD and install two apks.</p>
 <span class='line-number'>37</span>
 <span class='line-number'>38</span>
 <span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>git clone git@github.com:BiteMoi/BiteMeAndroid.git
-</span><span class='line'>Visit here : https://github.com/JakeWharton/gms-mvn-install, download the repo, follow the readme instruction, it will eventually added to your .m2/repository/com/google/android/ directory.
-</span><span class='line'>mvn clean install
+</span><span class='line'>&lt;strong>Very Important&lt;/strong>Visit here : https://github.com/JakeWharton/gms-mvn-install, download the repo, follow the readme instruction, it will eventually added to your .m2/repository/com/google/android/ directory.&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>Make sure you have Google-Play-Service-lib rev.5 installed for this project&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>mvn clean install
 </span><span class='line'>mvn eclipse:clean eclipse:eclipse
 </span><span class='line'>mkdir ../BiteMeAndroidWorkspace (Your new eclipse workspace)
 </span><span class='line'>open regular Eclipse(Juno for mine)

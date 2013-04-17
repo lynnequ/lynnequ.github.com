@@ -575,8 +575,14 @@ You still need to create right AVD and install two apks.</p>
 <span class='line-number'>34</span>
 <span class='line-number'>35</span>
 <span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:BiteMoi/BiteMeAndroid.git
-</span><span class='line'>Visit here : https://github.com/JakeWharton/gms-mvn-install, download the repo, follow the readme instruction, it will eventually added to your .m2/repository/com/google/android/ directory.
+</span><span class='line'>**Very Important**Visit here : https://github.com/JakeWharton/gms-mvn-install, download the repo, follow the readme instruction, it will eventually added to your .m2/repository/com/google/android/ directory.
+</span><span class='line'>
+</span><span class='line'>Make sure you have Google-Play-Service-lib rev.5 installed for this project
+</span><span class='line'>
 </span><span class='line'>mvn clean install
 </span><span class='line'>mvn eclipse:clean eclipse:eclipse
 </span><span class='line'>mkdir ../BiteMeAndroidWorkspace (Your new eclipse workspace)
