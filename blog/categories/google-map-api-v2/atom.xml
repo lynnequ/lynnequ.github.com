@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Google Map API v2 | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/google-map-api-v2/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-04-26T01:09:31-07:00</updated>
+  <updated>2013-04-26T01:31:17-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -413,7 +413,7 @@ After imported, google-play-service_lib is shown up as a project module.
 <p><strong>Reference <a href="http://www.vogella.com/articles/AndroidGoogleMaps/article.html">Google Maps Android API v2 - Tutorial
 </a></strong></p>
 
-<h2>And more fun with build tool</h2>
+<h2>And, more fun with build tool</h2>
 
 <p>This side project which I'm currently working on has maven support build in. Though you still need to create right AVD and install two apks.</p>
 
@@ -465,27 +465,41 @@ Android sdk configured; installed mvn plugins for regular eclipse(see pics below
 <span class='line-number'>40</span>
 <span class='line-number'>41</span>
 <span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>git clone git@github.com:BiteMoi/BiteMeAndroid.git
+</span><span class='line'>&lt;p>git clone git://github.com/CapeDev/BiteMeAndroid.git
 </span><span class='line'>&lt;strong>Very Important&lt;/strong>Visit here : https://github.com/JakeWharton/gms-mvn-install, download the repo, follow the readme instruction, it will eventually added to your .m2/repository/com/google/android/ directory.&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>Make sure you have Google-Play-Service-lib rev.5 installed for this project&lt;/p>
+</span><span class='line'>&lt;p>(Make sure you have Google-Play-Service-lib rev.5 installed for this project.)&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>mvn clean install
 </span><span class='line'>mvn eclipse:clean eclipse:eclipse
 </span><span class='line'>mkdir ../BiteMeAndroidWorkspace (Your new eclipse workspace)
-</span><span class='line'>open regular Eclipse(Juno for mine)
-</span><span class='line'>import -> existing maven project (You need maven plugin for Eclipse first, you can install from marketPlace or some other way you can find)
-</span><span class='line'>choose ../BiteMeAndroid (the original github repo)
-</span><span class='line'>next-> You should see maven-compiler-plugin:2.5.1:compile; maven-compiler-plugin:2.5.1:testCompile with two green check
-</span><span class='line'>finish
-</span><span class='line'>right click on project if there is red cross -> maven -> update project&lt;/p>
+</span><span class='line'>Open regular Eclipse(mine is Juno at the moment), use the directory we just created as your workspace.
+</span><span class='line'>Import -> existing maven project (You need maven plugin for Eclipse first, you can install from marketPlace or some other way you can find)
+</span><span class='line'>Choose by click "Browse" button, navigate to /BiteMeAndroid (the github repo we just cloned at the beginning) as your "Root Directory"
+</span><span class='line'>"Next"-> You should see maven-compiler-plugin:2.5.1:compile; maven-compiler-plugin:2.5.1:testCompile with two green check mark ->"Finish"
+</span><span class='line'>Right click on project if there is red cross -> "Maven" -> "Update project…"&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;hr />
 </span><span class='line'>
-</span><span class='line'>&lt;p>echo no  | android create avd -n BiteMoiCMD -t android-17 --skin WVGA800 --force --abi armeabi-v7a
-</span><span class='line'>android sdk -> tools -> manage avds -> change to Intel Atom(x86) -> start&lt;/p>
+</span><span class='line'>&lt;p>Create device and start it:&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>echo no  | android create avd -n BiteMoiCMD -t android-17 --skin WVGA800 --force --abi armeabi-v7a&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$android sdk
+</span><span class='line'>You should see "Android SDK Manager" window pop out, select "Tools" from the top
+</span><span class='line'>Select "Manage avds", you should see "Android Virtual Device Manager" window.
+</span><span class='line'>Select the device you just created or have
+</span><span class='line'>(Click "Edit", in the CPU/ABI area, change to Intel Atom(x86), because it's faster)
+</span><span class='line'>Click "Start…" and "Laurch"&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;hr />
 </span><span class='line'>
@@ -502,7 +516,7 @@ Android sdk configured; installed mvn plugins for regular eclipse(see pics below
 </span><span class='line'>
 </span><span class='line'>&lt;p>Disable Maven Nature -> mvn eclipse:clean eclipse:eclipse -> add Maven back&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>-----Install and run&lt;/p>
+</span><span class='line'>&lt;p>-----Install the apk and run&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>$ adb uninstall com.thoughtworks.bitemoi
 </span><span class='line'>$ mvn clean install
@@ -512,7 +526,8 @@ Android sdk configured; installed mvn plugins for regular eclipse(see pics below
 <img src="http://i.imgur.com/Q4M3bNq.png" alt="alt text" />
 <img src="http://i.imgur.com/MShtWRA.png" alt="alt text" /></p>
 
-<p><a href="https://github.com/JakeWharton/gms-mvn-install">GIT REPO: GMS MVN INSTALL</a></p>
+<p>Reference for installing Google Play Service:
+<a href="https://github.com/JakeWharton/gms-mvn-install">GIT REPO: GMS MVN INSTALL</a></p>
 ]]></content>
   </entry>
   
