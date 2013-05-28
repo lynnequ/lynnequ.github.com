@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-05-28T08:17:44-07:00</updated>
+  <updated>2013-05-28T08:20:04-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -14,32 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Github_multiple_accounts_usage_notes]]></title>
+    <title type="html"><![CDATA[Github Multiple Accounts Usage Notes]]></title>
     <link href="http://lynnequ.github.com/blog/2013/05/28/github-multiple-accounts-usage-notes/"/>
     <updated>2013-05-28T08:03:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/05/28/github-multiple-accounts-usage-notes</id>
-    <content type="html"><![CDATA[
-
-<figure class='code'><figcaption><span>~/.ssh/config </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Host github-tw
-</span><span class='line'>          HostName github.com
-</span><span class='line'>          IdentityFile ~/.ssh/id_rsa
-</span><span class='line'>          User git
-</span><span class='line'>  Host github-lynnequ
-</span><span class='line'>          HostName github.com
-</span><span class='line'>          IdentityFile ~/.ssh/id_rsa_lynnequ
-</span><span class='line'>          User git</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Scenario:
+    <content type="html"><![CDATA[<p>Scenario:
 When you have a local repo and a new github repo, if you want to push to one of your github account using specific credential.</p>
 
 <p>Check the config under .ssh.</p>
@@ -72,7 +51,7 @@ When you have a local repo and a new github repo, if you want to push to one of 
 <p>You should according change your host to which one exist and you are willing to use in config file</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add origin git@github-lynnequ:lynnequ/FunctionalPrac</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add origin git@github-lynnequ:GITHUB_USERNAME/REPO_NAME</span></code></pre></td></tr></table></div></figure>
 
 
 

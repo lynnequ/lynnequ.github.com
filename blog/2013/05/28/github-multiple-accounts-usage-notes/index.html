@@ -5,19 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Github_multiple_accounts_usage_notes - If you see it</title>
+  <title>Github Multiple Accounts Usage Notes - If you see it</title>
   <meta name="author" content="Lynne Qu">
 
   
-  <meta name="description" content="~/.ssh/config 1
-2
-3
-4
-5
-6
-7
-8
-Host github-tw HostName github.com IdentityFile ~/.ssh/id_rsa User git Host github-lynnequ HostName github.com &hellip;">
+  <meta name="description" content="Scenario:
+When you have a local repo and a new github repo, if you want to push to one of your github account using specific credential. Check the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,7 +82,7 @@ Host github-tw HostName github.com IdentityFile ~/.ssh/id_rsa User git Host gith
   
   <header>
     
-      <h1 class="entry-title">Github_multiple_accounts_usage_notes</h1>
+      <h1 class="entry-title">Github Multiple Accounts Usage Notes</h1>
     
     
       <p class="meta">
@@ -112,28 +105,7 @@ Host github-tw HostName github.com IdentityFile ~/.ssh/id_rsa User git Host gith
   </header>
 
 
-<div class="entry-content">
-
-<figure class='code'><figcaption><span>~/.ssh/config </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Host github-tw
-</span><span class='line'>          HostName github.com
-</span><span class='line'>          IdentityFile ~/.ssh/id_rsa
-</span><span class='line'>          User git
-</span><span class='line'>  Host github-lynnequ
-</span><span class='line'>          HostName github.com
-</span><span class='line'>          IdentityFile ~/.ssh/id_rsa_lynnequ
-</span><span class='line'>          User git</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Scenario:
+<div class="entry-content"><p>Scenario:
 When you have a local repo and a new github repo, if you want to push to one of your github account using specific credential.</p>
 
 <p>Check the config under .ssh.</p>
@@ -166,7 +138,7 @@ When you have a local repo and a new github repo, if you want to push to one of 
 <p>You should according change your host to which one exist and you are willing to use in config file</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add origin git@github-lynnequ:lynnequ/FunctionalPrac</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add origin git@github-lynnequ:GITHUB_USERNAME/REPO_NAME</span></code></pre></td></tr></table></div></figure>
 
 
 
@@ -245,7 +217,7 @@ When you have a local repo and a new github repo, if you want to push to one of 
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/05/28/github-multiple-accounts-usage-notes/">Github_multiple_accounts_usage_notes</a>
+        <a href="/blog/2013/05/28/github-multiple-accounts-usage-notes/">Github Multiple Accounts Usage Notes</a>
       </li>
     
       <li class="post">
