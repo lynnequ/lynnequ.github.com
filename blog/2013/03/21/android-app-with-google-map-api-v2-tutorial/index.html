@@ -475,7 +475,7 @@ After imported, google-play-service_lib is shown up as a project module.
 
 <p>This side project which I&#8217;m currently working on has maven support build in. Though you still need to create right AVD and install two apks.</p>
 
-<p><a href="git://github.com/CapeDev/BiteMeAndroid.git">GIT REPO: BiteMeAndroid </a></p>
+<p><a href="https://github.com/CapeDev/BiteMeAndroid">GIT REPO: BiteMeAndroid </a></p>
 
 <p><strong>Requirements:</strong>
 Android sdk configured; installed mvn plugins for regular eclipse(see pics below); installed google play services apks dependencies(gms, vending).</p>
@@ -527,8 +527,10 @@ Android sdk configured; installed mvn plugins for regular eclipse(see pics below
 <span class='line-number'>44</span>
 <span class='line-number'>45</span>
 <span class='line-number'>46</span>
+<span class='line-number'>47</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/CapeDev/BiteMeAndroid.git
-</span><span class='line'>**Very Important**Visit here : https://github.com/JakeWharton/gms-mvn-install, download the repo, follow the readme instruction, it will eventually added to your .m2/repository/com/google/android/ directory.
+</span><span class='line'>**Very Important**
+</span><span class='line'>Visit here : https://github.com/JakeWharton/gms-mvn-install, download the repo, follow the readme instruction, it will eventually added to your .m2/repository/com/google/android/ directory.
 </span><span class='line'>
 </span><span class='line'>(Make sure you have Google-Play-Service-lib rev.5 installed for this project.)
 </span><span class='line'>
@@ -573,6 +575,19 @@ Android sdk configured; installed mvn plugins for regular eclipse(see pics below
 </span><span class='line'>$ adb uninstall com.thoughtworks.bitemoi
 </span><span class='line'>$ mvn clean install
 </span><span class='line'>$ adb install target/bitemoi-1.0.apk</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>steps for IntelliJ 12 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1) git clone git://github.com/CapeDev/BiteMeAndroid.git 
+</span><span class='line'>2) Open IntelliJ 12 IDE, "File" -> "Import Project" -> "Select File or Firectory to Import" window, navigate to root directory of the git repo we just cloned. -> "OK"
+</span><span class='line'>3) Check  radio "Import project from external model" and choose Maven from the list -> "Next"
+</span><span class='line'>4) Check "Import Maven projects automatically" -> "Next" to the end…</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Regarding Eclipse plugin, this is what I have for my Eclipse
@@ -651,11 +666,15 @@ Android sdk configured; installed mvn plugins for regular eclipse(see pics below
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android'>Android (1)</a></li><li><a href='/blog/categories/chef'>chef (1)</a></li><li><a href='/blog/categories/github'>github (1)</a></li><li><a href='/blog/categories/google-map-api-v2'>Google Map API v2 (1)</a></li><li><a href='/blog/categories/life-note'>life note (1)</a></li><li><a href='/blog/categories/octopress'>octopress (1)</a></li><li><a href='/blog/categories/vagrant'>vagrant (1)</a></li><li><a href='/blog/categories/博客'>博客 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android'>Android (1)</a></li><li><a href='/blog/categories/chef'>chef (1)</a></li><li><a href='/blog/categories/github'>github (2)</a></li><li><a href='/blog/categories/google-map-api-v2'>Google Map API v2 (1)</a></li><li><a href='/blog/categories/life-note'>life note (1)</a></li><li><a href='/blog/categories/octopress'>octopress (1)</a></li><li><a href='/blog/categories/vagrant'>vagrant (1)</a></li><li><a href='/blog/categories/博客'>博客 (1)</a></li></ul>
 </section>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/28/github-multiple-accounts-usage-notes/">Github_multiple_accounts_usage_notes</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/04/09/chef-day-1/">Chef Day 1</a>
@@ -677,12 +696,12 @@ Android sdk configured; installed mvn plugins for regular eclipse(see pics below
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/android' style='font-size: 160.0%'>Android(1)</a> <a href='/blog/categories/chef' style='font-size: 160.0%'>chef(1)</a> <a href='/blog/categories/github' style='font-size: 160.0%'>github(1)</a> <a href='/blog/categories/google-map-api-v2' style='font-size: 160.0%'>Google Map API v2(1)</a> <a href='/blog/categories/life-note' style='font-size: 160.0%'>life note(1)</a> <a href='/blog/categories/octopress' style='font-size: 160.0%'>octopress(1)</a> <a href='/blog/categories/vagrant' style='font-size: 160.0%'>vagrant(1)</a> <a href='/blog/categories/博客' style='font-size: 160.0%'>博客(1)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/android' style='font-size: 130.0%'>Android(1)</a> <a href='/blog/categories/chef' style='font-size: 130.0%'>chef(1)</a> <a href='/blog/categories/github' style='font-size: 160.0%'>github(2)</a> <a href='/blog/categories/google-map-api-v2' style='font-size: 130.0%'>Google Map API v2(1)</a> <a href='/blog/categories/life-note' style='font-size: 130.0%'>life note(1)</a> <a href='/blog/categories/octopress' style='font-size: 130.0%'>octopress(1)</a> <a href='/blog/categories/vagrant' style='font-size: 130.0%'>vagrant(1)</a> <a href='/blog/categories/博客' style='font-size: 130.0%'>博客(1)</a> </span>
 </section>
 
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud" width="100%" height="250"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+50.0%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fchef%27+style%3D%27font-size%3A+50.0%25%27%3Echef%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgithub%27+style%3D%27font-size%3A+50.0%25%27%3Egithub%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgoogle-map-api-v2%27+style%3D%27font-size%3A+50.0%25%27%3EGoogle+Map+API+v2%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Flife-note%27+style%3D%27font-size%3A+50.0%25%27%3Elife+note%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+50.0%25%27%3Eoctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fvagrant%27+style%3D%27font-size%3A+50.0%25%27%3Evagrant%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2F%E5%8D%9A%E5%AE%A2%27+style%3D%27font-size%3A+50.0%25%27%3E%E5%8D%9A%E5%AE%A2%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud" width="100%" height="250"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+30.0%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fchef%27+style%3D%27font-size%3A+30.0%25%27%3Echef%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgithub%27+style%3D%27font-size%3A+50.0%25%27%3Egithub%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgoogle-map-api-v2%27+style%3D%27font-size%3A+30.0%25%27%3EGoogle+Map+API+v2%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Flife-note%27+style%3D%27font-size%3A+30.0%25%27%3Elife+note%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+30.0%25%27%3Eoctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fvagrant%27+style%3D%27font-size%3A+30.0%25%27%3Evagrant%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2F%E5%8D%9A%E5%AE%A2%27+style%3D%27font-size%3A+30.0%25%27%3E%E5%8D%9A%E5%AE%A2%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 
