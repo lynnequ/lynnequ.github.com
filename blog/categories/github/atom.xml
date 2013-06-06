@@ -4,7 +4,7 @@
   <title><![CDATA[Category: github | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-05-28T17:40:30-07:00</updated>
+  <updated>2013-06-06T11:39:01-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -18,7 +18,7 @@
     <link href="http://lynnequ.github.com/blog/2013/05/28/github-multiple-accounts-usage-notes/"/>
     <updated>2013-05-28T08:03:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/05/28/github-multiple-accounts-usage-notes</id>
-    <content type="html"><![CDATA[<p><strong>Scenario</strong>
+    <content type="html"><![CDATA[<p><strong>Scenario</strong><br/>
 When you have a local repo and a new github repo, if you want to push to the new repo with one of your github account credential.</p>
 
 <p>Check the config under .ssh.</p>

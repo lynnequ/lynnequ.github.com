@@ -5,11 +5,19 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: 博客 - If you see it</title>
+  <title>Swith Java On Mac - If you see it</title>
   <meta name="author" content="Lynne Qu">
 
   
-  <meta name="description" content="Category: 博客">
+  <meta name="description" content="How to switch Java version on Mac? See how many Javas there on your Mac =) 1
+2
+3
+4
+5
+6
+7
+$ /usr/libexec/java_home -V
+Matching Java Virtual Machines ( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +26,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lynnequ.github.comblog/categories/bo-ke">
+  <link rel="canonical" href="http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="If you see it" type="application/atom+xml">
@@ -77,36 +85,125 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: 博客</h1>
+    
+      <h1 class="entry-title">Swith Java on Mac</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-06T11:32:00-07:00" pubdate data-updated="true">Jun 6<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>How to switch Java version on Mac?</p>
 
-  
-  <h2>2013</h2>
+<h5>See how many Javas there on your Mac =)</h5>
 
-<article>
-  
-<h1><a href="/blog/2013/01/31/blog-log/">博客生成记</a></h1>
-<time datetime="2013-01-31T17:07:00-08:00" pubdate><span class='month'>Jan</span> <span class='day'>31</span> <span class='year'>2013</span></time>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ /usr/libexec/java_home -V
+</span><span class='line'>Matching Java Virtual Machines (3):
+</span><span class='line'>    1.8.0, x86_64:    "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
+</span><span class='line'>    1.6.0_45-b06-451, x86_64: "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>    1.6.0_45-b06-451, i386:   "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>
+</span><span class='line'>/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home</span></code></pre></td></tr></table></div></figure>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/bo-ke/'>博客</a></span>
-</footer>
+
+<h5>Set your variable</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo vi /etc/launchd.conf
+</span><span class='line'>//Note: The file may not exist</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<h5>Restart your mac</h5>
+
+<p>Yea, sadly. =(</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Lynne Qu</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-06T11:32:00-07:00" pubdate data-updated="true">Jun 6<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/java/'>java,</a>, <a class='category' href='/blog/categories/mac/'>mac</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac/" data-via="" data-counturl="http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/05/28/tricky-little-notes/" title="Previous Post: Tricky little notes">&laquo; Tricky little notes</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -175,7 +272,10 @@
       var disqus_shortname = 'ifyouseeit';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac/';
+        var disqus_url = 'http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

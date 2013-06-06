@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-05-28T17:40:30-07:00</updated>
+  <updated>2013-06-06T11:39:01-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -14,11 +14,81 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Swith Java On Mac]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac/"/>
+    <updated>2013-06-06T11:32:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac</id>
+    <content type="html"><![CDATA[<p>How to switch Java version on Mac?</p>
+
+<h5>See how many Javas there on your Mac =)</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ /usr/libexec/java_home -V
+</span><span class='line'>Matching Java Virtual Machines (3):
+</span><span class='line'>    1.8.0, x86_64:    "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
+</span><span class='line'>    1.6.0_45-b06-451, x86_64: "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>    1.6.0_45-b06-451, i386:   "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>
+</span><span class='line'>/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Set your variable</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo vi /etc/launchd.conf
+</span><span class='line'>//Note: The file may not exist</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Restart your mac</h5>
+
+<p>Yea, sadly. =(</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tricky little notes]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/05/28/tricky-little-notes/"/>
+    <updated>2013-05-28T17:51:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/05/28/tricky-little-notes</id>
+    <content type="html"><![CDATA[<p><strong>Show your remote origin information, including remote-url</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote show origin</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Pull the newest code from remote branch &#8220;master&#8221;</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git pull origin master</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Discard all local changes</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git reset --hard</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Github Multiple Accounts Usage Notes]]></title>
     <link href="http://lynnequ.github.com/blog/2013/05/28/github-multiple-accounts-usage-notes/"/>
     <updated>2013-05-28T08:03:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/05/28/github-multiple-accounts-usage-notes</id>
-    <content type="html"><![CDATA[<p><strong>Scenario</strong>
+    <content type="html"><![CDATA[<p><strong>Scenario</strong><br/>
 When you have a local repo and a new github repo, if you want to push to the new repo with one of your github account credential.</p>
 
 <p>Check the config under .ssh.</p>
@@ -517,6 +587,10 @@ Android sdk configured; installed mvn plugins for regular eclipse(see pics below
 <span class='line-number'>45</span>
 <span class='line-number'>46</span>
 <span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/CapeDev/BiteMeAndroid.git
 </span><span class='line'>**Very Important**
 </span><span class='line'>Visit here : https://github.com/JakeWharton/gms-mvn-install, download the repo, follow the readme instruction, it will eventually added to your .m2/repository/com/google/android/ directory.
@@ -531,6 +605,10 @@ Android sdk configured; installed mvn plugins for regular eclipse(see pics below
 </span><span class='line'>Choose by click "Browse" button, navigate to /BiteMeAndroid (the github repo we just cloned at the beginning) as your "Root Directory"
 </span><span class='line'>"Next"-> You should see maven-compiler-plugin:2.5.1:compile; maven-compiler-plugin:2.5.1:testCompile with two green check mark ->"Finish" 
 </span><span class='line'>Right click on project if there is red cross -> "Maven" -> "Update project…"
+</span><span class='line'>
+</span><span class='line'>-----Create IntelliJ 12 project 
+</span><span class='line'>
+</span><span class='line'>mvn clean install idea:clean idea:idea
 </span><span class='line'>
 </span><span class='line'>-----
 </span><span class='line'>Create device and start it:
