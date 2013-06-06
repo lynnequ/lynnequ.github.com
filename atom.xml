@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-06-06T11:39:01-07:00</updated>
+  <updated>2013-06-06T11:40:19-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -18,7 +18,8 @@
     <link href="http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac/"/>
     <updated>2013-06-06T11:32:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac</id>
-    <content type="html"><![CDATA[<p>How to switch Java version on Mac?</p>
+    <content type="html"><![CDATA[<p>How to switch Java version on Mac?
+Or how can I downgrade Java version on Mac?</p>
 
 <h5>See how many Javas there on your Mac =)</h5>
 
