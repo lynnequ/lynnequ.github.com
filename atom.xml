@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-06-24T13:47:43-07:00</updated>
+  <updated>2013-06-24T13:51:09-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -63,7 +63,7 @@
 
 <h3>Choices</h3>
 
-<h5>brew install</h5>
+<h4>brew install</h4>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -81,6 +81,8 @@
 
 <p><a href="http://stackoverflow.com/questions/15489333/homebrew-mac-os-x-10-8-throwing-errors-no-such-file-to-load">HomeBrew Mac os x 10.8 throwing errors “no such file to load”</a></p>
 
+<p>To know what verison of python you have on your mac except System provide</p>
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ ls /Library/Frameworks/Python.framework/Versions/  
@@ -89,13 +91,13 @@
 
 <p><a href="http://docs.python.org/3/using/mac.html">Using Python on a Macintosh</a></p>
 
-<h5>Python website</h5>
+<h4>python binary from the website</h4>
 
 <p><a href="http://www.python.org/download/releases/3.3.2/">Python 3.3.2 download</a> //Yea, I picked the lastest one here, not 3.2&#8230;</p>
 
 <p>And ah, magically, it installed, but when I typed <code>python</code> in iTerm, it still showing 2.7, why??</p>
 
-<p>Here is where/how to get to your python 3.3</p>
+<h6>Here is where/how to get to your python 3.3</h6>
 
 <p><strong> 1. It&#8217;s a app-ish thing in your Applications folder, as IDLE and Python Laucher. </strong><br/>
 <strong> 2. Try </strong></p>
