@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-06-24T11:31:48-07:00</updated>
+  <updated>2013-06-24T13:47:43-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tricky terminial note]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/06/24/tricky-terminial-note/"/>
+    <updated>2013-06-24T12:00:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/06/24/tricky-terminial-note</id>
+    <content type="html"><![CDATA[<h4>Copy from clipboard into file</h4>
+
+<ol>
+<li>Copy the content</li>
+<li>Go to the terminal</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ pbpaste > test.py  
+</span><span class='line'>$ cat test.py</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Misc:</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cat test.txt | pbcopy # copy things to system clipboard
+</span><span class='line'>$ echo hello | pbcopy # same as above
+</span><span class='line'>$ pbcopy &lt; test.txt # copy from a file, so you can use cmd + V
+</span><span class='line'>$ echo `pbpaste`  #you will see the content in the clipboard</span></code></pre></td></tr></table></div></figure>
+
+
+<p>[<strong>pbcopy</strong>] takes  the standard input and places it in the specified pasteboard.</p>
+
+<p>[<strong>pbpaste</strong>]removes  the data from the pasteboard and writes it to the standard output.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Upgrade 2.7 to 3.2 on Mac]]></title>

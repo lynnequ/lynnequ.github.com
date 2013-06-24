@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-06-24T11:31:48-07:00</updated>
+  <updated>2013-06-24T13:47:43-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -61,7 +61,7 @@
 <p>Here is where/how to get to your python 3.3</p>
 
 <p><strong> 1. It's a app-ish thing in your Applications folder, as IDLE and Python Laucher. </strong><br/>
-<strong> 2. Try </strong>
+<strong> 2. Try </strong> <br/>
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
