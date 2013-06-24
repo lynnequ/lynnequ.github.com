@@ -6,6 +6,8 @@
   <meta charset="utf-8">
   <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+  <script src="/javascripts/libs/bootstrap.js"></script>
+
     <style>
 
     /* GLOBAL STYLES
@@ -251,11 +253,9 @@
 </head>
 
 <body>
-
-
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
-        <div class="item">
+        <div class="item active">
           <img src="../assets/tweigenface.png" alt="">
           <div class="container">
             <div class="carousel-caption">
@@ -263,7 +263,7 @@
             </div>
           </div>
         </div>
-        <div class="item active">
+        <div class="item">
           <img src="../assets/tweigenface.png" alt="">
           <div class="container">
             <div class="carousel-caption">
@@ -280,6 +280,26 @@
       <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
     </div>
 
-
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
 </body>
 </html>

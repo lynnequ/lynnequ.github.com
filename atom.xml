@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-06-06T21:51:32-07:00</updated>
+  <updated>2013-06-24T11:27:52-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python Upgrade 2.7 to 3.2 on Mac]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/06/21/python-upgrade-2-dot-7-to-3-dot-2-on-mac/"/>
+    <updated>2013-06-21T11:33:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/06/21/python-upgrade-2-dot-7-to-3-dot-2-on-mac</id>
+    <content type="html"><![CDATA[<p>Well, honestly, this is the note to myself.</p>
+
+<p>Have you ever felt that I should know this and handle it like fast and smooth?</p>
+
+<p>Here is the something: upgrade python 2.7 to 3.2 on Mac(Moutain Lion 10.8.4).</p>
+
+<h3>Choices</h3>
+
+<h5>brew install</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ brew search python  
+</span><span class='line'>gst-python010  python       python24       python25       python26       python3    python31   python32
+</span><span class='line'>homebrew/apache/mod_python
+</span><span class='line'>$ brew install python32  
+</span><span class='line'>Error: Permission denied - /Library/Caches/Homebrew/Formula/python32.brewing</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>You may counter some fun issues, and I had references here.</strong></p>
+
+<p><a href="http://stackoverflow.com/questions/15489333/homebrew-mac-os-x-10-8-throwing-errors-no-such-file-to-load">HomeBrew Mac os x 10.8 throwing errors “no such file to load”</a></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ls /Library/Frameworks/Python.framework/Versions/  
+</span><span class='line'>3.3</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://docs.python.org/3/using/mac.html">Using Python on a Macintosh</a></p>
+
+<h5>Python website</h5>
+
+<p><a href="http://www.python.org/download/releases/3.3.2/">Python 3.3.2 download</a> //Yea, I picked the lastest one here, not 3.2&#8230;</p>
+
+<p>And ah, magically, it installed, but when I typed <code>python</code> in iTerm, it still showing 2.7, why??</p>
+
+<p>Here is where/how to get to your python 3.3</p>
+
+<p><strong> 1. It&#8217;s a app-ish thing in your Applications folder, as IDLE and Python Laucher. </strong>
+** 2. Try</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ python3</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Swith Java On Mac]]></title>
