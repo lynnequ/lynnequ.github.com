@@ -4,7 +4,7 @@
   <title><![CDATA[Category: terminal | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/terminal/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-06-24T21:05:13-07:00</updated>
+  <updated>2013-06-25T03:39:28-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Setup new mac notes]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/06/25/setup-new-mac-notes/"/>
+    <updated>2013-06-25T02:02:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/06/25/setup-new-mac-notes</id>
+    <content type="html"><![CDATA[<h2>Setup when you switch your computer</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ brew install wget&lt;br/>
+</span><span class='line'>$ brew install curl&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tricky terminial note]]></title>
@@ -74,19 +94,6 @@ Under iTerm 2 preference > profile > keys, set left option key acts as "+Esc"<br
 <code>alt + b</code></li>
 </ol>
 
-
-<h2>Setup when you switch your computer</h2>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ brew install wget&lt;br/>
-</span><span class='line'>$ brew install curl&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
