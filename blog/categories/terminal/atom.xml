@@ -4,7 +4,7 @@
   <title><![CDATA[Category: terminal | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/terminal/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-06-25T03:50:56-07:00</updated>
+  <updated>2013-06-25T03:51:54-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -163,7 +163,7 @@
 
 <p><code>$ ln -s -F /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl</code></p>
 
-<p><code>$ subl test.py</code>
+<p><code>$ subl test.py</code><br/>
 <code>$ subl path/to/folder</code></p>
 
 <h2>Re-setup Octopress blog</h2>
