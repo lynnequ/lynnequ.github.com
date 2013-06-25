@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mac | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-06-25T03:39:28-07:00</updated>
+  <updated>2013-06-25T03:46:39-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -18,18 +18,205 @@
     <link href="http://lynnequ.github.com/blog/2013/06/25/setup-new-mac-notes/"/>
     <updated>2013-06-25T02:02:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/06/25/setup-new-mac-notes</id>
-    <content type="html"><![CDATA[<h2>Setup when you switch your computer</h2>
+    <content type="html"><![CDATA[<h2>Setup when you switch to another mac(10.8.4)</h2>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ brew install wget&lt;br/>
+</span><span class='line'>$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"&lt;br/>
+</span><span class='line'>$ brew install wget&lt;br/>
 </span><span class='line'>$ brew install curl&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Basic terminal setup</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>~/.vimrc </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>" basic settings
+</span><span class='line'>set number
+</span><span class='line'>set hidden
+</span><span class='line'>set history=10000
+</span><span class='line'>set cursorline
+</span><span class='line'>hi CursorLine cterm=NONE ctermbg=lightblue ctermfg=darkyellow
+</span><span class='line'>set ruler
+</span><span class='line'>set cmdheight=2
+</span><span class='line'>set hlsearch
+</span><span class='line'>set tabstop=4
+</span><span class='line'>set shiftwidth=4
+</span><span class='line'>set softtabstop=4
+</span><span class='line'>set autoindent
+</span><span class='line'>set ignorecase smartcase
+</span><span class='line'>set showcmd
+</span><span class='line'>syntax on&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>~/.bash_profile </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>system cmd&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>alias ll="ls -Gl"
+</span><span class='line'>alias lll="ls -Gla"&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>terminal&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>export CLICOLOR=1&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>\h:\W \u\$&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>export PS1='[\033[01;33m]\u@\h[\033[01;31m] (\W) \$ [\033[00m]'&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>grep&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>alias grep='grep –color=always'&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>Android&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>export ANDROID_HOME='/Users/LynneQ/Documents/sdks/adt-bundle-mac-x86_64-20130522/sdk'
+</span><span class='line'>export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>Customization&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>alias DocLL='cd /Users/LynneQ/Documents/blog/lynnequ.github.com'&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>Git&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>alias gst='git status'
+</span><span class='line'>alias gba='git branch -a'
+</span><span class='line'>alias gb='git branch'
+</span><span class='line'>alias gsts='git status --short'
+</span><span class='line'>alias gco='git commit -m'
+</span><span class='line'>alias gad='git add'&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>[[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session &lt;em>as a function&lt;/em>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>Notes:</h4>
+
+<p><code>LynneQ:~ lqu$</code><br/>
+<strong>Explain</strong> machine name, colon, present working directory(~) a sapce, the current user and dollar sign($) (# if the shell has super user)<br/>
+<a href="http://guides.macrumors.com/Terminal">Ref</a></p>
+
+<h2>Install sublime text 2 app</h2>
+
+<p>After dmg package installation, to make terminal usable.</p>
+
+<p><code>$ ln -s -F /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime</code></p>
+
+<h2>Re-setup Octopress blog</h2>
+
+<ol>
+<li>Copy the git repo to new location</li>
+<li>Go set up git credential</li>
+<li>To make rake generate/preview/deploy works
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ sudo gem install bundler
+</span><span class='line'>$ sudo gem update --system
+</span><span class='line'>$ sudo bundle install&lt;/li>
+</span><span class='line'>&lt;/ol>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p>Install rvm and upgrade ruby from 1.8.7 to 1.9.3
+</span><span class='line'>$ \curl -L https://get.rvm.io | bash  //Install rvm
+</span><span class='line'>$ source /Users/LynneQ/.rvm/scripts/rvm
+</span><span class='line'>$ rvm get stable
+</span><span class='line'>$ rvm requirements
+</span><span class='line'>$ rvm install 1.9.3
+</span><span class='line'>$ rvm list
+</span><span class='line'>$ ruby -v
+</span><span class='line'>ruby 1.8.7 (2012-02-08 patchlevel 358) [universal-darwin12.0]&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ rvm use --default 1.9.3
+</span><span class='line'>Using /Users/LynneQ/.rvm/gems/ruby-1.9.3-p429&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ ruby -v
+</span><span class='line'>ruby 1.9.3p429 (2013-05-15 revision 40747) [x86_64-darwin12.4.0]&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Unfornately, if you bundle install before upgrade to 1.9.3, you need to restart the shell, and do <code>bundle install</code> again.</p>
+
+<p><a href="http://cheat.errtheblog.com/s/rvm">Ref</a></p>
 ]]></content>
   </entry>
   
