@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mac | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-06-24T14:42:37-07:00</updated>
+  <updated>2013-06-24T21:05:13-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -18,7 +18,7 @@
     <link href="http://lynnequ.github.com/blog/2013/06/24/tricky-terminial-note/"/>
     <updated>2013-06-24T12:00:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/06/24/tricky-terminial-note</id>
-    <content type="html"><![CDATA[<h4>Copy from clipboard into file</h4>
+    <content type="html"><![CDATA[<h3>Copy from clipboard into file</h3>
 
 <ol>
 <li>Copy the content</li>
@@ -54,6 +54,39 @@
 <p>[<strong>pbcopy</strong>] takes  the standard input and places it in the specified pasteboard.</p>
 
 <p>[<strong>pbpaste</strong>]removes  the data from the pasteboard and writes it to the standard output.</p>
+
+<h3>iTerm2 tricks</h3>
+
+<ol>
+<li>Autocomplete<br/>
+<code>cmd" + ;</code></li>
+<li>Show clipboard history<br/>
+<code>command+shift+h</code></li>
+<li>Enter/exit full screen (not for hotkey window)<br/>
+<code>cmd + enter</code></li>
+<li>Search under all tab<br/>
+<code>cmd + opt + e</code></li>
+<li>Search in the tab <br/>
+<code>cmd + f</code> <br/>
+<code>cmd + g</code>//next result</li>
+<li>Enable meta key
+Under iTerm 2 preference > profile > keys, set left option key acts as "+Esc"<br/>
+<code>alt + b</code></li>
+</ol>
+
+
+<h2>Setup when you switch your computer</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ brew install wget&lt;br/>
+</span><span class='line'>$ brew install curl&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

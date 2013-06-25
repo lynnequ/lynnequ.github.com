@@ -111,7 +111,7 @@ $ cat test.txt | pbcopy # copy &hellip;">
   </header>
 
 
-<div class="entry-content"><h4>Copy from clipboard into file</h4>
+<div class="entry-content"><h3>Copy from clipboard into file</h3>
 
 <ol>
 <li>Copy the content</li>
@@ -140,6 +140,40 @@ $ cat test.txt | pbcopy # copy &hellip;">
 <p>[<strong>pbcopy</strong>] takes  the standard input and places it in the specified pasteboard.</p>
 
 <p>[<strong>pbpaste</strong>]removes  the data from the pasteboard and writes it to the standard output.</p>
+
+<h3>iTerm2 tricks</h3>
+
+<ol>
+<li>Autocomplete<br/>
+<code>cmd" + ;</code></li>
+<li>Show clipboard history<br/>
+<code>command+shift+h</code></li>
+<li>Enter/exit full screen (not for hotkey window)<br/>
+<code>cmd + enter</code></li>
+<li>Search under all tab<br/>
+<code>cmd + opt + e</code></li>
+<li>Search in the tab <br/>
+<code>cmd + f</code> <br/>
+<code>cmd + g</code>//next result</li>
+<li>Enable meta key
+Under iTerm 2 preference > profile > keys, set left option key acts as &#8220;+Esc&#8221;<br/>
+<code>alt + b</code></li>
+</ol>
+
+
+<h2>Setup when you switch your computer</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"  
+</span><span class='line'>
+</span><span class='line'>$ brew install wget  
+</span><span class='line'>$ brew install curl</span></code></pre></td></tr></table></div></figure>
+
+
+
 </div>
 
 
