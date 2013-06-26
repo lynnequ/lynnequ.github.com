@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-06-25T08:39:02-07:00</updated>
+  <updated>2013-06-25T19:21:38-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Maven notes]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/06/25/maven-notes/"/>
+    <updated>2013-06-25T17:10:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/06/25/maven-notes</id>
+    <content type="html"><![CDATA[
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mvn -v  
+</span><span class='line'>Apache Maven 3.0.3 (r1075438; 2011-02-28 09:31:09-0800)
+</span><span class='line'>Maven home: /usr/share/maven
+</span><span class='line'>Java version: 1.6.0_51, vendor: Apple Inc.
+</span><span class='line'>Java home: /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>Default locale: en_US, platform encoding: MacRoman
+</span><span class='line'>OS name: "mac os x", version: "10.8.4", arch: "x86_64", family: "mac"</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>With Eclipse</h3>
+
+<p>Add this url to install m2e under &#8220;Install new software&#8221;.
+http://download.eclipse.org/technology/m2e/releases/</p>
+
+<h3>With IntelliJ</h3>
+
+<p>Install the plugins:</p>
+
+<p><code>Maven 2 Integration</code><br/>
+<code>Maven Run Helper</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Setup new mac notes]]></title>
@@ -986,6 +1023,22 @@ Android sdk configured; installed mvn plugins for regular eclipse(see pics below
 
 <p>Reference for installing Google Play Service:
 <a href="https://github.com/JakeWharton/gms-mvn-install">GIT REPO: GMS MVN INSTALL</a></p>
+
+<h2>UPDATE</h2>
+
+<p>Downloaded the newest google android sdk (Jun 25, 2013)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_HOME}/build-tools
+</span><span class='line'>
+</span><span class='line'>$ ln -sf ../build-tools/android-4.2.2/aapt aapt
+</span><span class='line'>$ ln -sf ../build-tools/android-4.2.2/lib lib
+</span><span class='line'>$ ln -sf ../build-tools/android-4.2.2/aidl aidl</span></code></pre></td></tr></table></div></figure>
+
 ]]></content>
   </entry>
   
