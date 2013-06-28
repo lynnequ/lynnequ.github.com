@@ -10,8 +10,7 @@
 
   
   <meta name="description" content="Show your remote origin information, including remote-url 1
-git remote show origin Pull the newest code from remote branch &#8220;master&#8221; 1
-git &hellip;">
+$ git remote show origin Pull the newest code from remote branch &#8220;master&#8221; 1 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -109,19 +108,33 @@ git &hellip;">
 <div class="entry-content"><p><strong>Show your remote origin information, including remote-url</strong></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git remote show origin</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git remote show origin</span></code></pre></td></tr></table></div></figure>
 
 
 <p><strong>Pull the newest code from remote branch &#8220;master&#8221;</strong></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git pull origin master</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git pull origin master</span></code></pre></td></tr></table></div></figure>
 
 
 <p><strong>Discard all local changes</strong></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git reset --hard</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git reset --hard</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Show git config</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config --list  // --global --system --local
+</span><span class='line'>OR
+</span><span class='line'>$ cat ~/.gitconfig
+</span><span class='line'>OR
+</span><span class='line'>$ cat .git/config</span></code></pre></td></tr></table></div></figure>
 
 
 
