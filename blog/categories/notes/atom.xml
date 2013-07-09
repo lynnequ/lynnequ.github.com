@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: notes | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/notes/atom.xml" rel="self"/>
+  <link href="http://lynnequ.github.com/"/>
+  <updated>2013-07-08T23:43:43-07:00</updated>
+  <id>http://lynnequ.github.com/</id>
+  <author>
+    <name><![CDATA[Lynne Qu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Startup engineering course notes]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/07/06/startup-engineering-course-notes/"/>
+    <updated>2013-07-06T09:12:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/07/06/startup-engineering-course-notes</id>
+    <content type="html"><![CDATA[<p>To know your shell better:
+<code>$ env</code></p>
+
+<h2>STDIN, STDOUT, STDERR</h2>
+
+<p><code>$ curl fakeurl</code> # print error message to screen<br/>
+<code>$ curl fakeurl 2&gt; errs.txt</code> # redirecting STDERR with 2>
+<code>$ curl google.com fakeurl 1&gt; out1.txt 2&gt; out2.txt</code> # redirecting STDIN and STDOUT with 1> and 2></p>
+
+<h2>Command 101</h2>
+
+<p><code>$ touch file1</code> # not only used for create zero byte file but also change timestamp without affect the content</p>
+
+<p><code>$ echo line1 &gt; lines.txt</code> # add text to file via ">", rewrite it</p>
+
+<p><code>$ echo line2 &gt;&gt; linex.txt</code> # append text to file via ">>"</p>
+
+<p><code>$ wc file</code> # word count, output will be line, word, byte, file name unless specifiy with arg<br/>
+<code>$ wc -l file</code> # only number of lines<br/>
+<code>$ wc -L file</code> # the longest line length</p>
+
+<p><code>$ yes | nl | head -100 &gt; demo3.txt</code> # nl: line number filtering, debugging and create quick datasets<br/>
+<code>$ nl *gbk | tail -l</code> # show the last line with line number</p>
+
+<h2>Text progressing</h2>
+
+<p><code>$ less file</code> # view large file, can scroll up and down with j and k or ctrl+n and ctrl+p</p>
+
+<h3>head</h3>
+
+<p><code>$ head -n2</code>; <code>$ head -50</code> # display the first n line in the prompt, by default is 10</p>
+
+<p><code>$ head -q *txt *gbk</code> # heads of multiple files w/o delimiters</p>
+
+<p><code>$ head -c50 *gbk</code> # first 50 characters</p>
+
+<h3>tail</h3>
+
+<p><code>$tail -n2 out1.txt</code> # display the last lines, by default 10 lines
+<code>$tail -n+2 out1.txt</code># start at second lines of the file</p>
+
+<p><code>$ yes | nl | head -n 10000000 &gt; foo &amp;</code> <br/>
+<code>$ tail -F foo</code> # run process in background and follow end of file</p>
+
+<h3>cat</h3>
+
+<p><code>$ cat demo.txt demo.txt demo.txt &gt; demo2.txt</code> # print/concatenate files, industrial strength file viwer, large file or file with weird bytes</p>
+
+<p><code>$ yes | head | cat - demo2.txt</code> # cat the input before the text in demo2.txt on the screen, didn't change the file; cat demo2.txt - is after</p>
+
+<h3>cut</h3>
+
+<p><code>$ cut -f2,5 *ptt | head</code> # pull out columns of a file, 2nd and 5th column in this one</p>
+
+<p><code>$ cut -c1-5 *ptt | head</code> # pull out columns by characters, from 1st to 5th</p>
+
+<h3>paste</h3>
+
+<p><code>$  tail -n+3 *ptt | cut -f1 &gt; locs</code><br/>
+<code>$  tail -n+3 *ptt | cut -f5 &gt; genes</code><br/>
+<code>$ locs genes locs | head</code> # paste by columns</p>
+
+<h3>sort</h3>
+
+<p><code>$ sort genes | less</code> # default is alphabetic order<br/>
+<code>$ sort -r genes | less</code> # reverse<br/>
+<code>$ sort -R genes | less</code> # randomize<br/>
+<code>$ cut -f1 *ptt | tail -n+4 | sort | head</code> # used in pipe</p>
+
+<p><code>$ sort -k1 -rn</code> # -k: start a key at POS1 ; -r:reverse the result of comparisons; -n:numberic sort, compare according to string numberical value</p>
+
+<h3>uniq</h3>
+
+<p><code>$ cut -f2 *ptt | tail -n+4 | sort | uniq -c | sort -k1 -rn</code> #report or filter out repeated lines in a file; with -c, precede each output line with the count of the number of times the line occurred in the input, followed by a single space.</p>
+
+<h3>split</h3>
+
+<p><code>$ split -d -l 1000 *ptt subset.ptt.</code> # in linux, split has -d for using numeric suffixes instead of alphabetic; split file per 1000 lines</p>
+
+<h2>wget</h2>
+
+<p><code>$ wget -w 2 -r -np -k -p http:www.stanford.edu/class/cs106</code> # recursively download an entire site, waiting 2 seconds between hits</p>
+
+<p>-np(--no-parent): it guarantees that only the files below a certain hierarchy will be downloaded.</p>
+
+<p>-k(--convert-links): After the download is complete, convert the links in the document to make them suitable for local viewing.  This affects not only the visible hyperlinks, but any part of the document that links to external content, such as embedded images, links to style sheets, hyperlinks to non-HTML content, etc.</p>
+
+<p>-p (--page-requisites): This option causes Wget to download all the files that are necessary to properly display a given HTML page.  This includes such things as inlined images, sounds, and referenced stylesheets.</p>
+
+<p><code>$ wget --help | less</code> # to know more</p>
+
+<h2>rsync</h2>
+
+<p>Synchronize local and remote files, transfer files between two machines.</p>
+
+<p>-avp : archive, versbose, progress</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rsync -avp data1.txt awshost:~/
+</span><span class='line'>building file list ... done
+</span><span class='line'>data1.txt&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>sent 9124 bytes  received 42 bytes  3666.40 bytes/sec
+</span><span class='line'>total size is 9000  speedup is 0.98&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ rsync -avp data1.txt awshost:~/
+</span><span class='line'>building file list ... done&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>sent 78 bytes  received 20 bytes  28.00 bytes/sec
+</span><span class='line'>total size is 9000  speedup is 91.84</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>"The rsync remote-update protocol allows rsync to transfer just the differences between two sets of files across the network connection, using an efficient checksum-search algorithm described in the technical report that accompanies this package."</p>
+
+<h2>curl</h2>
+
+<p>For interacting with singl url<br/>
+<code>$ GHUSER="lynneq"</code># init a variable<br/>
+<code>$ curl -i https://api.github.com/uers/$GHUSER/$GHVAR</code> # an api call with variables</p>
+]]></content>
+  </entry>
+  
+</feed>
