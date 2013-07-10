@@ -4,7 +4,7 @@
   <title><![CDATA[Category: command | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/command/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-07-08T23:43:43-07:00</updated>
+  <updated>2013-07-10T15:14:08-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -14,12 +14,14 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Startup engineering course notes]]></title>
+    <title type="html"><![CDATA[Startup engineering course notes #1 Shell start]]></title>
     <link href="http://lynnequ.github.com/blog/2013/07/06/startup-engineering-course-notes/"/>
     <updated>2013-07-06T09:12:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/07/06/startup-engineering-course-notes</id>
-    <content type="html"><![CDATA[<p>To know your shell better:
-<code>$ env</code></p>
+    <content type="html"><![CDATA[<p>To know your shell better: <br/>
+<code>$ env</code><br/>
+<code>$ man bash</code><br/>
+<code>$ info man</code> #a bit more detail than man pages</p>
 
 <h2>STDIN, STDOUT, STDERR</h2>
 
@@ -97,7 +99,9 @@
 
 <p><code>$ split -d -l 1000 *ptt subset.ptt.</code> # in linux, split has -d for using numeric suffixes instead of alphabetic; split file per 1000 lines</p>
 
-<h2>wget</h2>
+<h2>Downloading and Syncing</h2>
+
+<h3>wget</h3>
 
 <p><code>$ wget -w 2 -r -np -k -p http:www.stanford.edu/class/cs106</code> # recursively download an entire site, waiting 2 seconds between hits</p>
 
@@ -109,7 +113,7 @@
 
 <p><code>$ wget --help | less</code> # to know more</p>
 
-<h2>rsync</h2>
+<h3>rsync</h3>
 
 <p>Synchronize local and remote files, transfer files between two machines.</p>
 
@@ -142,11 +146,59 @@
 
 <p>"The rsync remote-update protocol allows rsync to transfer just the differences between two sets of files across the network connection, using an efficient checksum-search algorithm described in the technical report that accompanies this package."</p>
 
-<h2>curl</h2>
+<h3>curl</h3>
 
 <p>For interacting with singl url<br/>
 <code>$ GHUSER="lynneq"</code># init a variable<br/>
 <code>$ curl -i https://api.github.com/uers/$GHUSER/$GHVAR</code> # an api call with variables</p>
+
+<h2>System, process information</h2>
+
+<p><code>$ uname -a</code><br/>
+<code>$ hostname</code> # determine name of the current machine<br/>
+<code>$ whoami</code> # current user</p>
+
+<p><code>$ sleep 10 &amp;</code><br/>
+<code>$ ps xw | grep sleep | grep -v "grep"</code> # show process are running and grep the key word ; grep -v flag to exclude any lines that contained the string grep, "foogrep" won't be showed up<br/>
+<code>$ kill 11405</code> # kill process by its id</p>
+
+<pre><code>    $ sleep 60 &amp;
+    $ kill `ps xw | grep sleep | cut -f1 -d ' ' | head -1` # kill the process just started  
+</code></pre>
+
+<p><code>$ top</code> #most important processes</p>
+
+<h2>Storage and finding</h2>
+
+<p><code>$ tar -cvf genome.tar genome</code> # make an archive of files as .tar<br/>
+<code>$ gzip genome.tar</code> # compress the file as .tar.gz</p>
+
+<p><code>$ tar -xzvf genome.tar.gz</code> # unzip the file</p>
+
+<p><code>$ gunzip genome.tar.gz</code> # decompress the file from tar.gz to tar<br/>
+<code>$ zcat xx.fa.gz</code> # indentical to gunzip -c</p>
+
+<p><code>$ find /etc | nl</code> # find a file, non-indexed search</p>
+
+<p><code>$ sudo apt-get install -y locate</code>
+<code>$ sudo updatedb</code>
+<code>$ locate fstab</code> # find a file, indexed</p>
+
+<p><code>$ df -h</code> # df: system disk space, on mac with -h human readable</p>
+
+<p><code>$ du --max-depth=1 -b | sort -k1 -rn</code> # du: directory utilization. determine which subdirectories are taking up a lot of disk space</p>
+
+<h3>grep</h3>
+
+<p>Searching within the files:</p>
+
+<pre><code>    $ grep -l protein  *ptt # --files-with-matches, only the names of files containing selected lines are written to standard output.
+    NC_007779.ptt
+</code></pre>
+
+<p><code>$ grep -B 1 -A 1 protein *ptt</code> # print context that 1 line 'B'efore and 'A'fter where the match found</p>
+
+<p><code>$ grep 'protein.*' *ptt | sort | uniq</code> # regular expression</p>
 ]]></content>
   </entry>
   
