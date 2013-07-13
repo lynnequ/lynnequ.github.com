@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: java | If you see it]]></title>
-  <link href="http://lynnequ.github.com/blog/categories/java/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Google Play Service 7 | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/google-play-service-7/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
   <updated>2013-07-13T16:50:54-07:00</updated>
   <id>http://lynnequ.github.com/</id>
@@ -99,71 +99,6 @@
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Swith Java On Mac]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac/"/>
-    <updated>2013-06-06T11:32:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac</id>
-    <content type="html"><![CDATA[<p>How to switch Java version on Mac?
-Or how can I downgrade Java version on Mac?</p>
-
-<h5>See how many Javas there on your Mac =)</h5>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ /usr/libexec/java_home -V
-</span><span class='line'>Matching Java Virtual Machines (3):&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>1.8.0, x86_64:  "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
-</span><span class='line'>1.6.0_45-b06-451, x86_64:   "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</span><span class='line'>1.6.0_45-b06-451, i386: "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h5>Set your variable</h5>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ sudo vi /etc/launchd.conf
-</span><span class='line'>//Note: The file may not exist&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>setenv JAVA_VERSION 1.6&lt;br/>
-</span><span class='line'>setenv JAVA_HOME /System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>:wq&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h5>Restart your mac</h5>
-
-<p>Yea, sadly. =(</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>java -version&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

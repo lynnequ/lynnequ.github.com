@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Google Map API v2 | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/google-map-api-v2/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-07-12T15:43:29-07:00</updated>
+  <updated>2013-07-13T16:50:54-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,95 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Goolge Map on Android with Play Service 7]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/07/13/goolge-map-on-android-with-play-service-7/"/>
+    <updated>2013-07-13T15:57:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/07/13/goolge-map-on-android-with-play-service-7</id>
+    <content type="html"><![CDATA[<p>Our side project: <a href="https://github.com/CapeDev/TrakeMoi">TrakéMoi</a></p>
+
+<p>The previous blog post solved some basic problems you may have:
+<a href="http://ifyouseeit.org/blog/2013/03/21/android-app-with-google-map-api-v2-tutorial">Android App With Google Map API V2</a></p>
+
+<h3>Google Play Service 7 installation/upgrade</h3>
+
+<h5>Option 1</h5>
+
+<p>You can either run <code>$ android sdk</code>, select to install your Google Play Service, also api 16, for some reasons, you may need this to support the play 7.<br/>
+<img src="http://i.imgur.com/00JPaMB.png" alt="alt text" /></p>
+
+<h5>Option 2</h5>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ android update sdk --no-ui --force --filter platform-tools,extra-android-support,android-17,sysimg-17,extra-google-google_play_services&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ android update sdk --no-ui --force --filter android-16&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>GMS-MVN help setup</h3>
+
+<p>Add the <a href="https://github.com/JakeWharton/gms-mvn-install">gms-mvn</a> as your git submodule.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>.gitmodules </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>[submodule "vendor/gms-mvn"]&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>path = vendor/gms-mvn
+</span><span class='line'>url = git://github.com/JakeWharton/gms-mvn-install.git
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And automate the installation.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>setup.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;export <span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>:<span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/tools:<span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/platform-tools:<span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/build-tools&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git submodule init
+</span><span class='line'>git submodule update&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git submodule foreach git pull origin master&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;cp vendor/gms-mvn/gms-mvn-install.sh <span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/extras/google/google_play_services/libproject/google-play-services_lib/ &lt;br/&gt;
+</span><span class='line'><span class="o">(</span><span class="nb">cd</span> <span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/extras/google/google_play_services/libproject/google-play-services_lib/ &amp;amp;&amp;amp; ./gms-mvn-install.sh 7<span class="o">)</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Android app with Google Map API v2]]></title>
