@@ -4,7 +4,7 @@
   <title><![CDATA[Category: java | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-07-17T14:04:25-07:00</updated>
+  <updated>2013-07-17T14:17:28-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Goolge Map on Android with Play Service 7]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/07/13/goolge-map-on-android-with-play-service-7/"/>
+    <title type="html"><![CDATA[Google Map on Android with Play Service 7]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/07/13/google-map-on-android-with-play-service-7/"/>
     <updated>2013-07-13T15:57:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/07/13/goolge-map-on-android-with-play-service-7</id>
+    <id>http://lynnequ.github.com/blog/2013/07/13/google-map-on-android-with-play-service-7</id>
     <content type="html"><![CDATA[<p>Our side project: <a href="https://github.com/CapeDev/TrakeMoi">TrakéMoi</a></p>
 
 <p>The previous blog post solved some basic problems you may have:
