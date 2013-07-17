@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-07-13T17:01:21-07:00</updated>
+  <updated>2013-07-17T14:04:25-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -395,12 +395,32 @@
 <p>Add this url to install m2e under &#8220;Install new software&#8221;.
 http://download.eclipse.org/technology/m2e/releases/</p>
 
+<figure class='code'><figcaption><span>Create Eclipse project by maven </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mvn eclipse:clean eclipse:eclipse</span></code></pre></td></tr></table></div></figure>
+
+
 <h3>With IntelliJ</h3>
 
 <p>Install the plugins:</p>
 
 <p><code>Maven 2 Integration</code><br/>
 <code>Maven Run Helper</code></p>
+
+<figure class='code'><figcaption><span>Create IntelliJ project by maven </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mvn idea:clean idea:idea</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Noted Command</h3>
+
+<p>Running maven install without unit tests sometimes are usful cause it may take longer time for tests to finish and you want the artifact from mvn install.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mvn -Dmaven.test.skip=true install</span></code></pre></td></tr></table></div></figure>
+
+
+
 ]]></content>
   </entry>
   
