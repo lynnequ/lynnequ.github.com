@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-07-17T14:17:28-07:00</updated>
+  <updated>2013-07-24T23:18:05-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Scala Initialization]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/07/24/scala-initialization/"/>
+    <updated>2013-07-24T23:16:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/07/24/scala-initialization</id>
+    <content type="html"><![CDATA[<h3>Scala installation</h3>
+
+<p><a href="http://confluence.jetbrains.com/display/SCA/Getting+Started+with+IntelliJ+IDEA+Scala+Plugin">Scala IntelliJ plugin installation</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Google Map on Android with Play Service 7]]></title>
