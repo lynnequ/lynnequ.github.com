@@ -4,7 +4,7 @@
   <title><![CDATA[Category: scala installation | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/scala-installation/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-07-24T23:18:05-07:00</updated>
+  <updated>2013-08-05T14:43:09-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -18,7 +18,11 @@
     <link href="http://lynnequ.github.com/blog/2013/07/24/scala-initialization/"/>
     <updated>2013-07-24T23:16:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/07/24/scala-initialization</id>
-    <content type="html"><![CDATA[<h3>Scala installation</h3>
+    <content type="html"><![CDATA[<h3>Scala installation with IntelliJ</h3>
+
+<p>Download latest scala from <a href="http://www.scala-lang.org/">Scala site</a> -> scala-2.10.2.tgz</p>
+
+<p>Add scala compiler</p>
 
 <p><a href="http://confluence.jetbrains.com/display/SCA/Getting+Started+with+IntelliJ+IDEA+Scala+Plugin">Scala IntelliJ plugin installation</a></p>
 ]]></content>

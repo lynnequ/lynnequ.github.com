@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mac | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-07-24T23:18:05-07:00</updated>
+  <updated>2013-08-05T14:43:09-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Install Java 7 on Mac]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/08/05/install-java-7-on-mac/"/>
+    <updated>2013-08-05T13:39:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/08/05/install-java-7-on-mac</id>
+    <content type="html"><![CDATA[<h2>Install JDK 7 for Mac OS X 10.8.4</h2>
+
+<p>To install Java 7 (Java Development Kit 7, JDK 7), you need  download jdk7 from Oracle site ( <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">here</a> ), you will have jdk-7u25-macosx-x64.dmg and just double click to install it.</p>
+
+<p><img src="http://i.imgur.com/89nSxT8.png" alt="JDK 7" />
+<img src="http://i.imgur.com/GgaipTTh.png" alt="JDK 7 update 25" />
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ java -version
+</span><span class='line'>java version "1.7.0_25"
+</span><span class='line'>Java(TM) SE Runtime Environment (build 1.7.0_25-b15)
+</span><span class='line'>Java HotSpot(TM) 64-Bit Server VM (build 23.25-b01, mixed mode)&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ /usr/libexec/java_home -V
+</span><span class='line'>Matching Java Virtual Machines (3):&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>1.7.0_25, x86_64:   "Java SE 7" /Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
+</span><span class='line'>1.6.0_51-b11-457, x86_64:   "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>1.6.0_51-b11-457, i386: "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Note</h3>
+
+<p><a href="http://java.com/en/download/index.jsp">Java Runtime Environment, JRE</a> is differrent from JDK, after install this, you won't be see the change in your terminal by <code>java -version</code>.</p>
+
+<p><img src="http://i.imgur.com/QAGCDiL.png" alt="JRE" /></p>
+
+<p>Quote from <a href="http://www.jguru.com/faq/view.jsp?EID=46223">here</a>.</p>
+
+<blockquote><p>The "JDK" is the Java Development Kit. I.e., the JDK is bundle of software that you can use to develop Java based software. The "JRE" is the Java Runtime Environment. I.e., the JRE is an implementation of the Java Virtual Machine which actually executes Java programs.</p>
+
+<p>Typically, each JDK contains one (or more) JRE's along with the various development tools like the Java source compilers, bundling and deployment tools, debuggers, development libraries, etc.</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Startup engineering course notes #1 Shell start]]></title>
@@ -543,71 +599,6 @@ cmd + k : delete till the end of line</p>
 
 <p><strong>Show files inside jar</strong><br/>
 <code>jar tf file.jar</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Swith Java On Mac]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac/"/>
-    <updated>2013-06-06T11:32:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac</id>
-    <content type="html"><![CDATA[<p>How to switch Java version on Mac?
-Or how can I downgrade Java version on Mac?</p>
-
-<h5>See how many Javas there on your Mac =)</h5>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ /usr/libexec/java_home -V
-</span><span class='line'>Matching Java Virtual Machines (3):&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>1.8.0, x86_64:  "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
-</span><span class='line'>1.6.0_45-b06-451, x86_64:   "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</span><span class='line'>1.6.0_45-b06-451, i386: "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p>/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h5>Set your variable</h5>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ sudo vi /etc/launchd.conf
-</span><span class='line'>//Note: The file may not exist&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>setenv JAVA_VERSION 1.6&lt;br/>
-</span><span class='line'>setenv JAVA_HOME /System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>:wq&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h5>Restart your mac</h5>
-
-<p>Yea, sadly. =(</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>java -version&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

@@ -9,8 +9,7 @@
   <meta name="author" content="Lynne Qu">
 
   
-  <meta name="description" content="Scala installation Scala IntelliJ plugin installation
-">
+  <meta name="description" content="Install JDK 7 for Mac OS X 10.8.4 To install Java 7 (Java Development Kit 7, JDK 7), you need download jdk7 from Oracle site ( here ), you will have &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +84,85 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/08/05/install-java-7-on-mac/">Install Java 7 on Mac</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-05T13:39:00-07:00" pubdate data-updated="true">Aug 5<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Install JDK 7 for Mac OS X 10.8.4</h2>
+
+<p>To install Java 7 (Java Development Kit 7, JDK 7), you need  download jdk7 from Oracle site ( <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">here</a> ), you will have jdk-7u25-macosx-x64.dmg and just double click to install it.</p>
+
+<p><img src="http://i.imgur.com/89nSxT8.png" alt="JDK 7" />
+<img src="http://i.imgur.com/GgaipTTh.png" alt="JDK 7 update 25" /></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ java -version
+</span><span class='line'>java version "1.7.0_25"
+</span><span class='line'>Java(TM) SE Runtime Environment (build 1.7.0_25-b15)
+</span><span class='line'>Java HotSpot(TM) 64-Bit Server VM (build 23.25-b01, mixed mode)
+</span><span class='line'>
+</span><span class='line'>$ /usr/libexec/java_home -V
+</span><span class='line'>Matching Java Virtual Machines (3):
+</span><span class='line'>    1.7.0_25, x86_64: "Java SE 7" /Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
+</span><span class='line'>    1.6.0_51-b11-457, x86_64: "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>    1.6.0_51-b11-457, i386:   "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>
+</span><span class='line'>/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Note</h3>
+
+<p><a href="http://java.com/en/download/index.jsp">Java Runtime Environment, JRE</a> is differrent from JDK, after install this, you won&#8217;t be see the change in your terminal by <code>java -version</code>.</p>
+
+<p><img src="http://i.imgur.com/QAGCDiL.png" alt="JRE" /></p>
+
+<p>Quote from <a href="http://www.jguru.com/faq/view.jsp?EID=46223">here</a>.</p>
+
+<blockquote><p>The &#8220;JDK&#8221; is the Java Development Kit. I.e., the JDK is bundle of software that you can use to develop Java based software. The &#8220;JRE&#8221; is the Java Runtime Environment. I.e., the JRE is an implementation of the Java Virtual Machine which actually executes Java programs.</p>
+
+<p>Typically, each JDK contains one (or more) JRE&#8217;s along with the various development tools like the Java source compilers, bundling and deployment tools, debuggers, development libraries, etc.</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/07/24/scala-initialization/">Scala Initialization</a></h1>
     
     
@@ -108,7 +186,11 @@
   </header>
 
 
-  <div class="entry-content"><h3>Scala installation</h3>
+  <div class="entry-content"><h3>Scala installation with IntelliJ</h3>
+
+<p>Download latest scala from <a href="http://www.scala-lang.org/">Scala site</a> -> scala-2.10.2.tgz</p>
+
+<p>Add scala compiler</p>
 
 <p><a href="http://confluence.jetbrains.com/display/SCA/Getting+Started+with+IntelliJ+IDEA+Scala+Plugin">Scala IntelliJ plugin installation</a></p>
 </div>
@@ -1065,87 +1147,6 @@ cmd + k : delete till the end of line</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/06/swith-java-on-mac/">Swith Java on Mac</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-06T11:32:00-07:00" pubdate data-updated="true">Jun 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>How to switch Java version on Mac?
-Or how can I downgrade Java version on Mac?</p>
-
-<h5>See how many Javas there on your Mac =)</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ /usr/libexec/java_home -V
-</span><span class='line'>Matching Java Virtual Machines (3):
-</span><span class='line'>    1.8.0, x86_64:    "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
-</span><span class='line'>    1.6.0_45-b06-451, x86_64: "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</span><span class='line'>    1.6.0_45-b06-451, i386:   "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</span><span class='line'>
-</span><span class='line'>/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>Set your variable</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo vi /etc/launchd.conf
-</span><span class='line'>//Note: The file may not exist
-</span><span class='line'>
-</span><span class='line'>setenv JAVA_VERSION 1.6  
-</span><span class='line'>setenv JAVA_HOME /System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
-</span><span class='line'>
-</span><span class='line'>:wq</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>Restart your mac</h5>
-
-<p>Yea, sadly. =(</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1162,11 +1163,15 @@ Or how can I downgrade Java version on Mac?</p>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android'>Android (3)</a></li><li><a href='/blog/categories/chef'>chef (1)</a></li><li><a href='/blog/categories/command'>command (1)</a></li><li><a href='/blog/categories/erb'>erb (1)</a></li><li><a href='/blog/categories/example'>example (1)</a></li><li><a href='/blog/categories/function-programming'>function programming (1)</a></li><li><a href='/blog/categories/git'>git (1)</a></li><li><a href='/blog/categories/github'>github (2)</a></li><li><a href='/blog/categories/google-map-api-v2'>Google Map API v2 (2)</a></li><li><a href='/blog/categories/google-play-service-7'>Google Play Service 7 (1)</a></li><li><a href='/blog/categories/java'>java (2)</a></li><li><a href='/blog/categories/life-note'>life note (1)</a></li><li><a href='/blog/categories/listview'>ListView (1)</a></li><li><a href='/blog/categories/mac'>mac (5)</a></li><li><a href='/blog/categories/maven'>maven (2)</a></li><li><a href='/blog/categories/notes'>notes (1)</a></li><li><a href='/blog/categories/octopress'>octopress (1)</a></li><li><a href='/blog/categories/python'>python (1)</a></li><li><a href='/blog/categories/ruby'>ruby (1)</a></li><li><a href='/blog/categories/scala-installation'>scala installation (1)</a></li><li><a href='/blog/categories/shell'>shell (1)</a></li><li><a href='/blog/categories/startup'>startup (1)</a></li><li><a href='/blog/categories/terminal'>terminal (2)</a></li><li><a href='/blog/categories/vagrant'>vagrant (1)</a></li><li><a href='/blog/categories/博客'>博客 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android'>Android (3)</a></li><li><a href='/blog/categories/chef'>chef (1)</a></li><li><a href='/blog/categories/command'>command (1)</a></li><li><a href='/blog/categories/erb'>erb (1)</a></li><li><a href='/blog/categories/example'>example (1)</a></li><li><a href='/blog/categories/function-programming'>function programming (1)</a></li><li><a href='/blog/categories/git'>git (1)</a></li><li><a href='/blog/categories/github'>github (2)</a></li><li><a href='/blog/categories/google-map-api-v2'>Google Map API v2 (2)</a></li><li><a href='/blog/categories/google-play-service-7'>Google Play Service 7 (1)</a></li><li><a href='/blog/categories/java'>java (2)</a></li><li><a href='/blog/categories/java7'>java7 (1)</a></li><li><a href='/blog/categories/jdk7-installation'>jdk7 installation (1)</a></li><li><a href='/blog/categories/jre7'>jre7 (1)</a></li><li><a href='/blog/categories/life-note'>life note (1)</a></li><li><a href='/blog/categories/listview'>ListView (1)</a></li><li><a href='/blog/categories/mac'>mac (6)</a></li><li><a href='/blog/categories/maven'>maven (2)</a></li><li><a href='/blog/categories/notes'>notes (1)</a></li><li><a href='/blog/categories/octopress'>octopress (1)</a></li><li><a href='/blog/categories/python'>python (1)</a></li><li><a href='/blog/categories/ruby'>ruby (1)</a></li><li><a href='/blog/categories/scala-installation'>scala installation (1)</a></li><li><a href='/blog/categories/shell'>shell (1)</a></li><li><a href='/blog/categories/startup'>startup (1)</a></li><li><a href='/blog/categories/terminal'>terminal (2)</a></li><li><a href='/blog/categories/vagrant'>vagrant (1)</a></li><li><a href='/blog/categories/博客'>博客 (1)</a></li></ul>
 </section>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/05/install-java-7-on-mac/">Install Java 7 on Mac</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/07/24/scala-initialization/">Scala Initialization</a>
@@ -1184,20 +1189,16 @@ Or how can I downgrade Java version on Mac?</p>
         <a href="/blog/2013/07/06/startup-engineering-course-notes/">Startup engineering course notes #1 Shell start</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/02/android-listview/">Android: ListView</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/android' style='font-size: 136.0%'>Android(3)</a> <a href='/blog/categories/chef' style='font-size: 112.0%'>chef(1)</a> <a href='/blog/categories/command' style='font-size: 112.0%'>command(1)</a> <a href='/blog/categories/erb' style='font-size: 112.0%'>erb(1)</a> <a href='/blog/categories/example' style='font-size: 112.0%'>example(1)</a> <a href='/blog/categories/function-programming' style='font-size: 112.0%'>function programming(1)</a> <a href='/blog/categories/git' style='font-size: 112.0%'>git(1)</a> <a href='/blog/categories/github' style='font-size: 124.0%'>github(2)</a> <a href='/blog/categories/google-map-api-v2' style='font-size: 124.0%'>Google Map API v2(2)</a> <a href='/blog/categories/google-play-service-7' style='font-size: 112.0%'>Google Play Service 7(1)</a> <a href='/blog/categories/java' style='font-size: 124.0%'>java(2)</a> <a href='/blog/categories/life-note' style='font-size: 112.0%'>life note(1)</a> <a href='/blog/categories/listview' style='font-size: 112.0%'>ListView(1)</a> <a href='/blog/categories/mac' style='font-size: 160.0%'>mac(5)</a> <a href='/blog/categories/maven' style='font-size: 124.0%'>maven(2)</a> <a href='/blog/categories/notes' style='font-size: 112.0%'>notes(1)</a> <a href='/blog/categories/octopress' style='font-size: 112.0%'>octopress(1)</a> <a href='/blog/categories/python' style='font-size: 112.0%'>python(1)</a> <a href='/blog/categories/ruby' style='font-size: 112.0%'>ruby(1)</a> <a href='/blog/categories/scala-installation' style='font-size: 112.0%'>scala installation(1)</a> <a href='/blog/categories/shell' style='font-size: 112.0%'>shell(1)</a> <a href='/blog/categories/startup' style='font-size: 112.0%'>startup(1)</a> <a href='/blog/categories/terminal' style='font-size: 124.0%'>terminal(2)</a> <a href='/blog/categories/vagrant' style='font-size: 112.0%'>vagrant(1)</a> <a href='/blog/categories/博客' style='font-size: 112.0%'>博客(1)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/android' style='font-size: 130.0%'>Android(3)</a> <a href='/blog/categories/chef' style='font-size: 110.0%'>chef(1)</a> <a href='/blog/categories/command' style='font-size: 110.0%'>command(1)</a> <a href='/blog/categories/erb' style='font-size: 110.0%'>erb(1)</a> <a href='/blog/categories/example' style='font-size: 110.0%'>example(1)</a> <a href='/blog/categories/function-programming' style='font-size: 110.0%'>function programming(1)</a> <a href='/blog/categories/git' style='font-size: 110.0%'>git(1)</a> <a href='/blog/categories/github' style='font-size: 120.0%'>github(2)</a> <a href='/blog/categories/google-map-api-v2' style='font-size: 120.0%'>Google Map API v2(2)</a> <a href='/blog/categories/google-play-service-7' style='font-size: 110.0%'>Google Play Service 7(1)</a> <a href='/blog/categories/java' style='font-size: 120.0%'>java(2)</a> <a href='/blog/categories/java7' style='font-size: 110.0%'>java7(1)</a> <a href='/blog/categories/jdk7-installation' style='font-size: 110.0%'>jdk7 installation(1)</a> <a href='/blog/categories/jre7' style='font-size: 110.0%'>jre7(1)</a> <a href='/blog/categories/life-note' style='font-size: 110.0%'>life note(1)</a> <a href='/blog/categories/listview' style='font-size: 110.0%'>ListView(1)</a> <a href='/blog/categories/mac' style='font-size: 160.0%'>mac(6)</a> <a href='/blog/categories/maven' style='font-size: 120.0%'>maven(2)</a> <a href='/blog/categories/notes' style='font-size: 110.0%'>notes(1)</a> <a href='/blog/categories/octopress' style='font-size: 110.0%'>octopress(1)</a> <a href='/blog/categories/python' style='font-size: 110.0%'>python(1)</a> <a href='/blog/categories/ruby' style='font-size: 110.0%'>ruby(1)</a> <a href='/blog/categories/scala-installation' style='font-size: 110.0%'>scala installation(1)</a> <a href='/blog/categories/shell' style='font-size: 110.0%'>shell(1)</a> <a href='/blog/categories/startup' style='font-size: 110.0%'>startup(1)</a> <a href='/blog/categories/terminal' style='font-size: 120.0%'>terminal(2)</a> <a href='/blog/categories/vagrant' style='font-size: 110.0%'>vagrant(1)</a> <a href='/blog/categories/博客' style='font-size: 110.0%'>博客(1)</a> </span>
 </section>
 
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud" width="100%" height="250"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+34.0%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fchef%27+style%3D%27font-size%3A+18.0%25%27%3Echef%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fcommand%27+style%3D%27font-size%3A+18.0%25%27%3Ecommand%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Ferb%27+style%3D%27font-size%3A+18.0%25%27%3Eerb%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fexample%27+style%3D%27font-size%3A+18.0%25%27%3Eexample%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Ffunction-programming%27+style%3D%27font-size%3A+18.0%25%27%3Efunction+programming%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgit%27+style%3D%27font-size%3A+18.0%25%27%3Egit%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgithub%27+style%3D%27font-size%3A+26.0%25%27%3Egithub%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgoogle-map-api-v2%27+style%3D%27font-size%3A+26.0%25%27%3EGoogle+Map+API+v2%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgoogle-play-service-7%27+style%3D%27font-size%3A+18.0%25%27%3EGoogle+Play+Service+7%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+26.0%25%27%3Ejava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Flife-note%27+style%3D%27font-size%3A+18.0%25%27%3Elife+note%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Flistview%27+style%3D%27font-size%3A+18.0%25%27%3EListView%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fmac%27+style%3D%27font-size%3A+50.0%25%27%3Emac%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fmaven%27+style%3D%27font-size%3A+26.0%25%27%3Emaven%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fnotes%27+style%3D%27font-size%3A+18.0%25%27%3Enotes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+18.0%25%27%3Eoctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+18.0%25%27%3Epython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+18.0%25%27%3Eruby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fscala-installation%27+style%3D%27font-size%3A+18.0%25%27%3Escala+installation%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fshell%27+style%3D%27font-size%3A+18.0%25%27%3Eshell%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fstartup%27+style%3D%27font-size%3A+18.0%25%27%3Estartup%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fterminal%27+style%3D%27font-size%3A+26.0%25%27%3Eterminal%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fvagrant%27+style%3D%27font-size%3A+18.0%25%27%3Evagrant%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2F%E5%8D%9A%E5%AE%A2%27+style%3D%27font-size%3A+18.0%25%27%3E%E5%8D%9A%E5%AE%A2%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud" width="100%" height="250"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+30.0%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fchef%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Echef%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fcommand%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Ecommand%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Ferb%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eerb%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fexample%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eexample%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Ffunction-programming%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Efunction+programming%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgit%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Egit%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgithub%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Egithub%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgoogle-map-api-v2%27+style%3D%27font-size%3A+23.333333333333336%25%27%3EGoogle+Map+API+v2%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgoogle-play-service-7%27+style%3D%27font-size%3A+16.666666666666668%25%27%3EGoogle+Play+Service+7%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Ejava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjava7%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Ejava7%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjdk7-installation%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Ejdk7+installation%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjre7%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Ejre7%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Flife-note%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Elife+note%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Flistview%27+style%3D%27font-size%3A+16.666666666666668%25%27%3EListView%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fmac%27+style%3D%27font-size%3A+50.0%25%27%3Emac%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fmaven%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Emaven%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fnotes%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Enotes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eoctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Epython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eruby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fscala-installation%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Escala+installation%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fshell%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eshell%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fstartup%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Estartup%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fterminal%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Eterminal%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fvagrant%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Evagrant%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2F%E5%8D%9A%E5%AE%A2%27+style%3D%27font-size%3A+16.666666666666668%25%27%3E%E5%8D%9A%E5%AE%A2%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 
