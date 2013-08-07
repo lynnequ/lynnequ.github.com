@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Switch db from sqlite3 to postgres in Rails app - If you see it</title>
+  <title>Switch DB from sqlite3 to postgres in Rails app - If you see it</title>
   <meta name="author" content="Lynne Qu">
 
   
@@ -82,7 +82,7 @@ $ gem 'pg' Step 2: modify database.yml Change the database adapter and database 
   
   <header>
     
-      <h1 class="entry-title">Switch Db From Sqlite3 to Postgres in Rails App</h1>
+      <h1 class="entry-title">Switch DB From Sqlite3 to Postgres in Rails App</h1>
     
     
       <p class="meta">
@@ -178,9 +178,11 @@ You don&#8217;t need db/xx in the database part cause postgres is not like sqlit
 </span><span class='line'>$ bundle install</span></code></pre></td></tr></table></div></figure>
 
 
-<p><strong>Note</strong>
-1. If you are planning deploy to heroku, heroku will create the database for you according your database.yml
-2. If you are planning deploy to heroku via Snap, you need to go change the configuration for the build to use postgresql manually. Snap will pick up your db choice when you added it to it, but now monitoring it all the time for now.</p>
+<p><strong>Note</strong></p>
+
+<p><strong>1</strong>. If you are planning deploy to heroku, heroku will create the database for you according your database.yml</p>
+
+<p><strong>2</strong>. If you are planning deploy to heroku via Snap, you need to go change the configuration for the build to use postgresql manually. Snap will pick up your db choice when you added it to it, but now monitoring it all the time for now.</p>
 </div>
 
 
@@ -256,7 +258,7 @@ You don&#8217;t need db/xx in the database part cause postgres is not like sqlit
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/08/07/switch-db-from-sqlite3-to-postgres-in-rails-app/">Switch db from sqlite3 to postgres in Rails app</a>
+        <a href="/blog/2013/08/07/switch-db-from-sqlite3-to-postgres-in-rails-app/">Switch DB from sqlite3 to postgres in Rails app</a>
       </li>
     
       <li class="post">
