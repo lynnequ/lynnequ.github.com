@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rails | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://lynnequ.github.com/"/>
+  <updated>2013-08-07T14:57:21-07:00</updated>
+  <id>http://lynnequ.github.com/</id>
+  <author>
+    <name><![CDATA[Lynne Qu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Switch db from sqlite3 to postgres in Rails app]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/08/07/switch-db-from-sqlite3-to-postgres-in-rails-app/"/>
+    <updated>2013-08-07T14:28:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/08/07/switch-db-from-sqlite3-to-postgres-in-rails-app</id>
+    <content type="html"><![CDATA[<h4>Switch from sqlite3 to postgres</h4>
+
+<h5>Step 1: modify Gemfile</h5>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ gem 'pg'</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h5>Step 2: modify database.yml</h5>
+
+<p>Change the database adapter and database name in database.yml:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>development:
+</span><span class='line'>  adapter: postgresql
+</span><span class='line'>  encoding: utf8
+</span><span class='line'>  database: inventory_development
+</span><span class='line'>  host: localhost
+</span><span class='line'>  pool: 5
+</span><span class='line'>  timeout: 5000&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>test:
+</span><span class='line'>  adapter: postgresql
+</span><span class='line'>  encoding: utf8
+</span><span class='line'>  database: inventory_test
+</span><span class='line'>  pool: 5
+</span><span class='line'>  timeout: 5000&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>production:
+</span><span class='line'>  adapter: postgresql
+</span><span class='line'>  encoding: utf8
+</span><span class='line'>  database: inventory_production
+</span><span class='line'>  pool: 5
+</span><span class='line'>  timeout: 5000&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><strong>Note</strong>:
+You don't need db/xx in the database part cause postgres is not like sqlite3 provided a file under db folder.</p>
+
+<h5>Step 3: create database</h5>
+
+<p>You need to create database in postgres based on the name you specified in database.yml, all development, test and production.</p>
+
+<h5>Step 4: Rails DB migrate</h5>
+
+<p>Run the following in terminal:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ bundle update &lt;br/>
+</span><span class='line'>$ bundle install&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><strong>Note</strong>
+1. If you are planning deploy to heroku, heroku will create the database for you according your database.yml
+2. If you are planning deploy to heroku via Snap, you need to go change the configuration for the build to use postgresql manually. Snap will pick up your db choice when you added it to it, but now monitoring it all the time for now.</p>
+]]></content>
+  </entry>
+  
+</feed>
