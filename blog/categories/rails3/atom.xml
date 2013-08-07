@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: sqlite3 | If you see it]]></title>
-  <link href="http://lynnequ.github.com/blog/categories/sqlite3/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Rails3 | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/rails3/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
   <updated>2013-08-07T14:58:26-07:00</updated>
   <id>http://lynnequ.github.com/</id>
@@ -101,54 +101,6 @@ You don't need db/xx in the database part cause postgres is not like sqlite3 pro
 <p><strong>Note</strong>
 1. If you are planning deploy to heroku, heroku will create the database for you according your database.yml
 2. If you are planning deploy to heroku via Snap, you need to go change the configuration for the build to use postgresql manually. Snap will pick up your db choice when you added it to it, but now monitoring it all the time for now.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Sqlite3 with Android]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/08/05/sqlite3-with-android/"/>
-    <updated>2013-08-05T23:20:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/08/05/sqlite3-with-android</id>
-    <content type="html"><![CDATA[<p>Prerequisite: <a href="http://ifyouseeit.org/blog/2013/03/21/android-app-with-google-map-api-v2-tutorial/">set up <code>adb</code> command</a></p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ adb devices ## I have one real device and one emulator&lt;br/>
-</span><span class='line'>List of devices attached&lt;br/>
-</span><span class='line'>xxxxxxxxxxxx    device&lt;br/>
-</span><span class='line'>emulator-5554   device&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ adb -s emulator-5554 shell ## To access specific device's shell and then use sqlite3 command
-</span><span class='line'>root@android:/ # sqlite3
-</span><span class='line'>SQLite version 3.7.11 2012-03-20 11:35:50
-</span><span class='line'>Enter ".help" for instructions
-</span><span class='line'>Enter SQL statements terminated with a ";"
-</span><span class='line'>sqlite>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ adb -s emulator-5554  pull /system/xbin/sqlite3
-</span><span class='line'>4005 KB/s (67880 bytes in 0.016s)
-</span><span class='line'>s
-</span><span class='line'>$ adb -s 015d28569058200a push sqlite3 /system/xbin/
-</span><span class='line'>failed to copy 'sqlite3' to '/system/xbin//sqlite3': Read-only file system</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
