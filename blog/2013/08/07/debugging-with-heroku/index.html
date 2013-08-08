@@ -5,13 +5,23 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - If you see it</title>
+  <title>Debugging with Heroku - If you see it</title>
   <meta name="author" content="Lynne Qu">
 
   
-  <meta name="description" content="Blog Archive 2013 Debugging with Heroku
-Aug 07 2013 posted in Heroku, Rails Switch DB from sqlite3 to postgres in Rails app
-Aug 07 2013 posted in &hellip;">
+  <meta name="description" content="Install Heroku Toolbelt, and you should be able to run heroku from your command tool 1
+2
+3
+4
+5
+6
+7
+8
+$ heroku apps
+=== My Apps
+xxx
+xxxx
+$ heroku open &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +30,7 @@ Aug 07 2013 posted in &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lynnequ.github.com/blog/archives">
+  <link rel="canonical" href="http://lynnequ.github.com/blog/2013/08/07/debugging-with-heroku">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="If you see it" type="application/atom+xml">
@@ -79,316 +89,125 @@ Aug 07 2013 posted in &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Debugging With Heroku</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-07T15:22:00-07:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>Install <a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a>, and you should be able to run <code>heroku</code> from your command tool</p>
 
-  
-  <h2>2013</h2>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ heroku apps
+</span><span class='line'>=== My Apps
+</span><span class='line'>xxx
+</span><span class='line'>xxxx
+</span><span class='line'>$ heroku open --app your-app-name
+</span><span class='line'>Opening return-inventory... done
+</span><span class='line'>$ heroku logs
+</span><span class='line'>$ heroku run rake db:migrate --app return-inventory</span></code></pre></td></tr></table></div></figure>
 
-<article>
-  
-<h1><a href="/blog/2013/08/07/debugging-with-heroku/">Debugging with Heroku</a></h1>
-<time datetime="2013-08-07T15:22:00-07:00" pubdate><span class='month'>Aug</span> <span class='day'>07</span> <span class='year'>2013</span></time>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/heroku/'>Heroku</a>, <a class='category' href='/blog/categories/rails/'>Rails</a></span>
-</footer>
+<p>Run rails with production settings in order to debug locally</p>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ brew install memcached
+</span><span class='line'>$ rails s -e production</span></code></pre></td></tr></table></div></figure>
 
-</article>
 
 
 
-<article>
-  
-<h1><a href="/blog/2013/08/07/switch-db-from-sqlite3-to-postgres-in-rails-app/">Switch DB from sqlite3 to postgres in Rails app</a></h1>
-<time datetime="2013-08-07T14:28:00-07:00" pubdate><span class='month'>Aug</span> <span class='day'>07</span> <span class='year'>2013</span></time>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>RAILS_ENV=production rake db:migrate</span></code></pre></td></tr></table></div></figure>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/rails3/'>Rails3</a>, <a class='category' href='/blog/categories/snap/'>Snap</a>, <a class='category' href='/blog/categories/heroku/'>heroku</a>, <a class='category' href='/blog/categories/postgres/'>postgres</a>, <a class='category' href='/blog/categories/sqlite3/'>sqlite3</a></span>
-</footer>
 
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/08/06/bootstrp-ruby-on-rails/">Bootstrp ruby on rails</a></h1>
-<time datetime="2013-08-06T13:34:00-07:00" pubdate><span class='month'>Aug</span> <span class='day'>06</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/ror/'>ROR</a>, <a class='category' href='/blog/categories/ruby-on-rails/'>Ruby on Rails</a>, <a class='category' href='/blog/categories/basics/'>basics</a>, <a class='category' href='/blog/categories/notes/'>notes</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/08/05/sqlite3-with-android/">Sqlite3 with Android</a></h1>
-<time datetime="2013-08-05T23:20:00-07:00" pubdate><span class='month'>Aug</span> <span class='day'>05</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/android/'>Android</a>, <a class='category' href='/blog/categories/sqlite3/'>sqlite3</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/08/05/install-java-7-on-mac/">Install Java 7 on Mac</a></h1>
-<time datetime="2013-08-05T13:39:00-07:00" pubdate><span class='month'>Aug</span> <span class='day'>05</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/java7/'>java7</a>, <a class='category' href='/blog/categories/jdk7-installation/'>jdk7 installation</a>, <a class='category' href='/blog/categories/jre7/'>jre7</a>, <a class='category' href='/blog/categories/mac/'>mac</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/07/24/scala-initialization/">Scala Initialization</a></h1>
-<time datetime="2013-07-24T23:16:00-07:00" pubdate><span class='month'>Jul</span> <span class='day'>24</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/function-programming/'>function programming</a>, <a class='category' href='/blog/categories/scala-installation/'>scala installation</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/07/13/google-map-on-android-with-play-service-7/">Google Map on Android with Play Service 7</a></h1>
-<time datetime="2013-07-13T15:57:00-07:00" pubdate><span class='month'>Jul</span> <span class='day'>13</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/android/'>Android</a>, <a class='category' href='/blog/categories/google-map-api-v2/'>Google Map API v2</a>, <a class='category' href='/blog/categories/google-play-service-7/'>Google Play Service 7</a>, <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/maven/'>maven</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/07/12/simple-erb-template-with-ruby-example/">Simple erb template with ruby example</a></h1>
-<time datetime="2013-07-12T12:35:00-07:00" pubdate><span class='month'>Jul</span> <span class='day'>12</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/erb/'>erb</a>, <a class='category' href='/blog/categories/example/'>example</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/07/06/startup-engineering-course-notes/">Startup engineering course notes #1 Shell start</a></h1>
-<time datetime="2013-07-06T09:12:00-07:00" pubdate><span class='month'>Jul</span> <span class='day'>06</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/command/'>command</a>, <a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/notes/'>notes</a>, <a class='category' href='/blog/categories/shell/'>shell</a>, <a class='category' href='/blog/categories/startup/'>startup</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/07/02/android-listview/">Android: ListView</a></h1>
-<time datetime="2013-07-02T22:03:00-07:00" pubdate><span class='month'>Jul</span> <span class='day'>02</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/android/'>Android</a>, <a class='category' href='/blog/categories/listview/'>ListView</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/06/25/maven-notes/">Maven notes</a></h1>
-<time datetime="2013-06-25T17:10:00-07:00" pubdate><span class='month'>Jun</span> <span class='day'>25</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/maven/'>maven</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/06/25/setup-new-mac-notes/">Setup new mac notes</a></h1>
-<time datetime="2013-06-25T02:02:00-07:00" pubdate><span class='month'>Jun</span> <span class='day'>25</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/terminal/'>terminal</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/06/24/tricky-terminial-note/">Tricky terminial note</a></h1>
-<time datetime="2013-06-24T12:00:00-07:00" pubdate><span class='month'>Jun</span> <span class='day'>24</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/terminal/'>terminal</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/06/21/python-upgrade-2-dot-7-to-3-dot-2-on-mac/">Python Upgrade 2.7 to 3.2 on Mac</a></h1>
-<time datetime="2013-06-21T11:33:00-07:00" pubdate><span class='month'>Jun</span> <span class='day'>21</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/python/'>python</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/06/06/swith-java-on-mac/">Swith Java On Mac</a></h1>
-<time datetime="2013-06-06T11:32:00-07:00" pubdate><span class='month'>Jun</span> <span class='day'>06</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/mac/'>mac</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/05/28/tricky-little-notes/">Tricky little notes</a></h1>
-<time datetime="2013-05-28T17:51:00-07:00" pubdate><span class='month'>May</span> <span class='day'>28</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/git/'>git</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/05/28/github-multiple-accounts-usage-notes/">Github Multiple Accounts Usage Notes</a></h1>
-<time datetime="2013-05-28T08:03:00-07:00" pubdate><span class='month'>May</span> <span class='day'>28</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/github/'>github</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/04/09/chef-day-1/">Chef Day 1</a></h1>
-<time datetime="2013-04-09T14:14:00-07:00" pubdate><span class='month'>Apr</span> <span class='day'>09</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/chef/'>chef</a>, <a class='category' href='/blog/categories/vagrant/'>vagrant</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/03/21/android-app-with-google-map-api-v2-tutorial/">Android app with Google Map API v2</a></h1>
-<time datetime="2013-03-21T03:09:00-07:00" pubdate><span class='month'>Mar</span> <span class='day'>21</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/android/'>Android</a>, <a class='category' href='/blog/categories/google-map-api-v2/'>Google Map API v2</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/01/31/blog-log/">博客生成记</a></h1>
-<time datetime="2013-01-31T17:07:00-08:00" pubdate><span class='month'>Jan</span> <span class='day'>31</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/bo-ke/'>博客</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/01/30/zero/">Zero</a></h1>
-<time datetime="2013-01-30T18:49:00-08:00" pubdate><span class='month'>Jan</span> <span class='day'>30</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/life-note/'>life note</a></span>
-</footer>
-
-
-</article>
-
+<p>/Applications/Postgres.app/Contents/MacOS/bin/createdb inventory_production</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Lynne Qu</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-07T15:22:00-07:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/heroku/'>Heroku</a>, <a class='category' href='/blog/categories/rails/'>Rails</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lynnequ.github.com/blog/2013/08/07/debugging-with-heroku/" data-via="" data-counturl="http://lynnequ.github.com/blog/2013/08/07/debugging-with-heroku/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/08/07/switch-db-from-sqlite3-to-postgres-in-rails-app/" title="Previous Post: Switch DB from sqlite3 to postgres in Rails app">&laquo; Switch DB from sqlite3 to postgres in Rails app</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -457,7 +276,10 @@ Aug 07 2013 posted in &hellip;">
       var disqus_shortname = 'ifyouseeit';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lynnequ.github.com/blog/2013/08/07/debugging-with-heroku/';
+        var disqus_url = 'http://lynnequ.github.com/blog/2013/08/07/debugging-with-heroku/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

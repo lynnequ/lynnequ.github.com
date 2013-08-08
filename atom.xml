@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-08-07T15:01:14-07:00</updated>
+  <updated>2013-08-07T18:06:00-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,49 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Debugging with Heroku]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/08/07/debugging-with-heroku/"/>
+    <updated>2013-08-07T15:22:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/08/07/debugging-with-heroku</id>
+    <content type="html"><![CDATA[<p>Install <a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a>, and you should be able to run <code>heroku</code> from your command tool</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ heroku apps
+</span><span class='line'>=== My Apps
+</span><span class='line'>xxx
+</span><span class='line'>xxxx
+</span><span class='line'>$ heroku open --app your-app-name
+</span><span class='line'>Opening return-inventory... done
+</span><span class='line'>$ heroku logs
+</span><span class='line'>$ heroku run rake db:migrate --app return-inventory</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Run rails with production settings in order to debug locally</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ brew install memcached
+</span><span class='line'>$ rails s -e production</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>RAILS_ENV=production rake db:migrate</span></code></pre></td></tr></table></div></figure>
+
+
+<p>/Applications/Postgres.app/Contents/MacOS/bin/createdb inventory_production</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Switch DB from sqlite3 to postgres in Rails app]]></title>
@@ -79,7 +122,14 @@ You don&#8217;t need db/xx in the database part cause postgres is not like sqlit
 
 <h5>Step 3: create database</h5>
 
-<p>You need to create database in postgres based on the name you specified in database.yml, all development, test and production.</p>
+<p>You need to create database in postgres based on the name you specified in database.yml, all development, test and production.
+I used <a href="http://postgresapp.com/">PostgresApp</a> and then:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/Applications/Postgres.app/Contents/MacOS/bin/createdb YOUR_DB_NAME</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can follow the documentation and add the bin to your path.</p>
 
 <h5>Step 4: Rails DB migrate</h5>
 
@@ -87,11 +137,20 @@ You don&#8217;t need db/xx in the database part cause postgres is not like sqlit
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
+<span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ bundle update   
-</span><span class='line'>$ bundle install</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>$ bundle install  
+</span><span class='line'>$ rake db:migrate</span></code></pre></td></tr></table></div></figure>
 
 
-<p><strong>Note</strong></p>
+<p><strong>IMPORTANT NOTE</strong>
+If you are running your rails server in different mode locally, like production mode, you need to use the following line to performe your db migration.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>RAILS_ENV=production rake db:migrate</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Note</h5>
 
 <p><strong>1</strong>. If you are planning deploy to heroku, heroku will create the database for you according your database.yml</p>
 
@@ -1685,15 +1744,6 @@ Android sdk configured; installed mvn plugins for regular eclipse(see pics below
     <updated>2013-01-31T17:07:00-08:00</updated>
     <id>http://lynnequ.github.com/blog/2013/01/31/blog-log</id>
     <content type="html"><![CDATA[<p>Just testing Chinese characters for the moment, will update the process for generating this blog later. =)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Zero]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/01/30/zero/"/>
-    <updated>2013-01-30T18:49:00-08:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/01/30/zero</id>
-    <content type="html"><![CDATA[<p>Hello, 不免俗的.</p>
 ]]></content>
   </entry>
   
