@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Angular | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/angular/atom.xml" rel="self"/>
+  <link href="http://lynnequ.github.com/"/>
+  <updated>2013-08-21T19:43:09-07:00</updated>
+  <id>http://lynnequ.github.com/</id>
+  <author>
+    <name><![CDATA[Lynne Qu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Angular try]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/08/08/angular-try/"/>
+    <updated>2013-08-08T13:56:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/08/08/angular-try</id>
+    <content type="html"><![CDATA[<p>Angular extention for debugging in Chrome <a href="http://www.rei.com/media/ff/c8ddeb9a-f5ea-4cf8-808b-f0a7532aa3f4.jpg">check here</a>.</p>
+
+<p>data-ng-model : html5</p>
+
+<p>ng-model
+ng-bind</p>
+
+<p>$eval async queue <--> $watch list</p>
+
+<p>$scope: where all the data goes</p>
+
+<p>CalCtrl.$inject = ['scope']</p>
+
+<p>directives:
+run in this order to modify:
+template-dom
+dom</p>
+
+<p>$httpBackend</p>
+
+<p>Karma - end to end testing</p>
+]]></content>
+  </entry>
+  
+</feed>

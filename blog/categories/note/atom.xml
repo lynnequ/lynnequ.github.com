@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: note | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/note/atom.xml" rel="self"/>
+  <link href="http://lynnequ.github.com/"/>
+  <updated>2013-08-21T19:43:09-07:00</updated>
+  <id>http://lynnequ.github.com/</id>
+  <author>
+    <name><![CDATA[Lynne Qu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Markdown time tricks]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/08/18/markdown-time-tricks/"/>
+    <updated>2013-08-18T20:25:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/08/18/markdown-time-tricks</id>
+    <content type="html"><![CDATA[<p>The blog is written in Markdown syntax, and I'm using Mou as the text editer to see the blog preview at the same time. There are some time saving tricks I noted down.</p>
+
+<p>Use <code>cmd + k</code> for <code>inline code</code></p>
+
+<p>Use <code>shift + ctrl + l</code> for <a href="ifyouseeit.org">link</a> syntax</p>
+
+<p>Use <code>cmd + shift + I</code> for adding new image syntax</p>
+
+<p>Use <code>cmd + b</code> for adding bold to words</p>
+
+<p>Use <code>cmd + i</code> for adding emphasize to words</p>
+
+<p>Use <code>cmd + enter</code> for real new line</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Use Sublime 2 efficiently]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/08/18/use-sublime-2-efficiently/"/>
+    <updated>2013-08-18T19:48:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/08/18/use-sublime-2-efficiently</id>
+    <content type="html"><![CDATA[<p>As the note I had before, for IDE or text editor, there are many shortcuts and key combinations will enable us to work with them moving faster. I always prefer learn by steps due to the brain volume…</p>
+
+<h4>Logistics - efficient way to use Mac</h4>
+
+<p>cmd + H : hide your window
+cmd + alt + H : hide other windows</p>
+
+<p>ctrl + F2 : move focus to menu bar
+ctrl + F3 : move focus to dock
+ctrl + F8 : move focus to status bar</p>
+
+<h4>Editing</h4>
+
+<p>cmd + enter : insert line after
+cmd + shift + enter: insert line before</p>
+
+<p>cmd + d : select word
+cmd + l : select line</p>
+
+<p>cmd + k, cmd + u/l : convert to upper/lower case</p>
+
+<p>ctrl + m : jumpt to match bracket</p>
+
+<p>cmd + j : combine two lines</p>
+
+<p>alt + mouse : select by columns
+ctrl + k : delete to the end</p>
+
+<h4>Build</h4>
+
+<p>cmd + b : build based on your code language</p>
+]]></content>
+  </entry>
+  
+</feed>

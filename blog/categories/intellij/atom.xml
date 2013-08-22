@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: IntelliJ | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/intellij/atom.xml" rel="self"/>
+  <link href="http://lynnequ.github.com/"/>
+  <updated>2013-08-21T19:43:09-07:00</updated>
+  <id>http://lynnequ.github.com/</id>
+  <author>
+    <name><![CDATA[Lynne Qu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Add your IntelliJ12 icon to Red Hat panel]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/08/21/add-your-intellij12-icon-to-red-hat-panel/"/>
+    <updated>2013-08-21T19:16:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/08/21/add-your-intellij12-icon-to-red-hat-panel</id>
+    <content type="html"><![CDATA[<p><strong>Installing IntelliJ 12 For Red Hat 6 Enterprise</strong></p>
+
+<p>Download the tar.gz and untar it by <code>tar xvfz ideaIU-12.1.4.tar.gz</code>, you can move the directory to somewhere for your convenience, you need it later for installing and starting IntelliJ.</p>
+
+<p>Navigate to your IntelliJ directory and run <code>bin/idea.sh</code> to install IntelliJ.</p>
+
+<p>Navigate to your panel and right click.</p>
+
+<p><img src="http://i.imgur.com/qpyzh0V.png" alt="image" /></p>
+
+<p>Create custom launcher.</p>
+
+<p><img src="http://i.imgur.com/lmsoSvH.png" alt="image" /></p>
+
+<p>Add config and icon to the config.</p>
+
+<p><img src="http://i.imgur.com/TOkxqTE.png" alt="image" /></p>
+]]></content>
+  </entry>
+  
+</feed>
