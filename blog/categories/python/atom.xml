@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-08-21T19:43:09-07:00</updated>
+  <updated>2013-11-12T20:09:44-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -28,16 +28,13 @@
 
 <h4>brew install</h4>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ brew search python&lt;br/>
-</span><span class='line'>gst-python010  python         python24       python25       python26       python3    python31   python32
-</span><span class='line'>homebrew/apache/mod_python
-</span><span class='line'>$ brew install python32&lt;br/>
-</span><span class='line'>Error: Permission denied - /Library/Caches/Homebrew/Formula/python32.brewing&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}
+$ brew search python<br/>
+gst-python010  python         python24       python25       python26       python3    python31   python32
+homebrew/apache/mod_python
+$ brew install python32<br/>
+Error: Permission denied - /Library/Caches/Homebrew/Formula/python32.brewing<br/>
+{% endcodeblock%}</p>
 
 <p><strong>You may counter some fun issues, and I had references here.</strong></p>
 
@@ -45,12 +42,10 @@
 
 <p>To know what verison of python you have on your mac except System provide</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ ls /Library/Frameworks/Python.framework/Versions/&lt;br/>
-</span><span class='line'>3.3</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}<br/>
+$ ls /Library/Frameworks/Python.framework/Versions/<br/>
+3.3
+{% endcodeblock %}</p>
 
 <p><a href="http://docs.python.org/3/using/mac.html">Using Python on a Macintosh</a></p>
 
@@ -64,12 +59,10 @@
 
 <p><strong> 1. It's a app-ish thing in your Applications folder, as IDLE and Python Laucher. </strong><br/>
 <strong> 2. Try </strong> <br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ python3
-</span><span class='line'>$ python3 test.py</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}<br/>
+$ python3
+$ python3 test.py
+{% endcodeblock %}</p>
 
 <h3>"Interesting" problem</h3>
 

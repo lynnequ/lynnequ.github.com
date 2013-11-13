@@ -4,7 +4,7 @@
   <title><![CDATA[Category: maven | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/maven/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-08-21T19:43:09-07:00</updated>
+  <updated>2013-11-12T20:09:44-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -32,112 +32,63 @@
 
 <h5>Option 2</h5>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ android update sdk --no-ui --force --filter platform-tools,extra-android-support,android-17,sysimg-17,extra-google-google_play_services&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ android update sdk --no-ui --force --filter android-16&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<p>$ android update sdk --no-ui --force --filter platform-tools,extra-android-support,android-17,sysimg-17,extra-google-google_play_services</p>
+
+<p>$ android update sdk --no-ui --force --filter android-16</p>
+
+<p>{% endcodeblock %}</p>
 
 <h3>GMS-MVN help setup</h3>
 
 <p>Add the <a href="https://github.com/JakeWharton/gms-mvn-install">gms-mvn</a> as your git submodule.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>.gitmodules </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>[submodule "vendor/gms-mvn"]&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>path = vendor/gms-mvn
-</span><span class='line'>url = git://github.com/JakeWharton/gms-mvn-install.git
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock .gitmodules %}<br/>
+[submodule "vendor/gms-mvn"]</p>
+
+<pre><code>path = vendor/gms-mvn
+url = git://github.com/JakeWharton/gms-mvn-install.git
+</code></pre>
+
+<p>{% endcodeblock%}</p>
 
 <p>And automate the installation.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>setup.sh </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;export <span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>:<span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/tools:<span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/platform-tools:<span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/build-tools&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;git submodule init
-</span><span class='line'>git submodule update&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;git submodule foreach git pull origin master&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;cp vendor/gms-mvn/gms-mvn-install.sh <span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/extras/google/google_play_services/libproject/google-play-services_lib/ &lt;br/&gt;
-</span><span class='line'><span class="o">(</span><span class="nb">cd</span> <span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/extras/google/google_play_services/libproject/google-play-services_lib/ &amp;amp;&amp;amp; ./gms-mvn-install.sh 7<span class="o">)</span>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock setup.sh %}</p>
+
+<p>export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/build-tools</p>
+
+<p>git submodule init
+git submodule update</p>
+
+<p>git submodule foreach git pull origin master</p>
+
+<p>cp vendor/gms-mvn/gms-mvn-install.sh ${ANDROID_HOME}/extras/google/google_play_services/libproject/google-play-services_lib/ <br/>
+(cd ${ANDROID_HOME}/extras/google/google_play_services/libproject/google-play-services_lib/ &amp;&amp; ./gms-mvn-install.sh 7)</p>
+
+<p>{% endcodeblock%}</p>
 
 <h3>Update pom.xml</h3>
 
 <p>Add Google Play Service 7 to pom, also update the android-maven-plugin to 3.6.0.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>pom.xml partially </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;br/&gt;</span>
-</span><span class='line'><span class="nt">&lt;dependency&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>groupId<span class="ni">&amp;gt;</span>com.google.android.gms<span class="ni">&amp;lt;</span>/groupId<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>artifactId<span class="ni">&amp;gt;</span>google-play-services<span class="ni">&amp;lt;</span>/artifactId<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>version<span class="ni">&amp;gt;</span>7<span class="ni">&amp;lt;</span>/version<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>type<span class="ni">&amp;gt;</span>apklib<span class="ni">&amp;lt;</span>/type<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;/dependency&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;groupId&gt;</span>com.jayway.maven.plugins.android.generation2<span class="nt">&lt;/groupId&gt;</span>                <span class="nt">&lt;br/&gt;</span>
-</span><span class='line'><span class="nt">&lt;artifactId&gt;</span>android-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-</span><span class='line'><span class="nt">&lt;version&gt;</span>3.6.0<span class="nt">&lt;/version&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock pom.xml partially %}<br/>
+<dependency></p>
+
+<pre><code>&lt;groupId&gt;com.google.android.gms&lt;/groupId&gt;
+&lt;artifactId&gt;google-play-services&lt;/artifactId&gt;
+&lt;version&gt;7&lt;/version&gt;
+&lt;type&gt;apklib&lt;/type&gt;
+</code></pre>
+
+<p></dependency></p>
+
+<p><groupId>com.jayway.maven.plugins.android.generation2</groupId>                <br/>
+<artifactId>android-maven-plugin</artifactId>
+<version>3.6.0</version></p>
+
+<p>{% endcodeblock%}</p>
 ]]></content>
   </entry>
   
@@ -146,37 +97,25 @@
     <link href="http://lynnequ.github.com/blog/2013/06/25/maven-notes/"/>
     <updated>2013-06-25T17:10:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/06/25/maven-notes</id>
-    <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ mvn -v&lt;br/>
-</span><span class='line'>Apache Maven 3.0.3 (r1075438; 2011-02-28 09:31:09-0800)
-</span><span class='line'>Maven home: /usr/share/maven
-</span><span class='line'>Java version: 1.6.0_51, vendor: Apple Inc.
-</span><span class='line'>Java home: /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</span><span class='line'>Default locale: en_US, platform encoding: MacRoman
-</span><span class='line'>OS name: "mac os x", version: "10.8.4", arch: "x86_64", family: "mac"&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+    <content type="html"><![CDATA[<p>{% codeblock %}<br/>
+$ mvn -v<br/>
+Apache Maven 3.0.3 (r1075438; 2011-02-28 09:31:09-0800)
+Maven home: /usr/share/maven
+Java version: 1.6.0_51, vendor: Apple Inc.
+Java home: /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+Default locale: en_US, platform encoding: MacRoman
+OS name: "mac os x", version: "10.8.4", arch: "x86_64", family: "mac"</p>
+
+<p>{% endcodeblock %}</p>
 
 <h3>With Eclipse</h3>
 
 <p>Add this url to install m2e under "Install new software".
 http://download.eclipse.org/technology/m2e/releases/</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Create Eclipse project by maven </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ mvn eclipse:clean eclipse:eclipse&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock Create Eclipse project by maven %}<br/>
+$ mvn eclipse:clean eclipse:eclipse<br/>
+{% endcodeblock %}</p>
 
 <h3>With IntelliJ</h3>
 
@@ -185,20 +124,17 @@ http://download.eclipse.org/technology/m2e/releases/</p>
 <p><code>Maven 2 Integration</code><br/>
 <code>Maven Run Helper</code></p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Create IntelliJ project by maven </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ mvn idea:clean idea:idea&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock Create IntelliJ project by maven %}<br/>
+$ mvn idea:clean idea:idea<br/>
+{% endcodeblock %}</p>
 
 <h3>Noted Command</h3>
 
 <p>Running maven install without unit tests sometimes are usful cause it may take longer time for tests to finish and you want the artifact from mvn install.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ mvn -Dmaven.test.skip=true install&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}<br/>
+$ mvn -Dmaven.test.skip=true install<br/>
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   

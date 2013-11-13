@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Angular | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/angular/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-08-21T19:43:09-07:00</updated>
+  <updated>2013-11-12T20:09:34-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -15,21 +15,33 @@
   
   <entry>
     <title type="html"><![CDATA[Angular try]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/08/08/angular-try/"/>
-    <updated>2013-08-08T13:56:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/08/08/angular-try</id>
-    <content type="html"><![CDATA[<p>Angular extention for debugging in Chrome <a href="http://www.rei.com/media/ff/c8ddeb9a-f5ea-4cf8-808b-f0a7532aa3f4.jpg">check here</a>.</p>
+    <link href="http://lynnequ.github.com/blog/2013/10/10/angular-try/"/>
+    <updated>2013-10-10T16:28:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/10/10/angular-try</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/lynneq/angular_fun">My Rails App repo integrated with Augular followed RailsCast episode</a>,
+Under the repo, there is a <a href="https://github.com/lynneq/angular_fun/blob/master/todo.html">simple one page todo list demo</a> which includes key words: ng-bind, ng-repeat, ng-model. Also includes a small usage of filter, directive.</p>
+
+<p>You may start with try to under the example on the index page from <a href="http://angularjs.org/">Augular site</a></p>
+
+<p>Strongly recommand video tutorials from :
+<a href="http://egghead.io/">Egghead - Bite-sized web development training with AngularJS</a>, short clips but very helpful.</p>
+
+<p>Also, recommand two short screencasts from codeschool AugualrJS if you have suscription.</p>
+
+<p><a href="http://docs.angularjs.org/guide/directive">Directives</a>:</p>
+
+<p>Adding new behavior to or transforming the DOM.</p>
+
+<p>Wirtten with carmel cased names, invoked by translating to snake case with '-' or '_', optionally, prefix with x- or data- to make HTML validator compliant.</p>
+
+<p>Can be used in element names, attributes, class names, comments.</p>
+
+<p>ng-app</p>
 
 <p>data-ng-model : html5</p>
 
 <p>ng-model
 ng-bind</p>
-
-<p>$eval async queue <--> $watch list</p>
-
-<p>$scope: where all the data goes</p>
-
-<p>CalCtrl.$inject = ['scope']</p>
 
 <p>directives:
 run in this order to modify:
@@ -39,6 +51,16 @@ dom</p>
 <p>$httpBackend</p>
 
 <p>Karma - end to end testing</p>
+
+<p>Adding gem 'angularjs-rails'</p>
+
+<p>Application.js
+//= require angular
+//= require angular-resource</p>
+
+<p><strong>Misc.</strong></p>
+
+<p>Angular extention for debugging in Chrome <a href="http://www.rei.com/media/ff/c8ddeb9a-f5ea-4cf8-808b-f0a7532aa3f4.jpg">check here</a>.</p>
 ]]></content>
   </entry>
   

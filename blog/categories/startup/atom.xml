@@ -4,7 +4,7 @@
   <title><![CDATA[Category: startup | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/startup/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-08-21T19:43:09-07:00</updated>
+  <updated>2013-11-12T20:09:44-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -119,30 +119,20 @@
 
 <p>-avp : archive, versbose, progress</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ rsync -avp data1.txt awshost:~/
-</span><span class='line'>building file list ... done
-</span><span class='line'>data1.txt&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>sent 9124 bytes  received 42 bytes  3666.40 bytes/sec
-</span><span class='line'>total size is 9000  speedup is 0.98&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rsync -avp data1.txt awshost:~/
-</span><span class='line'>building file list ... done&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>sent 78 bytes  received 20 bytes  28.00 bytes/sec
-</span><span class='line'>total size is 9000  speedup is 91.84</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}
+$ rsync -avp data1.txt awshost:~/
+building file list ... done
+data1.txt</p>
+
+<p>sent 9124 bytes  received 42 bytes  3666.40 bytes/sec
+total size is 9000  speedup is 0.98</p>
+
+<p>$ rsync -avp data1.txt awshost:~/
+building file list ... done</p>
+
+<p>sent 78 bytes  received 20 bytes  28.00 bytes/sec
+total size is 9000  speedup is 91.84
+{% endcodeblock %}</p>
 
 <p>"The rsync remote-update protocol allows rsync to transfer just the differences between two sets of files across the network connection, using an efficient checksum-search algorithm described in the technical report that accompanies this package."</p>
 

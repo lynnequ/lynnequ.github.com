@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-08-21T19:43:09-07:00</updated>
+  <updated>2013-11-12T20:09:44-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -14,37 +14,53 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Git branch]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/10/17/git-branch/"/>
+    <updated>2013-10-17T21:27:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/10/17/git-branch</id>
+    <content type="html"><![CDATA[<p><strong>Browse all the branches</strong>: <code>git branch --all</code> or <code>git branch -a</code></p>
+
+<p><strong>Browse only remote branches</strong>: <code>git branch -r</code></p>
+
+<p><strong>Delete local branch</strong>: <code>git brach -d BRANCH_NAME</code> or <code>git brach -D BRANCH_NAME</code> if it states 'error: The branch xxx is not fully merged' and you really don't care about what's in that branch.</p>
+
+<p>Note: <code>git brach -d BRANCH_NAME_1 BRANCH_NAME_2 BRANCH_NAME_3</code> to delete multiple branches at the same time is ok.</p>
+
+<p><strong>Delete remote branch</strong>: <code>git push origin :REMOTE_BRANCH_NAME</code> or <code>git branch -r -d origin/REMOTE_BRANCH_NAME</code></p>
+
+<p>Note: if you see 'error: unable to delete xxx: remote ref does not exist', try to do <code>git fetch -p origin</code> to sync your local repo and origin master repo. <code>-p</code> will delete any tracking branches locally that no longer in remote.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Tricky little notes]]></title>
     <link href="http://lynnequ.github.com/blog/2013/05/28/tricky-little-notes/"/>
     <updated>2013-05-28T17:51:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/05/28/tricky-little-notes</id>
     <content type="html"><![CDATA[<p><strong>Show your remote origin information, including remote-url</strong><br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git remote show origin</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+$ git remote show origin
+{% endcodeblock %}</p>
 
 <p><strong>Pull the newest code from remote branch "master"</strong>   <br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git pull origin master</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+$ git pull origin master
+{% endcodeblock %}</p>
 
 <p><strong>Discard all local changes</strong><br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git reset --hard</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+$ git reset --hard
+{% endcodeblock %}</p>
 
 <p><strong>Show git config</strong><br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config --list  // --global --system --local
-</span><span class='line'>OR
-</span><span class='line'>$ cat ~/.gitconfig
-</span><span class='line'>OR
-</span><span class='line'>$ cat .git/config&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}
+$ git config --list  // --global --system --local
+OR
+$ cat ~/.gitconfig
+OR
+$ cat .git/config</p>
+
+<p>{% endcodeblock %}</p>
 ]]></content>
   </entry>
   

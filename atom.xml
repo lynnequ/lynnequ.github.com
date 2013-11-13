@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-08-21T19:43:09-07:00</updated>
+  <updated>2013-11-12T20:09:34-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,76 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Git branch]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/10/17/git-branch/"/>
+    <updated>2013-10-17T21:27:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/10/17/git-branch</id>
+    <content type="html"><![CDATA[<p><strong>Browse all the branches</strong>: <code>git branch --all</code> or <code>git branch -a</code></p>
+
+<p><strong>Browse only remote branches</strong>: <code>git branch -r</code></p>
+
+<p><strong>Delete local branch</strong>: <code>git brach -d BRANCH_NAME</code> or <code>git brach -D BRANCH_NAME</code> if it states &#8216;error: The branch xxx is not fully merged&#8217; and you really don&#8217;t care about what&#8217;s in that branch.</p>
+
+<p>Note: <code>git brach -d BRANCH_NAME_1 BRANCH_NAME_2 BRANCH_NAME_3</code> to delete multiple branches at the same time is ok.</p>
+
+<p><strong>Delete remote branch</strong>: <code>git push origin :REMOTE_BRANCH_NAME</code> or <code>git branch -r -d origin/REMOTE_BRANCH_NAME</code></p>
+
+<p>Note: if you see &#8216;error: unable to delete xxx: remote ref does not exist&#8217;, try to do <code>git fetch -p origin</code> to sync your local repo and origin master repo. <code>-p</code> will delete any tracking branches locally that no longer in remote.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Angular try]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/10/10/angular-try/"/>
+    <updated>2013-10-10T16:28:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/10/10/angular-try</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/lynneq/angular_fun">My Rails App repo integrated with Augular followed RailsCast episode</a>,
+Under the repo, there is a <a href="https://github.com/lynneq/angular_fun/blob/master/todo.html">simple one page todo list demo</a> which includes key words: ng-bind, ng-repeat, ng-model. Also includes a small usage of filter, directive.</p>
+
+<p>You may start with try to under the example on the index page from <a href="http://angularjs.org/">Augular site</a></p>
+
+<p>Strongly recommand video tutorials from :
+<a href="http://egghead.io/">Egghead - Bite-sized web development training with AngularJS</a>, short clips but very helpful.</p>
+
+<p>Also, recommand two short screencasts from codeschool AugualrJS if you have suscription.</p>
+
+<p><a href="http://docs.angularjs.org/guide/directive">Directives</a>:</p>
+
+<p>Adding new behavior to or transforming the DOM.</p>
+
+<p>Wirtten with carmel cased names, invoked by translating to snake case with &#8216;-&#8217; or &#8216;_&#8217;, optionally, prefix with x- or data- to make HTML validator compliant.</p>
+
+<p>Can be used in element names, attributes, class names, comments.</p>
+
+<p>ng-app</p>
+
+<p>data-ng-model : html5</p>
+
+<p>ng-model
+ng-bind</p>
+
+<p>directives:
+run in this order to modify:
+template-dom
+dom</p>
+
+<p>$httpBackend</p>
+
+<p>Karma - end to end testing</p>
+
+<p>Adding gem &#8216;angularjs-rails&#8217;</p>
+
+<p>Application.js
+//= require angular
+//= require angular-resource</p>
+
+<p><strong>Misc.</strong></p>
+
+<p>Angular extention for debugging in Chrome <a href="http://www.rei.com/media/ff/c8ddeb9a-f5ea-4cf8-808b-f0a7532aa3f4.jpg">check here</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Add your IntelliJ12 icon to Red Hat panel]]></title>
@@ -32,7 +102,7 @@
 
 <p><img src="http://i.imgur.com/lmsoSvH.png" alt="image" /></p>
 
-<p>Add config and icon to the config.</p>
+<p>Add command and icon to the config.</p>
 
 <p><img src="http://i.imgur.com/TOkxqTE.png" alt="image" /></p>
 ]]></content>
@@ -95,35 +165,6 @@ ctrl + k : delete to the end</p>
 <h4>Build</h4>
 
 <p>cmd + b : build based on your code language</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Angular try]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/08/08/angular-try/"/>
-    <updated>2013-08-08T13:56:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/08/08/angular-try</id>
-    <content type="html"><![CDATA[<p>Angular extention for debugging in Chrome <a href="http://www.rei.com/media/ff/c8ddeb9a-f5ea-4cf8-808b-f0a7532aa3f4.jpg">check here</a>.</p>
-
-<p>data-ng-model : html5</p>
-
-<p>ng-model
-ng-bind</p>
-
-<p>$eval async queue <--> $watch list</p>
-
-<p>$scope: where all the data goes</p>
-
-<p>CalCtrl.$inject = [&#8216;scope&#8217;]</p>
-
-<p>directives:
-run in this order to modify:
-template-dom
-dom</p>
-
-<p>$httpBackend</p>
-
-<p>Karma - end to end testing</p>
 ]]></content>
   </entry>
   
@@ -1208,47 +1249,6 @@ Or how can I downgrade Java version on Mac?</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Tricky little notes]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/05/28/tricky-little-notes/"/>
-    <updated>2013-05-28T17:51:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/05/28/tricky-little-notes</id>
-    <content type="html"><![CDATA[<p><strong>Show your remote origin information, including remote-url</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git remote show origin</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Pull the newest code from remote branch &#8220;master&#8221;</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git pull origin master</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Discard all local changes</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git reset --hard</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Show git config</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config --list  // --global --system --local
-</span><span class='line'>OR
-</span><span class='line'>$ cat ~/.gitconfig
-</span><span class='line'>OR
-</span><span class='line'>$ cat .git/config</span></code></pre></td></tr></table></div></figure>
-
-
 
 ]]></content>
   </entry>
