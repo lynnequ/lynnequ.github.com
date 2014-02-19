@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Google Map API v2 | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/google-map-api-v2/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-11-12T20:09:44-08:00</updated>
+  <updated>2014-02-18T20:54:33-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -32,63 +32,112 @@
 
 <h5>Option 2</h5>
 
-<p>{% codeblock %}</p>
-
-<p>$ android update sdk --no-ui --force --filter platform-tools,extra-android-support,android-17,sysimg-17,extra-google-google_play_services</p>
-
-<p>$ android update sdk --no-ui --force --filter android-16</p>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ android update sdk --no-ui --force --filter platform-tools,extra-android-support,android-17,sysimg-17,extra-google-google_play_services&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ android update sdk --no-ui --force --filter android-16&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h3>GMS-MVN help setup</h3>
 
 <p>Add the <a href="https://github.com/JakeWharton/gms-mvn-install">gms-mvn</a> as your git submodule.</p>
 
-<p>{% codeblock .gitmodules %}<br/>
-[submodule "vendor/gms-mvn"]</p>
-
-<pre><code>path = vendor/gms-mvn
-url = git://github.com/JakeWharton/gms-mvn-install.git
-</code></pre>
-
-<p>{% endcodeblock%}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>.gitmodules </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>[submodule "vendor/gms-mvn"]&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>path = vendor/gms-mvn
+</span><span class='line'>url = git://github.com/JakeWharton/gms-mvn-install.git
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>And automate the installation.</p>
 
-<p>{% codeblock setup.sh %}</p>
-
-<p>export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/build-tools</p>
-
-<p>git submodule init
-git submodule update</p>
-
-<p>git submodule foreach git pull origin master</p>
-
-<p>cp vendor/gms-mvn/gms-mvn-install.sh ${ANDROID_HOME}/extras/google/google_play_services/libproject/google-play-services_lib/ <br/>
-(cd ${ANDROID_HOME}/extras/google/google_play_services/libproject/google-play-services_lib/ &amp;&amp; ./gms-mvn-install.sh 7)</p>
-
-<p>{% endcodeblock%}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>setup.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;export <span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>:<span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/tools:<span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/platform-tools:<span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/build-tools&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git submodule init
+</span><span class='line'>git submodule update&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git submodule foreach git pull origin master&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;cp vendor/gms-mvn/gms-mvn-install.sh <span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/extras/google/google_play_services/libproject/google-play-services_lib/ &lt;br/&gt;
+</span><span class='line'><span class="o">(</span><span class="nb">cd</span> <span class="k">${</span><span class="nv">ANDROID_HOME</span><span class="k">}</span>/extras/google/google_play_services/libproject/google-play-services_lib/ &amp;amp;&amp;amp; ./gms-mvn-install.sh 7<span class="o">)</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h3>Update pom.xml</h3>
 
 <p>Add Google Play Service 7 to pom, also update the android-maven-plugin to 3.6.0.</p>
 
-<p>{% codeblock pom.xml partially %}<br/>
-<dependency></p>
-
-<pre><code>&lt;groupId&gt;com.google.android.gms&lt;/groupId&gt;
-&lt;artifactId&gt;google-play-services&lt;/artifactId&gt;
-&lt;version&gt;7&lt;/version&gt;
-&lt;type&gt;apklib&lt;/type&gt;
-</code></pre>
-
-<p></dependency></p>
-
-<p><groupId>com.jayway.maven.plugins.android.generation2</groupId>                <br/>
-<artifactId>android-maven-plugin</artifactId>
-<version>3.6.0</version></p>
-
-<p>{% endcodeblock%}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>pom.xml partially </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;br/&gt;</span>
+</span><span class='line'><span class="nt">&lt;dependency&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>groupId<span class="ni">&amp;gt;</span>com.google.android.gms<span class="ni">&amp;lt;</span>/groupId<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>artifactId<span class="ni">&amp;gt;</span>google-play-services<span class="ni">&amp;lt;</span>/artifactId<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>version<span class="ni">&amp;gt;</span>7<span class="ni">&amp;lt;</span>/version<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>type<span class="ni">&amp;gt;</span>apklib<span class="ni">&amp;lt;</span>/type<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/dependency&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;groupId&gt;</span>com.jayway.maven.plugins.android.generation2<span class="nt">&lt;/groupId&gt;</span>                <span class="nt">&lt;br/&gt;</span>
+</span><span class='line'><span class="nt">&lt;artifactId&gt;</span>android-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span><span class='line'><span class="nt">&lt;version&gt;</span>3.6.0<span class="nt">&lt;/version&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
@@ -103,20 +152,25 @@ git submodule update</p>
 
 <p>Setting up these in .bash_profile to enable you using command like <code>adb</code> and <code>emulator</code>.</p>
 
-<p>{% codeblock %}</p>
-
-<p>export ANDROID_HOME='/path/to/adt-bundle-mac-x86_64/sdk'
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools</p>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>export ANDROID_HOME='/path/to/adt-bundle-mac-x86_64/sdk'
+</span><span class='line'>export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h4>Build your environment</h4>
 
 <p>Running your Android SDK Manager from your teminal:</p>
 
-<p>{% codeblock %}
-android sdk
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>android sdk</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Select Android 4.2.2 (API 17), Google Play Services under extra(scroll down to the bottom)
 <img src="http://i.imgur.com/3ONXSei.png" alt="alt text" />
@@ -128,12 +182,18 @@ android sdk
 
 <h5>Create Device Emulator from your command and start your emulator</h5>
 
-<p>{% codeblock %}</p>
-
-<p>echo no  | android create avd -n BiteMoi -t android-17 --skin WVGA800 --force --abi armeabi-v7a<br/>
-emulator -avd BiteMoi -partition-size 512 -no-audio -no-boot-anim</p>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>echo no  | android create avd -n BiteMoi -t android-17 --skin WVGA800 --force --abi armeabi-v7a&lt;br/>
+</span><span class='line'>emulator -avd BiteMoi -partition-size 512 -no-audio -no-boot-anim&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>Updated</strong>
 You can create your Virtual Device as follows.<br/>
@@ -152,16 +212,18 @@ Run <code>android sdk</code></p>
 <p><strong>Debuging notes</strong></p>
 
 <p><strong>Installation and uninstall by apk or package name</strong>
-{% codeblock %}<br/>
-adb install target/bitemoi-1.0.apk  # Install and uninstall apk through adb<br/>
-adb uninstall com.thoughtworks.bitemoi # Unistall by given package name<br/>
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>adb install target/bitemoi-1.0.apk  # Install and uninstall apk through adb&lt;br/>
+</span><span class='line'>adb uninstall com.thoughtworks.bitemoi # Unistall by given package name&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>Logcat</strong><br/>
-{% codeblock %}
-adb logcat -c   # Clean logcat log
-adb logcat  # Start monitoring logcat, live version <br/>
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>adb logcat -c   # Clean logcat log
+</span><span class='line'>adb logcat  # Start monitoring logcat, live version &lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h6>References</h6>
 
@@ -183,62 +245,120 @@ adb logcat  # Start monitoring logcat, live version <br/>
 
 <p><strong>AndroidManifest.xml</strong></p>
 
-<p>{% codeblock AndroidManifest.xml %}<br/>
-&lt;?xml version="1.0" encoding="utf-8"?>
-&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"</p>
-
-<pre><code>package="com.thoughtworks.bitemoi"
-android:versionCode="1"
-android:versionName="1.0" &gt;
-
-&lt;uses-sdk
-    android:minSdkVersion="15"
-    android:targetSdkVersion="17" /&gt;
-
-&lt;uses-permission android:name="android.permission.INTERNET" /&gt;
-&lt;uses-permission android:name="com.thoughtworks.bitemoi.permission.MAPS_RECEIVE" /&gt;
-&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
-&lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;
-&lt;uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" /&gt;
-&lt;!--
- The following two permissions are not required to use
- Google Maps Android API v2, but are recommended.
---&gt;
-&lt;uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /&gt;
-&lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /&gt;
-
-&lt;permission
-    android:name="com.thoughtworks.bitemoi.permission.MAPS_RECEIVE"
-    android:protectionLevel="signature" /&gt;
-
-&lt;uses-feature
-    android:glEsVersion="0x00020000"
-    android:required="true" /&gt;
-
-&lt;application
-    android:allowBackup="true"
-    android:icon="@drawable/ic_launcher"
-    android:label="@string/app_name"
-    android:theme="@style/AppTheme" &gt;
-    &lt;activity
-        android:name="com.thoughtworks.bitemoi.MapActivity"
-        android:label="@string/app_name" &gt;
-        &lt;intent-filter&gt;
-            &lt;action android:name="android.intent.action.MAIN" /&gt;
-
-            &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
-        &lt;/intent-filter&gt;
-    &lt;/activity&gt;
-
-    &lt;meta-data
-        android:name="com.google.android.maps.v2.API_KEY"
-        android:value="YOU_GOOGLE_ANDROID_MAP_API_KEY" /&gt;
-&lt;/application&gt;
-</code></pre>
-
-<p></manifest></p>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>AndroidManifest.xml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;br/&gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+</span><span class='line'><span class="ni">&amp;lt;</span>manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>package=&quot;com.thoughtworks.bitemoi&quot;
+</span><span class='line'>android:versionCode=&quot;1&quot;
+</span><span class='line'>android:versionName=&quot;1.0&quot; <span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-sdk
+</span><span class='line'>    android:minSdkVersion=&quot;15&quot;
+</span><span class='line'>    android:targetSdkVersion=&quot;17&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;android.permission.INTERNET&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;com.thoughtworks.bitemoi.permission.MAPS_RECEIVE&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;com.google.android.providers.gsf.permission.READ_GSERVICES&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>!--
+</span><span class='line'> The following two permissions are not required to use
+</span><span class='line'> Google Maps Android API v2, but are recommended.
+</span><span class='line'>--<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>permission
+</span><span class='line'>    android:name=&quot;com.thoughtworks.bitemoi.permission.MAPS_RECEIVE&quot;
+</span><span class='line'>    android:protectionLevel=&quot;signature&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>uses-feature
+</span><span class='line'>    android:glEsVersion=&quot;0x00020000&quot;
+</span><span class='line'>    android:required=&quot;true&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>application
+</span><span class='line'>    android:allowBackup=&quot;true&quot;
+</span><span class='line'>    android:icon=&quot;@drawable/ic_launcher&quot;
+</span><span class='line'>    android:label=&quot;@string/app_name&quot;
+</span><span class='line'>    android:theme=&quot;@style/AppTheme&quot; <span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>activity
+</span><span class='line'>        android:name=&quot;com.thoughtworks.bitemoi.MapActivity&quot;
+</span><span class='line'>        android:label=&quot;@string/app_name&quot; <span class="ni">&amp;gt;</span>
+</span><span class='line'>        <span class="ni">&amp;lt;</span>intent-filter<span class="ni">&amp;gt;</span>
+</span><span class='line'>            <span class="ni">&amp;lt;</span>action android:name=&quot;android.intent.action.MAIN&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="ni">&amp;lt;</span>category android:name=&quot;android.intent.category.LAUNCHER&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>        <span class="ni">&amp;lt;</span>/intent-filter<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>/activity<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>meta-data
+</span><span class='line'>        android:name=&quot;com.google.android.maps.v2.API_KEY&quot;
+</span><span class='line'>        android:value=&quot;YOU_GOOGLE_ANDROID_MAP_API_KEY&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>/application<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/manifest&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h5>Generate your Google Android Map API Key</h5>
 
@@ -248,11 +368,12 @@ android:versionName="1.0" &gt;
 
 <p>Then under "API Access", choose "Create new Android key…" button. You can follow the instruction there and paste your <strong>SHA-1</strong> along with your <strong>package name</strong> there to get a production key, but for debugging purpose, I did the following.</p>
 
-<p>{% codeblock %}
-cd ~/.android <br/>
-$ keytool -list -v -alias androiddebugkey -keystore debug.keystore \
--storepass android -keypass android # using debug.keystore to discover the SHA-1
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd ~/.android &lt;br/>
+</span><span class='line'>$ keytool -list -v -alias androiddebugkey -keystore debug.keystore \
+</span><span class='line'>-storepass android -keypass android # using debug.keystore to discover the SHA-1</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>More read on : <a href="https://developers.google.com/console/help/#generatingdevkeys">Google: generate dev keys</a></p>
 
@@ -266,16 +387,28 @@ Note: this is a debug key for my app, will not work on yours.</p>
 <p><strong>Add the map fragment to your layout</strong><br/>
 Add this between <code>&lt;RelativeLayout&gt;&lt;/RelativeLayout&gt;</code>, you can preview the fragment in "Graphical Layout" tab.</p>
 
-<p>{% codeblock Layout/activity_map.xml (partial)%}</p>
-
-<pre><code>&lt;fragment
-    android:id="@+id/map"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    class="com.google.android.gms.maps.MapFragment" /&gt;
-</code></pre>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Layout/activity_map.xml (partial)</span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>fragment
+</span><span class='line'>    android:id=&quot;@+id/map&quot;
+</span><span class='line'>    android:layout_width=&quot;match_parent&quot;
+</span><span class='line'>    android:layout_height=&quot;match_parent&quot;
+</span><span class='line'>    class=&quot;com.google.android.gms.maps.MapFragment&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>Add Google Play Service Support</strong></p>
 
@@ -295,54 +428,102 @@ After imported, google-play-service_lib is shown up as a project module.
 
 <p><strong>Now we can use Goolge Android Map v2 api to build our app</strong></p>
 
-<p>{% codeblock MapActivity.java %}<br/>
-package com.thoughtworks.bitemoi;</p>
-
-<p>import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;</p>
-
-<p>import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.UiSettings;</p>
-
-<p>public class MapActivity extends Activity {</p>
-
-<pre><code>private GoogleMap map;
-private UiSettings uiSettings;
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_map);
-    setUpMapIfNeeded();
-}
-
-private void setUpMapIfNeeded() {
-    if (map == null) {
-        map = ((MapFragment) getFragmentManager()
-                .findFragmentById(R.id.map)).getMap();
-        if (map != null) {
-            setUpMap();
-        }
-    }
-}
-
-private void setUpMap() {
-    uiSettings = map.getUiSettings();
-    map.setMyLocationEnabled(true);
-}
-
-@Override
-public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.map, menu);
-    return true;
-}
-</code></pre>
-
-<p>}
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>MapActivity.java </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">thoughtworks</span><span class="o">.</span><span class="na">bitemoi</span><span class="o">;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">android.app.Activity</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">android.view.Menu</span><span class="o">;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">com.google.android.gms.maps.GoogleMap</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">com.google.android.gms.maps.MapFragment</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">com.google.android.gms.maps.UiSettings</span><span class="o">;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MapActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kd">private</span> <span class="n">GoogleMap</span> <span class="n">map</span><span class="o">;</span>
+</span><span class='line'><span class="kd">private</span> <span class="n">UiSettings</span> <span class="n">uiSettings</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span><span class='line'>    <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_map</span><span class="o">);</span>
+</span><span class='line'>    <span class="n">setUpMapIfNeeded</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">private</span> <span class="kt">void</span> <span class="nf">setUpMapIfNeeded</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">map</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">map</span> <span class="o">=</span> <span class="o">((</span><span class="n">MapFragment</span><span class="o">)</span> <span class="n">getFragmentManager</span><span class="o">()</span>
+</span><span class='line'>                <span class="o">.</span><span class="na">findFragmentById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">map</span><span class="o">)).</span><span class="na">getMap</span><span class="o">();</span>
+</span><span class='line'>        <span class="k">if</span> <span class="o">(</span><span class="n">map</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>            <span class="n">setUpMap</span><span class="o">();</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">private</span> <span class="kt">void</span> <span class="nf">setUpMap</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">uiSettings</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">getUiSettings</span><span class="o">();</span>
+</span><span class='line'>    <span class="n">map</span><span class="o">.</span><span class="na">setMyLocationEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onCreateOptionsMenu</span><span class="o">(</span><span class="n">Menu</span> <span class="n">menu</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="c1">// Inflate the menu; this adds items to the action bar if it is present.</span>
+</span><span class='line'>    <span class="n">getMenuInflater</span><span class="o">().</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">menu</span><span class="o">.</span><span class="na">map</span><span class="o">,</span> <span class="n">menu</span><span class="o">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Build and run your application while your AVD is running.</p>
 
@@ -350,10 +531,12 @@ public boolean onCreateOptionsMenu(Menu menu) {
 
 <p>There may be some issues with Google Play Services not found or not updated. Till Apr 09, the hacky way which are intall these two apks works for me.</p>
 
-<p>{% codeblock %}<br/>
-$ adb install com.android.vending-1.apk
-$ adb install com.google.android.gms-3025110-v3.0.25\ (583950-10).apk
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ adb install com.android.vending-1.apk
+</span><span class='line'>$ adb install com.google.android.gms-3025110-v3.0.25\ (583950-10).apk</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>Reference <a href="http://www.vogella.com/articles/AndroidGoogleMaps/article.html">Google Maps Android API v2 - Tutorial
 </a></strong></p>
@@ -367,69 +550,129 @@ $ adb install com.google.android.gms-3025110-v3.0.25\ (583950-10).apk
 <p><strong>Requirements:</strong>
 Android sdk configured; installed mvn plugins for regular eclipse(see pics below); installed google play services apks dependencies(gms, vending).</p>
 
-<p>{% codeblock steps for making BiteMoi working locally %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>steps for making BiteMoi working locally </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>git clone git://github.com/CapeDev/BiteMeAndroid.git
+</span><span class='line'>&lt;strong>Very Important&lt;/strong>
+</span><span class='line'>Visit here : https://github.com/JakeWharton/gms-mvn-install, download the repo, follow the readme instruction, it will eventually added to your .m2/repository/com/google/android/ directory.&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>(Make sure you have Google-Play-Service-lib rev.5 installed for this project.)&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>mvn clean install
+</span><span class='line'>mvn eclipse:clean eclipse:eclipse
+</span><span class='line'>mkdir ../BiteMeAndroidWorkspace (Your new eclipse workspace)
+</span><span class='line'>Open regular Eclipse(mine is Juno at the moment), use the directory we just created as your workspace.
+</span><span class='line'>Import -> existing maven project (You need maven plugin for Eclipse first, you can install from marketPlace or some other way you can find)
+</span><span class='line'>Choose by click "Browse" button, navigate to /BiteMeAndroid (the github repo we just cloned at the beginning) as your "Root Directory"
+</span><span class='line'>"Next"-> You should see maven-compiler-plugin:2.5.1:compile; maven-compiler-plugin:2.5.1:testCompile with two green check mark ->"Finish"
+</span><span class='line'>Right click on project if there is red cross -> "Maven" -> "Update project…"&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>-----Create IntelliJ 12 project&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>mvn clean install idea:clean idea:idea&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;hr />
+</span><span class='line'>
+</span><span class='line'>&lt;p>Create device and start it:&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>echo no  | android create avd -n BiteMoiCMD -t android-17 --skin WVGA800 --force --abi armeabi-v7a&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$android sdk
+</span><span class='line'>You should see "Android SDK Manager" window pop out, select "Tools" from the top
+</span><span class='line'>Select "Manage avds", you should see "Android Virtual Device Manager" window.
+</span><span class='line'>Select the device you just created or have
+</span><span class='line'>(Click "Edit", in the CPU/ABI area, change to Intel Atom(x86), because it's faster)
+</span><span class='line'>Click "Start…" and "Laurch"&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;hr />
+</span><span class='line'>
+</span><span class='line'>&lt;p>Troubleshooting, not in order:&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>propertities -> builders -> uncheck Java Builder&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>If you see missing gms ish, install two apks from google-apk folder under BiteMoi git-repo by this:
+</span><span class='line'>adb install XXX&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>check Propertities -> Java Build Path -> Source tab -> check target/unpack/apklibs/com.google.android.gms_google-play-services_apklib_5/src&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>project -> clean, clean and clean!!!&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>Disable Maven Nature -> mvn eclipse:clean eclipse:eclipse -> add Maven back&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>-----Install the apk and run&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ adb uninstall com.thoughtworks.bitemoi
+</span><span class='line'>$ mvn clean install
+</span><span class='line'>$ adb install target/bitemoi-1.0.apk</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>git clone git://github.com/CapeDev/BiteMeAndroid.git
-<strong>Very Important</strong>
-Visit here : https://github.com/JakeWharton/gms-mvn-install, download the repo, follow the readme instruction, it will eventually added to your .m2/repository/com/google/android/ directory.</p>
-
-<p>(Make sure you have Google-Play-Service-lib rev.5 installed for this project.)</p>
-
-<p>mvn clean install
-mvn eclipse:clean eclipse:eclipse
-mkdir ../BiteMeAndroidWorkspace (Your new eclipse workspace)
-Open regular Eclipse(mine is Juno at the moment), use the directory we just created as your workspace.
-Import -> existing maven project (You need maven plugin for Eclipse first, you can install from marketPlace or some other way you can find)
-Choose by click "Browse" button, navigate to /BiteMeAndroid (the github repo we just cloned at the beginning) as your "Root Directory"
-"Next"-> You should see maven-compiler-plugin:2.5.1:compile; maven-compiler-plugin:2.5.1:testCompile with two green check mark ->"Finish"
-Right click on project if there is red cross -> "Maven" -> "Update project…"</p>
-
-<p>-----Create IntelliJ 12 project</p>
-
-<p>mvn clean install idea:clean idea:idea</p>
-
-<hr />
-
-<p>Create device and start it:</p>
-
-<p>echo no  | android create avd -n BiteMoiCMD -t android-17 --skin WVGA800 --force --abi armeabi-v7a</p>
-
-<p>$android sdk
-You should see "Android SDK Manager" window pop out, select "Tools" from the top
-Select "Manage avds", you should see "Android Virtual Device Manager" window.
-Select the device you just created or have
-(Click "Edit", in the CPU/ABI area, change to Intel Atom(x86), because it's faster)
-Click "Start…" and "Laurch"</p>
-
-<hr />
-
-<p>Troubleshooting, not in order:</p>
-
-<p>propertities -> builders -> uncheck Java Builder</p>
-
-<p>If you see missing gms ish, install two apks from google-apk folder under BiteMoi git-repo by this:
-adb install XXX</p>
-
-<p>check Propertities -> Java Build Path -> Source tab -> check target/unpack/apklibs/com.google.android.gms_google-play-services_apklib_5/src</p>
-
-<p>project -> clean, clean and clean!!!</p>
-
-<p>Disable Maven Nature -> mvn eclipse:clean eclipse:eclipse -> add Maven back</p>
-
-<p>-----Install the apk and run</p>
-
-<p>$ adb uninstall com.thoughtworks.bitemoi
-$ mvn clean install
-$ adb install target/bitemoi-1.0.apk
-{% endcodeblock %}</p>
-
-<p>{% codeblock steps for IntelliJ 12 %}
-1) git clone git://github.com/CapeDev/BiteMeAndroid.git
-2) Open IntelliJ 12 IDE, "File" -> "Import Project" -> "Select File or Firectory to Import" window, navigate to root directory of the git repo we just cloned. -> "OK"
-3) Check  radio "Import project from external model" and choose Maven from the list -> "Next"
-4) Check "Import Maven projects automatically" -> "Next" to the end…</p>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>steps for IntelliJ 12 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1) git clone git://github.com/CapeDev/BiteMeAndroid.git
+</span><span class='line'>2) Open IntelliJ 12 IDE, "File" -> "Import Project" -> "Select File or Firectory to Import" window, navigate to root directory of the git repo we just cloned. -> "OK"
+</span><span class='line'>3) Check  radio "Import project from external model" and choose Maven from the list -> "Next"
+</span><span class='line'>4) Check "Import Maven projects automatically" -> "Next" to the end…&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Regarding Eclipse plugin, this is what I have for my Eclipse
 <img src="http://i.imgur.com/Q4M3bNq.png" alt="alt text" />
@@ -442,13 +685,16 @@ $ adb install target/bitemoi-1.0.apk
 
 <p>Downloaded the newest google android sdk (Jun 25, 2013)</p>
 
-<p>{% codeblock %}
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_HOME}/build-tools</p>
-
-<p>$ ln -sf ../build-tools/android-4.2.2/aapt aapt
-$ ln -sf ../build-tools/android-4.2.2/lib lib
-$ ln -sf ../build-tools/android-4.2.2/aidl aidl
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_HOME}/build-tools&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ ln -sf ../build-tools/android-4.2.2/aapt aapt
+</span><span class='line'>$ ln -sf ../build-tools/android-4.2.2/lib lib
+</span><span class='line'>$ ln -sf ../build-tools/android-4.2.2/aidl aidl</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

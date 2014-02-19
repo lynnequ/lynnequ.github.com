@@ -2,131 +2,135 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/01/30/zero/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/01/31/blog-log/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>
             http://lynnequ.github.com/blog/2013/03/21/android-app-with-google-map-api-v2-tutorial/
         </loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/04/09/chef-day-1/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/05/28/github-multiple-accounts-usage-notes/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/05/28/tricky-little-notes/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>
             http://lynnequ.github.com/blog/2013/06/21/python-upgrade-2-dot-7-to-3-dot-2-on-mac/
         </loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/06/24/tricky-terminial-note/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/06/25/setup-new-mac-notes/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/06/25/maven-notes/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/07/02/android-listview/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/07/06/startup-engineering-course-notes/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>
             http://lynnequ.github.com/blog/2013/07/12/simple-erb-template-with-ruby-example/
         </loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>
             http://lynnequ.github.com/blog/2013/07/13/google-map-on-android-with-play-service-7/
         </loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/07/24/scala-initialization/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/08/05/install-java-7-on-mac/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/08/05/sqlite3-with-android/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/08/06/bootstrp-ruby-on-rails/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>
             http://lynnequ.github.com/blog/2013/08/07/switch-db-from-sqlite3-to-postgres-in-rails-app/
         </loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/08/07/debugging-with-heroku/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/08/18/use-sublime-2-efficiently/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/08/18/markdown-time-tricks/</loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>
             http://lynnequ.github.com/blog/2013/08/21/add-your-intellij12-icon-to-red-hat-panel/
         </loc>
-        <lastmod>2013-09-30T21:04:46-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/10/10/angular-try/</loc>
-        <lastmod>2013-10-10T16:34:48-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/2013/10/17/git-branch/</loc>
-        <lastmod>2013-10-17T21:41:43-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lynnequ.github.com/blog/2013/11/25/openmrs-dev-environment-installation/</loc>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/about/</loc>
-        <lastmod>2013-11-12T20:08:53-08:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/blog/archives/</loc>
-        <lastmod>2013-10-17T21:41:43-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/</loc>
-        <lastmod>2013-10-17T21:41:43-07:00</lastmod>
+        <lastmod>2014-01-11T18:30:22-08:00</lastmod>
     </url>
     <url>
         <loc>http://lynnequ.github.com/robots.txt</loc>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: terminal | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/terminal/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-11-12T20:09:44-08:00</updated>
+  <updated>2014-02-18T20:54:33-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -20,75 +20,137 @@
     <id>http://lynnequ.github.com/blog/2013/06/25/setup-new-mac-notes</id>
     <content type="html"><![CDATA[<h2>Config new system when you switch to another mac(10.8.4)</h2>
 
-<p>{% codeblock %}<br/>
-$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"<br/>
-$ brew install wget<br/>
-$ brew install curl<br/>
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"&lt;br/>
+</span><span class='line'>$ brew install wget&lt;br/>
+</span><span class='line'>$ brew install curl&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h2>Basic terminal setup</h2>
 
-<p>{% codeblock ~/.vimrc %}
-" basic settings
-set number
-set hidden
-set history=10000
-set cursorline
-hi CursorLine cterm=NONE ctermbg=lightblue ctermfg=darkyellow
-set ruler
-set cmdheight=2
-set hlsearch
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set autoindent
-set ignorecase smartcase
-set showcmd
-syntax on</p>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>~/.vimrc </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>" basic settings
+</span><span class='line'>set number
+</span><span class='line'>set hidden
+</span><span class='line'>set history=10000
+</span><span class='line'>set cursorline
+</span><span class='line'>hi CursorLine cterm=NONE ctermbg=lightblue ctermfg=darkyellow
+</span><span class='line'>set ruler
+</span><span class='line'>set cmdheight=2
+</span><span class='line'>set hlsearch
+</span><span class='line'>set tabstop=4
+</span><span class='line'>set shiftwidth=4
+</span><span class='line'>set softtabstop=4
+</span><span class='line'>set autoindent
+</span><span class='line'>set ignorecase smartcase
+</span><span class='line'>set showcmd
+</span><span class='line'>syntax on&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>iTerm2 theme : thayer <a href="https://github.com/baskerville/iTerm-2-Color-Themes">iterm2 themes</a>
-{% codeblock ~/.bash_profile %}</p>
-
-<h2>system cmd</h2>
-
-<p>alias ll="ls -Gl"
-alias lll="ls -Gla"</p>
-
-<h2>terminal</h2>
-
-<p>export CLICOLOR=1</p>
-
-<h1>\h:\W \u\$</h1>
-
-<p>export PS1='[\033[01;33m]\u@\h[\033[01;31m] (\W) \$ [\033[00m]'</p>
-
-<h1>grep</h1>
-
-<p>alias grep='grep –color=always'</p>
-
-<h2>Android</h2>
-
-<p>export ANDROID_HOME='/Users/LynneQ/Documents/sdks/adt-bundle-mac-x86_64-20130522/sdk'
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools</p>
-
-<h2>Customization</h2>
-
-<p>alias DocLL='cd /Users/LynneQ/Documents/blog/lynnequ.github.com'</p>
-
-<h2>Git</h2>
-
-<p>alias gst='git status'
-alias gba='git branch -a'
-alias gb='git branch'
-alias gsts='git status --short'
-alias gco='git commit -m'
-alias gad='git add'</p>
-
-<p>[[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session <em>as a function</em></p>
-
-<p>{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>~/.bash_profile </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>system cmd&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>alias ll="ls -Gl"
+</span><span class='line'>alias lll="ls -Gla"&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>terminal&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>export CLICOLOR=1&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>\h:\W \u\$&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>export PS1='[\033[01;33m]\u@\h[\033[01;31m] (\W) \$ [\033[00m]'&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>grep&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>alias grep='grep –color=always'&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>Android&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>export ANDROID_HOME='/Users/LynneQ/Documents/sdks/adt-bundle-mac-x86_64-20130522/sdk'
+</span><span class='line'>export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>Customization&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>alias DocLL='cd /Users/LynneQ/Documents/blog/lynnequ.github.com'&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h2>Git&lt;/h2>
+</span><span class='line'>
+</span><span class='line'>&lt;p>alias gst='git status'
+</span><span class='line'>alias gba='git branch -a'
+</span><span class='line'>alias gb='git branch'
+</span><span class='line'>alias gsts='git status --short'
+</span><span class='line'>alias gco='git commit -m'
+</span><span class='line'>alias gad='git add'&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>[[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session &lt;em>as a function&lt;/em>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h4>Notes:</h4>
 
@@ -111,29 +173,50 @@ alias gad='git add'</p>
 <li>Copy the git repo to new location</li>
 <li>Go set up git credential</li>
 <li>To make rake generate/preview/deploy works
-{% codeblock %}<br/>
-$ sudo gem install bundler
-$ sudo gem update --system
-$ sudo bundle install</li>
-</ol>
-
-
-<p>Install rvm and upgrade ruby from 1.8.7 to 1.9.3
-$ \curl -L https://get.rvm.io | bash  //Install rvm
-$ source /Users/LynneQ/.rvm/scripts/rvm
-$ rvm get stable
-$ rvm requirements
-$ rvm install 1.9.3
-$ rvm list
-$ ruby -v
-ruby 1.8.7 (2012-02-08 patchlevel 358) [universal-darwin12.0]</p>
-
-<p>$ rvm use --default 1.9.3
-Using /Users/LynneQ/.rvm/gems/ruby-1.9.3-p429</p>
-
-<p>$ ruby -v
-ruby 1.9.3p429 (2013-05-15 revision 40747) [x86_64-darwin12.4.0]<br/>
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ sudo gem install bundler
+</span><span class='line'>$ sudo gem update --system
+</span><span class='line'>$ sudo bundle install&lt;/li>
+</span><span class='line'>&lt;/ol>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>&lt;p>Install rvm and upgrade ruby from 1.8.7 to 1.9.3
+</span><span class='line'>$ \curl -L https://get.rvm.io | bash  //Install rvm
+</span><span class='line'>$ source /Users/LynneQ/.rvm/scripts/rvm
+</span><span class='line'>$ rvm get stable
+</span><span class='line'>$ rvm requirements
+</span><span class='line'>$ rvm install 1.9.3
+</span><span class='line'>$ rvm list
+</span><span class='line'>$ ruby -v
+</span><span class='line'>ruby 1.8.7 (2012-02-08 patchlevel 358) [universal-darwin12.0]&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ rvm use --default 1.9.3
+</span><span class='line'>Using /Users/LynneQ/.rvm/gems/ruby-1.9.3-p429&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ ruby -v
+</span><span class='line'>ruby 1.9.3p429 (2013-05-15 revision 40747) [x86_64-darwin12.4.0]&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Unfornately, if you bundle install before upgrade to 1.9.3, you need to restart the shell, and do <code>bundle install</code> again.</p>
 
@@ -151,23 +234,33 @@ ruby 1.9.3p429 (2013-05-15 revision 40747) [x86_64-darwin12.4.0]<br/>
 <ol>
 <li>Copy the content</li>
 <li>Go to the terminal<br/>
-{% codeblock %} <br/>
-$ pbpaste > test.py<br/>
-$ cat test.py<br/>
-{% endcodeblock %}</li>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ pbpaste > test.py&lt;br/>
+</span><span class='line'>$ cat test.py&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></li>
 </ol>
 
 
 <p><strong>Misc:</strong></p>
 
-<p>{% codeblock %}</p>
-
-<p>$ cat test.txt | pbcopy # copy things to system clipboard
-$ echo hello | pbcopy # same as above
-$ pbcopy &lt; test.txt # copy from a file, so you can use cmd + V
-$ echo <code>pbpaste</code>  #you will see the content in the clipboard</p>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ cat test.txt | pbcopy # copy things to system clipboard
+</span><span class='line'>$ echo hello | pbcopy # same as above
+</span><span class='line'>$ pbcopy &lt; test.txt # copy from a file, so you can use cmd + V
+</span><span class='line'>$ echo &lt;code>pbpaste&lt;/code>  #you will see the content in the clipboard&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>[<strong>pbcopy</strong>] takes  the standard input and places it in the specified pasteboard.</p>
 

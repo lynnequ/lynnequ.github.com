@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vagrant | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/vagrant/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-11-12T20:09:44-08:00</updated>
+  <updated>2014-02-18T20:54:33-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OpenMRS dev environment installation]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/11/25/openmrs-dev-environment-installation/"/>
+    <updated>2013-11-25T23:17:00-08:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/11/25/openmrs-dev-environment-installation</id>
+    <content type="html"><![CDATA[<p>Thanks and credit to Christopher Schuster providing this <a href="https://github.com/cpschuster/OpenMRS-dev-setup">Github Repo for OpenMRS dev setup</a></p>
+
+<h2>#</h2>
+
+<p>127.0.0.1 | FAILED => to use the 'ssh' connection type with passwords, you must install the sshpass program</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Chef Day 1]]></title>
@@ -35,9 +48,8 @@ attribute</p>
 
 <h2>Install VM</h2>
 
-<p>{% codeblock %}
-gem install vagrant
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install vagrant</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

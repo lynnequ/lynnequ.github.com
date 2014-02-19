@@ -4,7 +4,7 @@
   <title><![CDATA[Category: example | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/example/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-11-12T20:09:44-08:00</updated>
+  <updated>2014-02-18T20:54:33-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -18,28 +18,42 @@
     <link href="http://lynnequ.github.com/blog/2013/07/12/simple-erb-template-with-ruby-example/"/>
     <updated>2013-07-12T12:35:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/07/12/simple-erb-template-with-ruby-example</id>
-    <content type="html"><![CDATA[<p>{% codeblock test.erb %}
-Hello: &lt;%= Prov.show_hostname("123")%>
-{% endcodeblock %}</p>
+    <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>test.erb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='erb'><span class='line'><span class="x">Hello: &amp;lt;%= Prov.show_hostname(&quot;123&quot;)</span><span class="err">%&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>{% codeblock prov.rb %}
-class Prov</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>prov.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Prov</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;def self.show_hostname(host)</span>
+</span><span class='line'><span class="sr">    &quot;--------</span><span class="si">#{</span><span class="n">host</span><span class="si">}</span><span class="sr">-------&quot;</span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;end</span>
+</span><span class='line'><span class="sr">puts Prov.show_hostname(&quot;test&quot;)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<pre><code>def self.show_hostname(host)
-    "--------#{host}-------"
-end
-</code></pre>
-
-<p>end
-puts Prov.show_hostname("test")
-{% endcodeblock %}</p>
-
-<p>{% codeblock generate.rb %}
-require 'erb'
-require './prov'
-renderer = ERB.new(File.read("test.erb"))
-puts renderer.result
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>generate.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="nb">require</span> <span class="s1">&#39;erb&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;./prov&#39;</span>
+</span><span class='line'><span class="n">renderer</span> <span class="o">=</span> <span class="no">ERB</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;test.erb&quot;</span><span class="p">))</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">renderer</span><span class="o">.</span><span class="n">result</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><code>$ ruby generate.rb</code></p>
 ]]></content>

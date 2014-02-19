@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-11-12T20:09:44-08:00</updated>
+  <updated>2014-02-18T20:54:33-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -38,29 +38,32 @@
     <updated>2013-05-28T17:51:00-07:00</updated>
     <id>http://lynnequ.github.com/blog/2013/05/28/tricky-little-notes</id>
     <content type="html"><![CDATA[<p><strong>Show your remote origin information, including remote-url</strong><br/>
-{% codeblock %}
-$ git remote show origin
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git remote show origin</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>Pull the newest code from remote branch "master"</strong>   <br/>
-{% codeblock %}
-$ git pull origin master
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git pull origin master</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>Discard all local changes</strong><br/>
-{% codeblock %}
-$ git reset --hard
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git reset --hard</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>Show git config</strong><br/>
-{% codeblock %}
-$ git config --list  // --global --system --local
-OR
-$ cat ~/.gitconfig
-OR
-$ cat .git/config</p>
-
-<p>{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config --list  // --global --system --local
+</span><span class='line'>OR
+</span><span class='line'>$ cat ~/.gitconfig
+</span><span class='line'>OR
+</span><span class='line'>$ cat .git/config&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

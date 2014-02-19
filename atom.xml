@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-11-12T20:09:34-08:00</updated>
+  <updated>2014-02-18T20:54:33-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OpenMRS dev environment installation]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/11/25/openmrs-dev-environment-installation/"/>
+    <updated>2013-11-25T23:17:00-08:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/11/25/openmrs-dev-environment-installation</id>
+    <content type="html"><![CDATA[<p>Thanks and credit to Christopher Schuster providing this <a href="https://github.com/cpschuster/OpenMRS-dev-setup">Github Repo for OpenMRS dev setup</a></p>
+
+<h2>#</h2>
+
+<p>127.0.0.1 | FAILED => to use the &#8216;ssh&#8217; connection type with passwords, you must install the sshpass program</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Git branch]]></title>
@@ -1195,60 +1208,6 @@ Under iTerm 2 preference > profile > keys, set left option key acts as &#8220;+E
 <li>Download the zip file, unzip it</li>
 <li><code>python3 setup.py install</code></li>
 </ol>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Swith Java On Mac]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac/"/>
-    <updated>2013-06-06T11:32:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/06/06/swith-java-on-mac</id>
-    <content type="html"><![CDATA[<p>How to switch Java version on Mac?
-Or how can I downgrade Java version on Mac?</p>
-
-<h5>See how many Javas there on your Mac =)</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ /usr/libexec/java_home -V
-</span><span class='line'>Matching Java Virtual Machines (3):
-</span><span class='line'>    1.8.0, x86_64:    "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
-</span><span class='line'>    1.6.0_45-b06-451, x86_64: "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</span><span class='line'>    1.6.0_45-b06-451, i386:   "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</span><span class='line'>
-</span><span class='line'>/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>Set your variable</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo vi /etc/launchd.conf
-</span><span class='line'>//Note: The file may not exist
-</span><span class='line'>
-</span><span class='line'>setenv JAVA_VERSION 1.6  
-</span><span class='line'>setenv JAVA_HOME /System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
-</span><span class='line'>
-</span><span class='line'>:wq</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>Restart your mac</h5>
-
-<p>Yea, sadly. =(</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>java -version</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

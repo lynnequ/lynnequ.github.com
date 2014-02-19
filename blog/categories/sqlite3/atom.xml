@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sqlite3 | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/sqlite3/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-11-12T20:09:44-08:00</updated>
+  <updated>2014-02-18T20:54:33-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -22,38 +22,63 @@
 
 <h5>Step 1: modify Gemfile</h5>
 
-<p>{% codeblock %}<br/>
-$ gem 'pg'
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ gem 'pg'</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h5>Step 2: modify database.yml</h5>
 
 <p>Change the database adapter and database name in database.yml:</p>
 
-<p>{% codeblock %}<br/>
-development:
-  adapter: postgresql
-  encoding: utf8
-  database: inventory_development
-  host: localhost
-  pool: 5
-  timeout: 5000</p>
-
-<p>test:
-  adapter: postgresql
-  encoding: utf8
-  database: inventory_test
-  pool: 5
-  timeout: 5000</p>
-
-<p>production:
-  adapter: postgresql
-  encoding: utf8
-  database: inventory_production
-  pool: 5
-  timeout: 5000</p>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>development:
+</span><span class='line'>  adapter: postgresql
+</span><span class='line'>  encoding: utf8
+</span><span class='line'>  database: inventory_development
+</span><span class='line'>  host: localhost
+</span><span class='line'>  pool: 5
+</span><span class='line'>  timeout: 5000&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>test:
+</span><span class='line'>  adapter: postgresql
+</span><span class='line'>  encoding: utf8
+</span><span class='line'>  database: inventory_test
+</span><span class='line'>  pool: 5
+</span><span class='line'>  timeout: 5000&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>production:
+</span><span class='line'>  adapter: postgresql
+</span><span class='line'>  encoding: utf8
+</span><span class='line'>  database: inventory_production
+</span><span class='line'>  pool: 5
+</span><span class='line'>  timeout: 5000&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>Note</strong>:
 You don't need db/xx in the database part cause postgres is not like sqlite3 provided a file under db folder.</p>
@@ -62,9 +87,10 @@ You don't need db/xx in the database part cause postgres is not like sqlite3 pro
 
 <p>You need to create database in postgres based on the name you specified in database.yml, all development, test and production.
 I used <a href="http://postgresapp.com/">PostgresApp</a> and then:<br/>
-{% codeblock %}<br/>
-/Applications/Postgres.app/Contents/MacOS/bin/createdb YOUR_DB_NAME<br/>
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>/Applications/Postgres.app/Contents/MacOS/bin/createdb YOUR_DB_NAME&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>You can follow the documentation and add the bin to your path.</p>
 
@@ -72,18 +98,22 @@ I used <a href="http://postgresapp.com/">PostgresApp</a> and then:<br/>
 
 <p>Run the following in terminal:</p>
 
-<p>{% codeblock %}<br/>
-$ bundle update <br/>
-$ bundle install<br/>
-$ rake db:migrate
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ bundle update &lt;br/>
+</span><span class='line'>$ bundle install&lt;br/>
+</span><span class='line'>$ rake db:migrate</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><strong>IMPORTANT NOTE</strong>
 If you are running your rails server in different mode locally, like production mode, you need to use the following line to performe your db migration.</p>
 
-<p>{% codeblock %}<br/>
-RAILS_ENV=production rake db:migrate
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>RAILS_ENV=production rake db:migrate</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h5>Note</h5>
 
@@ -100,26 +130,44 @@ RAILS_ENV=production rake db:migrate
     <id>http://lynnequ.github.com/blog/2013/08/05/sqlite3-with-android</id>
     <content type="html"><![CDATA[<p>Prerequisite: <a href="http://ifyouseeit.org/blog/2013/03/21/android-app-with-google-map-api-v2-tutorial/">set up <code>adb</code> command</a></p>
 
-<p>{% codeblock %}</p>
-
-<p>$ adb devices ## I have one real device and one emulator<br/>
-List of devices attached<br/>
-xxxxxxxxxxxx    device<br/>
-emulator-5554   device</p>
-
-<p>$ adb -s emulator-5554 shell ## To access specific device's shell and then use sqlite3 command
-root@android:/ # sqlite3
-SQLite version 3.7.11 2012-03-20 11:35:50
-Enter ".help" for instructions
-Enter SQL statements terminated with a ";"
-sqlite></p>
-
-<p>$ adb -s emulator-5554  pull /system/xbin/sqlite3
-4005 KB/s (67880 bytes in 0.016s)
-s
-$ adb -s 015d28569058200a push sqlite3 /system/xbin/
-failed to copy 'sqlite3' to '/system/xbin//sqlite3': Read-only file system
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ adb devices ## I have one real device and one emulator&lt;br/>
+</span><span class='line'>List of devices attached&lt;br/>
+</span><span class='line'>xxxxxxxxxxxx    device&lt;br/>
+</span><span class='line'>emulator-5554   device&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ adb -s emulator-5554 shell ## To access specific device's shell and then use sqlite3 command
+</span><span class='line'>root@android:/ # sqlite3
+</span><span class='line'>SQLite version 3.7.11 2012-03-20 11:35:50
+</span><span class='line'>Enter ".help" for instructions
+</span><span class='line'>Enter SQL statements terminated with a ";"
+</span><span class='line'>sqlite>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ adb -s emulator-5554  pull /system/xbin/sqlite3
+</span><span class='line'>4005 KB/s (67880 bytes in 0.016s)
+</span><span class='line'>s
+</span><span class='line'>$ adb -s 015d28569058200a push sqlite3 /system/xbin/
+</span><span class='line'>failed to copy 'sqlite3' to '/system/xbin//sqlite3': Read-only file system</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

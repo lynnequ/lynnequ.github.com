@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jdk7 installation | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/jdk7-installation/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2013-11-12T20:09:44-08:00</updated>
+  <updated>2014-02-18T20:54:33-08:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -24,22 +24,36 @@
 
 <p><img src="http://i.imgur.com/89nSxT8.png" alt="JDK 7" />
 <img src="http://i.imgur.com/GgaipTTh.png" alt="JDK 7 update 25" />
-{% codeblock %}<br/>
-$ java -version
-java version "1.7.0_25"
-Java(TM) SE Runtime Environment (build 1.7.0_25-b15)
-Java HotSpot(TM) 64-Bit Server VM (build 23.25-b01, mixed mode)</p>
-
-<p>$ /usr/libexec/java_home -V
-Matching Java Virtual Machines (3):</p>
-
-<pre><code>1.7.0_25, x86_64:   "Java SE 7" /Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
-1.6.0_51-b11-457, x86_64:   "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-1.6.0_51-b11-457, i386: "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</code></pre>
-
-<p>/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home<br/>
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>$ java -version
+</span><span class='line'>java version "1.7.0_25"
+</span><span class='line'>Java(TM) SE Runtime Environment (build 1.7.0_25-b15)
+</span><span class='line'>Java HotSpot(TM) 64-Bit Server VM (build 23.25-b01, mixed mode)&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ /usr/libexec/java_home -V
+</span><span class='line'>Matching Java Virtual Machines (3):&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>1.7.0_25, x86_64:   "Java SE 7" /Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
+</span><span class='line'>1.6.0_51-b11-457, x86_64:   "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>1.6.0_51-b11-457, i386: "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h3>Note</h3>
 

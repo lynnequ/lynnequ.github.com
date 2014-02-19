@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: open source | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/open-source/atom.xml" rel="self"/>
+  <link href="http://lynnequ.github.com/"/>
+  <updated>2014-02-18T20:54:33-08:00</updated>
+  <id>http://lynnequ.github.com/</id>
+  <author>
+    <name><![CDATA[Lynne Qu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OpenMRS dev environment installation]]></title>
+    <link href="http://lynnequ.github.com/blog/2013/11/25/openmrs-dev-environment-installation/"/>
+    <updated>2013-11-25T23:17:00-08:00</updated>
+    <id>http://lynnequ.github.com/blog/2013/11/25/openmrs-dev-environment-installation</id>
+    <content type="html"><![CDATA[<p>Thanks and credit to Christopher Schuster providing this <a href="https://github.com/cpschuster/OpenMRS-dev-setup">Github Repo for OpenMRS dev setup</a></p>
+
+<h2>#</h2>
+
+<p>127.0.0.1 | FAILED => to use the 'ssh' connection type with passwords, you must install the sshpass program</p>
+]]></content>
+  </entry>
+  
+</feed>
