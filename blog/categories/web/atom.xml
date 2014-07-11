@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: web | If you see it]]></title>
+  <title><![CDATA[Category: web, | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2014-02-18T20:54:33-08:00</updated>
+  <updated>2014-07-11T00:46:40-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -14,53 +14,69 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Angular try]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/10/10/angular-try/"/>
-    <updated>2013-10-10T16:28:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/10/10/angular-try</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/lynneq/angular_fun">My Rails App repo integrated with Augular followed RailsCast episode</a>,
-Under the repo, there is a <a href="https://github.com/lynneq/angular_fun/blob/master/todo.html">simple one page todo list demo</a> which includes key words: ng-bind, ng-repeat, ng-model. Also includes a small usage of filter, directive.</p>
+    <title type="html"><![CDATA[Create a simple J2EE web project with IntelliJ and Tomcat]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/04/01/create-a-simple-j2ee-web-project-with-intellij-and-tomcat/"/>
+    <updated>2014-04-01T15:21:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/04/01/create-a-simple-j2ee-web-project-with-intellij-and-tomcat</id>
+    <content type="html"><![CDATA[<p>As it's surprising hard to start from scratch to create a simple web project using jsp running on tomcat with IntelliJ, this post intends to leave a note for this boiler process.</p>
 
-<p>You may start with try to under the example on the index page from <a href="http://angularjs.org/">Augular site</a></p>
+<h4>Install Tomcat 7 on Mac (10.9.2)</h4>
 
-<p>Strongly recommand video tutorials from :
-<a href="http://egghead.io/">Egghead - Bite-sized web development training with AngularJS</a>, short clips but very helpful.</p>
+<p>Download: http://tomcat.apache.org/download-70.cgi#7.0.53</p>
 
-<p>Also, recommand two short screencasts from codeschool AugualrJS if you have suscription.</p>
+<p>Unzip</p>
 
-<p><a href="http://docs.angularjs.org/guide/directive">Directives</a>:</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mv apache-tomcat-7.0.53 /usr/local/Cellar/
+</span><span class='line'>$ mv apache-tomcat-7.0.53 tomcat
+</span><span class='line'>$ cd tomcat/bin
+</span><span class='line'>$ sh startup.sh</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Adding new behavior to or transforming the DOM.</p>
+<p>Test it in http://localhost:8080/ to see if it works.</p>
 
-<p>Wirtten with carmel cased names, invoked by translating to snake case with '-' or '_', optionally, prefix with x- or data- to make HTML validator compliant.</p>
+<p><code>$ sh shutdown.sh</code></p>
 
-<p>Can be used in element names, attributes, class names, comments.</p>
+<p>Edit <code>$TOMCAT_DIR/conf/tomcat-users.xml</code> to get admin access:</p>
 
-<p>ng-app</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>$TOMCAT_DIR/conf/tomcat-users.xml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;manager-gui&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;user</span> <span class="na">username=</span><span class="s">&quot;admin&quot;</span> <span class="na">password=</span><span class="s">&quot;admin&quot;</span> <span class="na">roles=</span><span class="s">&quot;admin,manager-gui&quot;</span><span class="nt">/&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>data-ng-model : html5</p>
+<p>And restart the tomcat to gain the access with new credential.</p>
 
-<p>ng-model
-ng-bind</p>
+<p><strong>Roles</strong>: "You can find the role names in the web.xml file of the Manager web application. The available roles are:"</p>
 
-<p>directives:
-run in this order to modify:
-template-dom
-dom</p>
+<p><strong>manager-gui</strong> — Access to the HTML interface.</p>
 
-<p>$httpBackend</p>
+<p><strong>manager-status</strong> — Access to the "Server Status" page only.</p>
 
-<p>Karma - end to end testing</p>
+<p><strong>manager-script</strong> — Access to the tools-friendly plain text interface that is described in this document, and to the "Server Status" page.</p>
 
-<p>Adding gem 'angularjs-rails'</p>
+<p><strong>manager-jmx</strong> — Access to JMX proxy interface and to the "Server Status" page.</p>
 
-<p>Application.js
-//= require angular
-//= require angular-resource</p>
+<p><a href="http://tomcat.apache.org/tomcat-7.0-doc/manager-howto.html">Tomcat 7 manager-howto</a></p>
 
-<p><strong>Misc.</strong></p>
+<h4>Addition:</h4>
 
-<p>Angular extention for debugging in Chrome <a href="http://www.rei.com/media/ff/c8ddeb9a-f5ea-4cf8-808b-f0a7532aa3f4.jpg">check here</a>.</p>
+<h5>Add tomcat7 to IntelliJ</h5>
+
+<p>Add this as tomcat home directory /usr/local/Cellar/tomcat/ or the your specific link form your settings.</p>
 ]]></content>
   </entry>
   

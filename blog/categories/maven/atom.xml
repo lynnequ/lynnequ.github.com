@@ -4,7 +4,7 @@
   <title><![CDATA[Category: maven | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/maven/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2014-02-18T20:54:33-08:00</updated>
+  <updated>2014-07-11T00:46:40-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing Maven and upgrade it]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/03/24/fixing-maven-and-upgrade-it/"/>
+    <updated>2014-03-24T14:10:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/03/24/fixing-maven-and-upgrade-it</id>
+    <content type="html"><![CDATA[<p>If you are using a older version of maven on Linux with dpkg package manager:</p>
+
+<p><strong>Uninstall maven</strong></p>
+
+<p><code>$ dpkg --get--selections</code> to list all dpkg packages.</p>
+
+<p><code>$sudo apt-get remove maven2</code> to remove package</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Google Map on Android with Play Service 7]]></title>
@@ -193,12 +208,68 @@ http://download.eclipse.org/technology/m2e/releases/</p>
 
 <h3>Noted Command</h3>
 
-<p>Running maven install without unit tests sometimes are usful cause it may take longer time for tests to finish and you want the artifact from mvn install.</p>
+<p>Running maven install without unit tests sometimes are useful cause it may take longer time for tests to finish and you want the artifact from mvn install.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
-</span><span class='line'>$ mvn -Dmaven.test.skip=true install&lt;br/></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'>$ mvn -Dmaven.test.skip=true install&lt;br/>
+</span><span class='line'>// --- OR ----&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ mvn install -DskipTests&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Add maven central repository to pom.xml</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>  &lt;repositories>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>&lt;repository&gt;
+</span><span class='line'>  &lt;id&gt;central&lt;/id&gt;
+</span><span class='line'>  &lt;name&gt;Maven Repository Switchboard&lt;/name&gt;
+</span><span class='line'>  &lt;layout&gt;default&lt;/layout&gt;
+</span><span class='line'>  &lt;url&gt;http://repo1.maven.org/maven2&lt;/url&gt;
+</span><span class='line'>  &lt;snapshots&gt;
+</span><span class='line'>    &lt;enabled&gt;false&lt;/enabled&gt;
+</span><span class='line'>  &lt;/snapshots&gt;
+</span><span class='line'>&lt;/repository&gt;
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>  &lt;/repositories>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Generate a simple site running with Jetty</h3>
+
+<p><code>
+mvn site:site
+mvn site:run
+</code></p>
 ]]></content>
   </entry>
   

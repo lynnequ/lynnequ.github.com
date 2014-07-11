@@ -10,7 +10,9 @@
   <meta name="author" content="Lynne Qu">
 
   
-  <meta name="description" content="Thanks and credit to Christopher Schuster providing this Github Repo for OpenMRS dev setup # 127.0.0.1 | FAILED => to use the &#8216;ssh&#8217; &hellip;">
+  <meta name="description" content="Deploy to heroku $ heroku create $ git push heroku master
+$ foreman start // locally running server after you have Procfile
+$ git push origin master &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +85,420 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/07/11/deploy-and-rename-heroku-app/">Deploy and Rename Heroku App</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-11T00:34:00-07:00" pubdate data-updated="true">Jul 11<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h5>Deploy to heroku</h5>
+
+<pre><code>$ heroku create 
+$ git push heroku master
+$ foreman start // locally running server after you have Procfile
+$ git push origin master // your git account
+$ git push heroku master // when you want to deploy
+$ heroku ps:scale web=1
+$ heroku logs 
+$ heroku open
+</code></pre>
+
+<h5>Rename heroku app:</h5>
+
+<pre><code>$ git remote rm heroku
+$ git remote add heroku git@heroku.com:XXXX.git
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/17/install-learnyounode-on-mac/">Install Learnyounode on Mac</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-17T13:16:00-07:00" pubdate data-updated="true">May 17<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><pre><code>$ brew update 
+$ brew install node 
+$ node --version
+v0.10.28
+$ sudo npm install -g learnyounode
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/01/create-a-simple-j2ee-web-project-with-intellij-and-tomcat/">Create a Simple J2EE Web Project With IntelliJ and Tomcat</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-01T15:21:00-07:00" pubdate data-updated="true">Apr 1<span>st</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As it&#8217;s surprising hard to start from scratch to create a simple web project using jsp running on tomcat with IntelliJ, this post intends to leave a note for this boiler process.</p>
+
+<h4>Install Tomcat 7 on Mac (10.9.2)</h4>
+
+<p>Download: http://tomcat.apache.org/download-70.cgi#7.0.53</p>
+
+<p>Unzip</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mv apache-tomcat-7.0.53 /usr/local/Cellar/
+</span><span class='line'>$ mv apache-tomcat-7.0.53 tomcat
+</span><span class='line'>$ cd tomcat/bin
+</span><span class='line'>$ sh startup.sh</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Test it in http://localhost:8080/ to see if it works.</p>
+
+<p><code>$ sh shutdown.sh</code></p>
+
+<p>Edit <code>$TOMCAT_DIR/conf/tomcat-users.xml</code> to get admin access:</p>
+
+<figure class='code'><figcaption><span>$TOMCAT_DIR/conf/tomcat-users.xml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'>  <span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;manager-gui&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;user</span> <span class="na">username=</span><span class="s">&quot;admin&quot;</span> <span class="na">password=</span><span class="s">&quot;admin&quot;</span> <span class="na">roles=</span><span class="s">&quot;admin,manager-gui&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And restart the tomcat to gain the access with new credential.</p>
+
+<p><strong>Roles</strong>: &#8220;You can find the role names in the web.xml file of the Manager web application. The available roles are:&#8221;</p>
+
+<p><strong>manager-gui</strong> — Access to the HTML interface.</p>
+
+<p><strong>manager-status</strong> — Access to the &#8220;Server Status&#8221; page only.</p>
+
+<p><strong>manager-script</strong> — Access to the tools-friendly plain text interface that is described in this document, and to the &#8220;Server Status&#8221; page.</p>
+
+<p><strong>manager-jmx</strong> — Access to JMX proxy interface and to the &#8220;Server Status&#8221; page.</p>
+
+<p><a href="http://tomcat.apache.org/tomcat-7.0-doc/manager-howto.html">Tomcat 7 manager-howto</a></p>
+
+<h4>Addition:</h4>
+
+<h5>Add tomcat7 to IntelliJ</h5>
+
+<p>Add this as tomcat home directory /usr/local/Cellar/tomcat/ or the your specific link form your settings.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/01/ubuntu-tooling/">Ubuntu Tooling</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-01T01:20:00-07:00" pubdate data-updated="true">Apr 1<span>st</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h4>Terminal alternatives:</h4>
+
+<p><strong>Guake</strong>
+Slide window, less configuation, switch tabs shortcut, transparent etc.</p>
+
+<p><strong>Terminator</strong>
+Multi windows</p>
+
+<p><a href="http://www.omgubuntu.co.uk/2011/10/five-alternative-terminal-emulator-apps-for-ubuntu">Referece</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/31/seo-101/">SEO 101</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-31T16:43:00-07:00" pubdate data-updated="true">Mar 31<span>st</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>#</h2>
+
+<p>&#8220;&#8221;View Page Source&#8221; would not contain the word &#8220;octopus&#8221;. Similarly, if some of your content is created dynamically, the page source will not include all the content you will want the crawler to see.</p>
+
+<p> <strong>In other words &#8220;View Page Source&#8221; is exactly what the crawler gets.</strong></p>
+
+<p>  In current practice, &#8220;progressive enhancement&#8221; in the form of Hijax-links are often used</p>
+
+<p>When creating your links, format them so they&#8217;ll offer a static link as well as calling a JavaScript function</p>
+
+<p><a href="ajax.htm?foo=32" onClick="navigate('ajax.html#foo=32'); return false">foo 32</a></p>
+
+<p>Note that the static link&#8217;s URL has a parameter (?foo=32) instead of <strong>a fragment (#foo=32)</strong>, which is used by the AJAX code. This is important, <strong>as search engines understand URL parameters but often ignore fragments</strong>. Web developer Jeremy Keith labeled this technique as Hijax. Since you now offer static links, users and search engines can link to the exact content they want to share or reference.(<strong>Hijax</strong>)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="ajax.htm?foo=32" onClick="navigate('ajax.html#foo=32'); return false">foo 32&lt;/a></span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="https://developers.google.com/webmasters/ajax-crawling/docs/learn-more">Google ajax crawling</a></p>
+
+<h4>Crawling simulator</h4>
+
+<p><a href="http://crawljax.com/">Crawljax</a></p>
+
+<p>Download, unzip, run</p>
+
+<pre><code>java -jar crawljax-web-3.5.jar
+</code></pre>
+
+<h4>Snapshots tools</h4>
+
+<p><a href="http://htmlunit.sourceforge.net/">htmlUnit</a></p>
+
+<p><a href="http://phantomjs.org">PhantomJS</a> : lightweight, fast generation</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/28/vagrant-to-your-dev-vbox/">Vagrant With Your Dev Vbox</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-28T14:43:00-07:00" pubdate data-updated="true">Mar 28<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>To create a Ubuntu GUI Development VM (12.04 LTS i386)</p>
+
+<figure class='code'><figcaption><span>Command line </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ vagrant init
+</span><span class='line'>
+</span><span class='line'>$ vagrant box add JujuBox http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-juju-vagrant-disk1.box
+</span><span class='line'>
+</span><span class='line'>$ vagrant up
+</span><span class='line'>
+</span><span class='line'>$ vagrant destroy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Reference:
+<a href="https://juju.ubuntu.com/docs/config-vagrant.html">Using Juju with Vagrant</a>
+<a href="http://www.vagrantbox.es/">List of vagrant boxes</a></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ vagrant halt //shut down VM 
+</span><span class='line'>
+</span><span class='line'>$ vagrant reload // reload the box, may not fully work with VPN on</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Adding existing box via Vagrant</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>vagrant box add --name BOX_NAME BOX_NAME_WITH_POSSIBLE_PATH_IF_YOU_HAVE_IT.box
+</span><span class='line'>vagrant init BOX_NAME
+</span><span class='line'>vagrant up
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/24/fixing-maven-and-upgrade-it/">Fixing Maven and Upgrade It</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-24T14:10:00-07:00" pubdate data-updated="true">Mar 24<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you are using a older version of maven on Linux with dpkg package manager:</p>
+
+<p><strong>Uninstall maven</strong></p>
+
+<p><code>$ dpkg --get--selections</code> to list all dpkg packages.</p>
+
+<p><code>$sudo apt-get remove maven2</code> to remove package</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/11/25/openmrs-dev-environment-installation/">OpenMRS Dev Environment Installation</a></h1>
     
     
@@ -111,6 +527,8 @@
 <h2>#</h2>
 
 <p>127.0.0.1 | FAILED => to use the &#8216;ssh&#8217; connection type with passwords, you must install the sshpass program</p>
+
+<p>install mysql-server</p>
 </div>
   
   
@@ -242,512 +660,6 @@ dom</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/21/add-your-intellij12-icon-to-red-hat-panel/">Add Your IntelliJ12 Icon to Red Hat Panel</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-21T19:16:00-07:00" pubdate data-updated="true">Aug 21<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>Installing IntelliJ 12 For Red Hat 6 Enterprise</strong></p>
-
-<p>Download the tar.gz and untar it by <code>tar xvfz ideaIU-12.1.4.tar.gz</code>, you can move the directory to somewhere for your convenience, you need it later for installing and starting IntelliJ.</p>
-
-<p>Navigate to your IntelliJ directory and run <code>bin/idea.sh</code> to install IntelliJ.</p>
-
-<p>Navigate to your panel and right click.</p>
-
-<p><img src="http://i.imgur.com/qpyzh0V.png" alt="image" /></p>
-
-<p>Create custom launcher.</p>
-
-<p><img src="http://i.imgur.com/lmsoSvH.png" alt="image" /></p>
-
-<p>Add command and icon to the config.</p>
-
-<p><img src="http://i.imgur.com/TOkxqTE.png" alt="image" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/18/markdown-time-tricks/">Markdown Time Tricks</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-18T20:25:00-07:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The blog is written in Markdown syntax, and I&#8217;m using Mou as the text editer to see the blog preview at the same time. There are some time saving tricks I noted down.</p>
-
-<p>Use <code>cmd + k</code> for <code>inline code</code></p>
-
-<p>Use <code>shift + ctrl + l</code> for <a href="ifyouseeit.org">link</a> syntax</p>
-
-<p>Use <code>cmd + shift + I</code> for adding new image syntax</p>
-
-<p>Use <code>cmd + b</code> for adding bold to words</p>
-
-<p>Use <code>cmd + i</code> for adding emphasize to words</p>
-
-<p>Use <code>cmd + enter</code> for real new line</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/18/use-sublime-2-efficiently/">Use Sublime 2 Efficiently</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-18T19:48:00-07:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>As the note I had before, for IDE or text editor, there are many shortcuts and key combinations will enable us to work with them moving faster. I always prefer learn by steps due to the brain volume…</p>
-
-<h4>Logistics - efficient way to use Mac</h4>
-
-<p>cmd + H : hide your window
-cmd + alt + H : hide other windows</p>
-
-<p>ctrl + F2 : move focus to menu bar
-ctrl + F3 : move focus to dock
-ctrl + F8 : move focus to status bar</p>
-
-<h4>Editing</h4>
-
-<p>cmd + enter : insert line after
-cmd + shift + enter: insert line before</p>
-
-<p>cmd + d : select word
-cmd + l : select line</p>
-
-<p>cmd + k, cmd + u/l : convert to upper/lower case</p>
-
-<p>ctrl + m : jumpt to match bracket</p>
-
-<p>cmd + j : combine two lines</p>
-
-<p>alt + mouse : select by columns
-ctrl + k : delete to the end</p>
-
-<h4>Build</h4>
-
-<p>cmd + b : build based on your code language</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/07/debugging-with-heroku/">Debugging With Heroku</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-07T15:22:00-07:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Install <a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a>, and you should be able to run <code>heroku</code> from your command tool</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ heroku apps
-</span><span class='line'>=== My Apps
-</span><span class='line'>xxx
-</span><span class='line'>xxxx
-</span><span class='line'>$ heroku open --app your-app-name
-</span><span class='line'>Opening return-inventory... done
-</span><span class='line'>$ heroku logs
-</span><span class='line'>$ heroku run rake db:migrate --app return-inventory</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Run rails with production settings in order to debug locally</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ brew install memcached
-</span><span class='line'>$ rails s -e production</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>RAILS_ENV=production rake db:migrate</span></code></pre></td></tr></table></div></figure>
-
-
-<p>/Applications/Postgres.app/Contents/MacOS/bin/createdb inventory_production</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/07/switch-db-from-sqlite3-to-postgres-in-rails-app/">Switch DB From Sqlite3 to Postgres in Rails App</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-07T14:28:00-07:00" pubdate data-updated="true">Aug 7<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h4>Switch from sqlite3 to postgres</h4>
-
-<h5>Step 1: modify Gemfile</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem 'pg'</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>Step 2: modify database.yml</h5>
-
-<p>Change the database adapter and database name in database.yml:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>development:
-</span><span class='line'>  adapter: postgresql
-</span><span class='line'>  encoding: utf8
-</span><span class='line'>  database: inventory_development
-</span><span class='line'>  host: localhost
-</span><span class='line'>  pool: 5
-</span><span class='line'>  timeout: 5000
-</span><span class='line'>
-</span><span class='line'>test:
-</span><span class='line'>  adapter: postgresql
-</span><span class='line'>  encoding: utf8
-</span><span class='line'>  database: inventory_test
-</span><span class='line'>  pool: 5
-</span><span class='line'>  timeout: 5000
-</span><span class='line'>
-</span><span class='line'>production:
-</span><span class='line'>  adapter: postgresql
-</span><span class='line'>  encoding: utf8
-</span><span class='line'>  database: inventory_production
-</span><span class='line'>  pool: 5
-</span><span class='line'>  timeout: 5000</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Note</strong>:
-You don&#8217;t need db/xx in the database part cause postgres is not like sqlite3 provided a file under db folder.</p>
-
-<h5>Step 3: create database</h5>
-
-<p>You need to create database in postgres based on the name you specified in database.yml, all development, test and production.
-I used <a href="http://postgresapp.com/">PostgresApp</a> and then:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/Applications/Postgres.app/Contents/MacOS/bin/createdb YOUR_DB_NAME</span></code></pre></td></tr></table></div></figure>
-
-
-<p>You can follow the documentation and add the bin to your path.</p>
-
-<h5>Step 4: Rails DB migrate</h5>
-
-<p>Run the following in terminal:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ bundle update   
-</span><span class='line'>$ bundle install  
-</span><span class='line'>$ rake db:migrate</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>IMPORTANT NOTE</strong>
-If you are running your rails server in different mode locally, like production mode, you need to use the following line to performe your db migration.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>RAILS_ENV=production rake db:migrate</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>Note</h5>
-
-<p><strong>1</strong>. If you are planning deploy to heroku, heroku will create the database for you according your database.yml</p>
-
-<p><strong>2</strong>. If you are planning deploy to heroku via Snap, you need to go change the configuration for the build to use postgresql manually. Snap will pick up your db choice when you added it to it, but now monitoring it all the time for now.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/06/bootstrp-ruby-on-rails/">Bootstrp Ruby on Rails</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-06T13:34:00-07:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Install Rails 3</h3>
-
-<p>Prerequisite: Ruby</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ ruby -v
-</span><span class='line'>ruby 1.9.3p429 (2013-05-15 revision 40747) [x86_64-darwin12.4.0]</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem install rdoc ## to avoid "file 'lib' not found" error  
-</span><span class='line'>$ gem install rails --version "=3.2.14"</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong> As Aug 6th, 2013, the following installed rails 4.0.0, I chose to use Rails 3 for now. </strong>
-Here is how downgrade.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem install rails 
-</span><span class='line'>$ gem uninstall rails
-</span><span class='line'>Successfully uninstalled rails-4.0.0
-</span><span class='line'>$ gem install rails --version "=3.2.14"</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/05/sqlite3-with-android/">Sqlite3 With Android</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-05T23:20:00-07:00" pubdate data-updated="true">Aug 5<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Prerequisite: <a href="http://ifyouseeit.org/blog/2013/03/21/android-app-with-google-map-api-v2-tutorial/">set up <code>adb</code> command</a></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ adb devices ## I have one real device and one emulator  
-</span><span class='line'>List of devices attached  
-</span><span class='line'>xxxxxxxxxxxx  device  
-</span><span class='line'>emulator-5554 device   
-</span><span class='line'>
-</span><span class='line'>$ adb -s emulator-5554 shell ## To access specific device's shell and then use sqlite3 command
-</span><span class='line'>root@android:/ # sqlite3
-</span><span class='line'>SQLite version 3.7.11 2012-03-20 11:35:50
-</span><span class='line'>Enter ".help" for instructions
-</span><span class='line'>Enter SQL statements terminated with a ";"
-</span><span class='line'>sqlite>
-</span><span class='line'>
-</span><span class='line'>$ adb -s emulator-5554  pull /system/xbin/sqlite3
-</span><span class='line'>4005 KB/s (67880 bytes in 0.016s)
-</span><span class='line'>s
-</span><span class='line'>$ adb -s 015d28569058200a push sqlite3 /system/xbin/
-</span><span class='line'>failed to copy 'sqlite3' to '/system/xbin//sqlite3': Read-only file system</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -767,23 +679,23 @@ Here is how downgrade.</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/11/25/openmrs-dev-environment-installation/">OpenMRS dev environment installation</a>
+        <a href="/blog/2014/07/11/deploy-and-rename-heroku-app/">Deploy and rename heroku app</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/10/17/git-branch/">Git branch</a>
+        <a href="/blog/2014/05/17/install-learnyounode-on-mac/">Install learnyounode on Mac</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/10/10/angular-try/">Angular try</a>
+        <a href="/blog/2014/04/01/create-a-simple-j2ee-web-project-with-intellij-and-tomcat/">Create a simple J2EE web project with IntelliJ and Tomcat</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/08/21/add-your-intellij12-icon-to-red-hat-panel/">Add your IntelliJ12 icon to Red Hat panel</a>
+        <a href="/blog/2014/04/01/ubuntu-tooling/">Ubuntu tooling</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/08/18/markdown-time-tricks/">Markdown time tricks</a>
+        <a href="/blog/2014/03/31/seo-101/">SEO 101</a>
       </li>
     
   </ul>
@@ -791,16 +703,16 @@ Here is how downgrade.</p>
 
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud" width="100%" height="250"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+36.66666666666667%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fangular%27+style%3D%27font-size%3A+16.666666666666668%25%27%3EAngular%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fbasics%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Ebasics%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fchef%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Echef%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fcommand%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Ecommand%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Ferb%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eerb%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fexample%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eexample%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Ffunction-programming%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Efunction+programming%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgit%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Egit%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgithub%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Egithub%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgoogle-map-api-v2%27+style%3D%27font-size%3A+23.333333333333336%25%27%3EGoogle+Map+API+v2%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgoogle-play-service-7%27+style%3D%27font-size%3A+16.666666666666668%25%27%3EGoogle+Play+Service+7%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fheroku%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eheroku%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fheroku%27+style%3D%27font-size%3A+16.666666666666668%25%27%3EHeroku%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fintellij%27+style%3D%27font-size%3A+16.666666666666668%25%27%3EIntelliJ%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Ejava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjava7%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Ejava7%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjdk7-installation%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Ejdk7+installation%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjre7%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Ejre7%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Flife-note%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Elife+note%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Flistview%27+style%3D%27font-size%3A+16.666666666666668%25%27%3EListView%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fmac%27+style%3D%27font-size%3A+50.0%25%27%3Emac%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fmarkdown%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Emarkdown%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fmaven%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Emaven%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fnote%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Enote%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fnotes%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Enotes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eoctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fopen-source%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eopen+source%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fopenmrs%27+style%3D%27font-size%3A+16.666666666666668%25%27%3EOpenMRS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fpostgres%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Epostgres%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Epython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+16.666666666666668%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Frails3%27+style%3D%27font-size%3A+16.666666666666668%25%27%3ERails3%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fredhat%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eredhat%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fror%27+style%3D%27font-size%3A+16.666666666666668%25%27%3EROR%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eruby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fruby-on-rails%27+style%3D%27font-size%3A+16.666666666666668%25%27%3ERuby+on+Rails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fscala-installation%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Escala+installation%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fshell%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eshell%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fsnap%27+style%3D%27font-size%3A+16.666666666666668%25%27%3ESnap%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fsqlite3%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Esqlite3%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fstartup%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Estartup%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fsublime%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Esublime%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fterminal%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Eterminal%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fvagrant%27+style%3D%27font-size%3A+23.333333333333336%25%27%3Evagrant%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fweb%27+style%3D%27font-size%3A+16.666666666666668%25%27%3Eweb%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2F%E5%8D%9A%E5%AE%A2%27+style%3D%27font-size%3A+16.666666666666668%25%27%3E%E5%8D%9A%E5%AE%A2%3C%2Fa%3E+%3C%2Ftags%3E"></span>
+    <span id="tag-cloud" width="100%" height="250"><embed type='application/x-shockwave-flash' src='/javascripts/tagcloud.swf'width='100%' height='250' bgcolor='#f2f2f2' id='tagcloudflash' name='tagcloudflash' quality='high' allowscriptaccess='always'flashvars="tcolor=0x333333&amp;tcolor2=0x333333&amp;hicolor=0x000000&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fandroid%27+style%3D%27font-size%3A+32.85714285714286%25%27%3EAndroid%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fangular%27+style%3D%27font-size%3A+15.714285714285715%25%27%3EAngular%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fbasics%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Ebasics%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fchef%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Echef%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fcommand%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Ecommand%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fcontent%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Econtent%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fdynamic%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Edynamic%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fengine%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eengine%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Ferb%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eerb%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fexample%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eexample%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Ffunction-programming%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Efunction+programming%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgit%27+style%3D%27font-size%3A+21.42857142857143%25%27%3Egit%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgithub%27+style%3D%27font-size%3A+21.42857142857143%25%27%3Egithub%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgoogle-map-api-v2%27+style%3D%27font-size%3A+21.42857142857143%25%27%3EGoogle+Map+API+v2%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fgoogle-play-service-7%27+style%3D%27font-size%3A+15.714285714285715%25%27%3EGoogle+Play+Service+7%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fheroku%27+style%3D%27font-size%3A+21.42857142857143%25%27%3Eheroku%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fheroku%27+style%3D%27font-size%3A+15.714285714285715%25%27%3EHeroku%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fintellij%27+style%3D%27font-size%3A+21.42857142857143%25%27%3EIntelliJ%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fj2ee-%27+style%3D%27font-size%3A+15.714285714285715%25%27%3EJ2EE%2C%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjava%27+style%3D%27font-size%3A+21.42857142857143%25%27%3Ejava%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjava7%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Ejava7%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjdk7-installation%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Ejdk7+installation%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjre7%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Ejre7%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fjs-%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Ejs%2C%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Flife-note%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Elife+note%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Flistview%27+style%3D%27font-size%3A+15.714285714285715%25%27%3EListView%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fmac%27+style%3D%27font-size%3A+50.0%25%27%3Emac%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fmarkdown%27+style%3D%27font-size%3A+21.42857142857143%25%27%3Emarkdown%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fmaven%27+style%3D%27font-size%3A+27.142857142857142%25%27%3Emaven%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fnode-%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Enode%2C%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fnote%27+style%3D%27font-size%3A+21.42857142857143%25%27%3Enote%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fnotes%27+style%3D%27font-size%3A+21.42857142857143%25%27%3Enotes%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Foctopress%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eoctopress%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fopen-source%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eopen+source%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fopenmrs%27+style%3D%27font-size%3A+15.714285714285715%25%27%3EOpenMRS%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Foptimization-%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eoptimization%2C%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fpostgres%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Epostgres%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fpython%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Epython%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Frails%27+style%3D%27font-size%3A+15.714285714285715%25%27%3ERails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Frails3%27+style%3D%27font-size%3A+15.714285714285715%25%27%3ERails3%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fredhat%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eredhat%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fror%27+style%3D%27font-size%3A+15.714285714285715%25%27%3EROR%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fruby%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eruby%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fruby-on-rails%27+style%3D%27font-size%3A+15.714285714285715%25%27%3ERuby+on+Rails%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fscala-installation%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Escala+installation%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fsearch%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Esearch%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fseo-%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eseo%2C%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fshell%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eshell%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fsnap%27+style%3D%27font-size%3A+15.714285714285715%25%27%3ESnap%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fsqlite3%27+style%3D%27font-size%3A+21.42857142857143%25%27%3Esqlite3%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fstartup%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Estartup%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fsublime%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Esublime%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fterminal%27+style%3D%27font-size%3A+21.42857142857143%25%27%3Eterminal%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Ftomcat-%27+style%3D%27font-size%3A+15.714285714285715%25%27%3ETomcat%2C%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Ftools%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Etools%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fubuntu-%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eubuntu%2C%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fvagrant%27+style%3D%27font-size%3A+27.142857142857142%25%27%3Evagrant%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fweb%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eweb%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2Fweb-%27+style%3D%27font-size%3A+15.714285714285715%25%27%3Eweb%2C%3C%2Fa%3E+%3Ca+href%3D%27http%3A%2F%2Flynnequ.github.com%2Fblog%2Fcategories%2F%E5%8D%9A%E5%AE%A2%27+style%3D%27font-size%3A+15.714285714285715%25%27%3E%E5%8D%9A%E5%AE%A2%3C%2Fa%3E+%3C%2Ftags%3E"></span>
 </section>
 
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/android'>Android (4)</a></li><li><a href='/blog/categories/angular'>Angular (1)</a></li><li><a href='/blog/categories/basics'>basics (1)</a></li><li><a href='/blog/categories/chef'>chef (1)</a></li><li><a href='/blog/categories/command'>command (1)</a></li><li><a href='/blog/categories/erb'>erb (1)</a></li><li><a href='/blog/categories/example'>example (1)</a></li><li><a href='/blog/categories/function-programming'>function programming (1)</a></li><li><a href='/blog/categories/git'>git (2)</a></li><li><a href='/blog/categories/github'>github (2)</a></li><li><a href='/blog/categories/google-map-api-v2'>Google Map API v2 (2)</a></li><li><a href='/blog/categories/google-play-service-7'>Google Play Service 7 (1)</a></li><li><a href='/blog/categories/heroku'>heroku (1)</a></li><li><a href='/blog/categories/heroku'>Heroku (1)</a></li><li><a href='/blog/categories/intellij'>IntelliJ (1)</a></li><li><a href='/blog/categories/java'>java (2)</a></li><li><a href='/blog/categories/java7'>java7 (1)</a></li><li><a href='/blog/categories/jdk7-installation'>jdk7 installation (1)</a></li><li><a href='/blog/categories/jre7'>jre7 (1)</a></li><li><a href='/blog/categories/life-note'>life note (1)</a></li><li><a href='/blog/categories/listview'>ListView (1)</a></li><li><a href='/blog/categories/mac'>mac (6)</a></li><li><a href='/blog/categories/markdown'>markdown (2)</a></li><li><a href='/blog/categories/maven'>maven (2)</a></li><li><a href='/blog/categories/note'>note (2)</a></li><li><a href='/blog/categories/notes'>notes (2)</a></li><li><a href='/blog/categories/octopress'>octopress (1)</a></li><li><a href='/blog/categories/open-source'>open source (1)</a></li><li><a href='/blog/categories/openmrs'>OpenMRS (1)</a></li><li><a href='/blog/categories/postgres'>postgres (1)</a></li><li><a href='/blog/categories/python'>python (1)</a></li><li><a href='/blog/categories/rails'>Rails (1)</a></li><li><a href='/blog/categories/rails3'>Rails3 (1)</a></li><li><a href='/blog/categories/redhat'>redhat (1)</a></li><li><a href='/blog/categories/ror'>ROR (1)</a></li><li><a href='/blog/categories/ruby'>ruby (1)</a></li><li><a href='/blog/categories/ruby-on-rails'>Ruby on Rails (1)</a></li><li><a href='/blog/categories/scala-installation'>scala installation (1)</a></li><li><a href='/blog/categories/shell'>shell (1)</a></li><li><a href='/blog/categories/snap'>Snap (1)</a></li><li><a href='/blog/categories/sqlite3'>sqlite3 (2)</a></li><li><a href='/blog/categories/startup'>startup (1)</a></li><li><a href='/blog/categories/sublime'>sublime (1)</a></li><li><a href='/blog/categories/terminal'>terminal (2)</a></li><li><a href='/blog/categories/vagrant'>vagrant (2)</a></li><li><a href='/blog/categories/web'>web (1)</a></li><li><a href='/blog/categories/博客'>博客 (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/android'>Android (4)</a></li><li><a href='/blog/categories/angular'>Angular (1)</a></li><li><a href='/blog/categories/basics'>basics (1)</a></li><li><a href='/blog/categories/chef'>chef (1)</a></li><li><a href='/blog/categories/command'>command (1)</a></li><li><a href='/blog/categories/content'>content (1)</a></li><li><a href='/blog/categories/dynamic'>dynamic (1)</a></li><li><a href='/blog/categories/engine'>engine (1)</a></li><li><a href='/blog/categories/erb'>erb (1)</a></li><li><a href='/blog/categories/example'>example (1)</a></li><li><a href='/blog/categories/function-programming'>function programming (1)</a></li><li><a href='/blog/categories/git'>git (2)</a></li><li><a href='/blog/categories/github'>github (2)</a></li><li><a href='/blog/categories/google-map-api-v2'>Google Map API v2 (2)</a></li><li><a href='/blog/categories/google-play-service-7'>Google Play Service 7 (1)</a></li><li><a href='/blog/categories/heroku'>heroku (2)</a></li><li><a href='/blog/categories/heroku'>Heroku (1)</a></li><li><a href='/blog/categories/intellij'>IntelliJ (2)</a></li><li><a href='/blog/categories/j2ee-'>J2EE, (1)</a></li><li><a href='/blog/categories/java'>java (2)</a></li><li><a href='/blog/categories/java7'>java7 (1)</a></li><li><a href='/blog/categories/jdk7-installation'>jdk7 installation (1)</a></li><li><a href='/blog/categories/jre7'>jre7 (1)</a></li><li><a href='/blog/categories/js-'>js, (1)</a></li><li><a href='/blog/categories/life-note'>life note (1)</a></li><li><a href='/blog/categories/listview'>ListView (1)</a></li><li><a href='/blog/categories/mac'>mac (7)</a></li><li><a href='/blog/categories/markdown'>markdown (2)</a></li><li><a href='/blog/categories/maven'>maven (3)</a></li><li><a href='/blog/categories/node-'>node, (1)</a></li><li><a href='/blog/categories/note'>note (2)</a></li><li><a href='/blog/categories/notes'>notes (2)</a></li><li><a href='/blog/categories/octopress'>octopress (1)</a></li><li><a href='/blog/categories/open-source'>open source (1)</a></li><li><a href='/blog/categories/openmrs'>OpenMRS (1)</a></li><li><a href='/blog/categories/optimization-'>optimization, (1)</a></li><li><a href='/blog/categories/postgres'>postgres (1)</a></li><li><a href='/blog/categories/python'>python (1)</a></li><li><a href='/blog/categories/rails'>Rails (1)</a></li><li><a href='/blog/categories/rails3'>Rails3 (1)</a></li><li><a href='/blog/categories/redhat'>redhat (1)</a></li><li><a href='/blog/categories/ror'>ROR (1)</a></li><li><a href='/blog/categories/ruby'>ruby (1)</a></li><li><a href='/blog/categories/ruby-on-rails'>Ruby on Rails (1)</a></li><li><a href='/blog/categories/scala-installation'>scala installation (1)</a></li><li><a href='/blog/categories/search'>search (1)</a></li><li><a href='/blog/categories/seo-'>seo, (1)</a></li><li><a href='/blog/categories/shell'>shell (1)</a></li><li><a href='/blog/categories/snap'>Snap (1)</a></li><li><a href='/blog/categories/sqlite3'>sqlite3 (2)</a></li><li><a href='/blog/categories/startup'>startup (1)</a></li><li><a href='/blog/categories/sublime'>sublime (1)</a></li><li><a href='/blog/categories/terminal'>terminal (2)</a></li><li><a href='/blog/categories/tomcat-'>Tomcat, (1)</a></li><li><a href='/blog/categories/tools'>tools (1)</a></li><li><a href='/blog/categories/ubuntu-'>ubuntu, (1)</a></li><li><a href='/blog/categories/vagrant'>vagrant (3)</a></li><li><a href='/blog/categories/web'>web (1)</a></li><li><a href='/blog/categories/web-'>web, (1)</a></li><li><a href='/blog/categories/博客'>博客 (1)</a></li></ul>
 </section>
 <section>
   <h1>Tag Pool</h1>
-    <span id="tag-cloud"><a href='/blog/categories/android' style='font-size: 140.0%'>Android(4)</a> <a href='/blog/categories/angular' style='font-size: 110.0%'>Angular(1)</a> <a href='/blog/categories/basics' style='font-size: 110.0%'>basics(1)</a> <a href='/blog/categories/chef' style='font-size: 110.0%'>chef(1)</a> <a href='/blog/categories/command' style='font-size: 110.0%'>command(1)</a> <a href='/blog/categories/erb' style='font-size: 110.0%'>erb(1)</a> <a href='/blog/categories/example' style='font-size: 110.0%'>example(1)</a> <a href='/blog/categories/function-programming' style='font-size: 110.0%'>function programming(1)</a> <a href='/blog/categories/git' style='font-size: 120.0%'>git(2)</a> <a href='/blog/categories/github' style='font-size: 120.0%'>github(2)</a> <a href='/blog/categories/google-map-api-v2' style='font-size: 120.0%'>Google Map API v2(2)</a> <a href='/blog/categories/google-play-service-7' style='font-size: 110.0%'>Google Play Service 7(1)</a> <a href='/blog/categories/heroku' style='font-size: 110.0%'>heroku(1)</a> <a href='/blog/categories/heroku' style='font-size: 110.0%'>Heroku(1)</a> <a href='/blog/categories/intellij' style='font-size: 110.0%'>IntelliJ(1)</a> <a href='/blog/categories/java' style='font-size: 120.0%'>java(2)</a> <a href='/blog/categories/java7' style='font-size: 110.0%'>java7(1)</a> <a href='/blog/categories/jdk7-installation' style='font-size: 110.0%'>jdk7 installation(1)</a> <a href='/blog/categories/jre7' style='font-size: 110.0%'>jre7(1)</a> <a href='/blog/categories/life-note' style='font-size: 110.0%'>life note(1)</a> <a href='/blog/categories/listview' style='font-size: 110.0%'>ListView(1)</a> <a href='/blog/categories/mac' style='font-size: 160.0%'>mac(6)</a> <a href='/blog/categories/markdown' style='font-size: 120.0%'>markdown(2)</a> <a href='/blog/categories/maven' style='font-size: 120.0%'>maven(2)</a> <a href='/blog/categories/note' style='font-size: 120.0%'>note(2)</a> <a href='/blog/categories/notes' style='font-size: 120.0%'>notes(2)</a> <a href='/blog/categories/octopress' style='font-size: 110.0%'>octopress(1)</a> <a href='/blog/categories/open-source' style='font-size: 110.0%'>open source(1)</a> <a href='/blog/categories/openmrs' style='font-size: 110.0%'>OpenMRS(1)</a> <a href='/blog/categories/postgres' style='font-size: 110.0%'>postgres(1)</a> <a href='/blog/categories/python' style='font-size: 110.0%'>python(1)</a> <a href='/blog/categories/rails' style='font-size: 110.0%'>Rails(1)</a> <a href='/blog/categories/rails3' style='font-size: 110.0%'>Rails3(1)</a> <a href='/blog/categories/redhat' style='font-size: 110.0%'>redhat(1)</a> <a href='/blog/categories/ror' style='font-size: 110.0%'>ROR(1)</a> <a href='/blog/categories/ruby' style='font-size: 110.0%'>ruby(1)</a> <a href='/blog/categories/ruby-on-rails' style='font-size: 110.0%'>Ruby on Rails(1)</a> <a href='/blog/categories/scala-installation' style='font-size: 110.0%'>scala installation(1)</a> <a href='/blog/categories/shell' style='font-size: 110.0%'>shell(1)</a> <a href='/blog/categories/snap' style='font-size: 110.0%'>Snap(1)</a> <a href='/blog/categories/sqlite3' style='font-size: 120.0%'>sqlite3(2)</a> <a href='/blog/categories/startup' style='font-size: 110.0%'>startup(1)</a> <a href='/blog/categories/sublime' style='font-size: 110.0%'>sublime(1)</a> <a href='/blog/categories/terminal' style='font-size: 120.0%'>terminal(2)</a> <a href='/blog/categories/vagrant' style='font-size: 120.0%'>vagrant(2)</a> <a href='/blog/categories/web' style='font-size: 110.0%'>web(1)</a> <a href='/blog/categories/博客' style='font-size: 110.0%'>博客(1)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/android' style='font-size: 134.28571428571428%'>Android(4)</a> <a href='/blog/categories/angular' style='font-size: 108.57142857142857%'>Angular(1)</a> <a href='/blog/categories/basics' style='font-size: 108.57142857142857%'>basics(1)</a> <a href='/blog/categories/chef' style='font-size: 108.57142857142857%'>chef(1)</a> <a href='/blog/categories/command' style='font-size: 108.57142857142857%'>command(1)</a> <a href='/blog/categories/content' style='font-size: 108.57142857142857%'>content(1)</a> <a href='/blog/categories/dynamic' style='font-size: 108.57142857142857%'>dynamic(1)</a> <a href='/blog/categories/engine' style='font-size: 108.57142857142857%'>engine(1)</a> <a href='/blog/categories/erb' style='font-size: 108.57142857142857%'>erb(1)</a> <a href='/blog/categories/example' style='font-size: 108.57142857142857%'>example(1)</a> <a href='/blog/categories/function-programming' style='font-size: 108.57142857142857%'>function programming(1)</a> <a href='/blog/categories/git' style='font-size: 117.14285714285714%'>git(2)</a> <a href='/blog/categories/github' style='font-size: 117.14285714285714%'>github(2)</a> <a href='/blog/categories/google-map-api-v2' style='font-size: 117.14285714285714%'>Google Map API v2(2)</a> <a href='/blog/categories/google-play-service-7' style='font-size: 108.57142857142857%'>Google Play Service 7(1)</a> <a href='/blog/categories/heroku' style='font-size: 117.14285714285714%'>heroku(2)</a> <a href='/blog/categories/heroku' style='font-size: 108.57142857142857%'>Heroku(1)</a> <a href='/blog/categories/intellij' style='font-size: 117.14285714285714%'>IntelliJ(2)</a> <a href='/blog/categories/j2ee-' style='font-size: 108.57142857142857%'>J2EE,(1)</a> <a href='/blog/categories/java' style='font-size: 117.14285714285714%'>java(2)</a> <a href='/blog/categories/java7' style='font-size: 108.57142857142857%'>java7(1)</a> <a href='/blog/categories/jdk7-installation' style='font-size: 108.57142857142857%'>jdk7 installation(1)</a> <a href='/blog/categories/jre7' style='font-size: 108.57142857142857%'>jre7(1)</a> <a href='/blog/categories/js-' style='font-size: 108.57142857142857%'>js,(1)</a> <a href='/blog/categories/life-note' style='font-size: 108.57142857142857%'>life note(1)</a> <a href='/blog/categories/listview' style='font-size: 108.57142857142857%'>ListView(1)</a> <a href='/blog/categories/mac' style='font-size: 160.0%'>mac(7)</a> <a href='/blog/categories/markdown' style='font-size: 117.14285714285714%'>markdown(2)</a> <a href='/blog/categories/maven' style='font-size: 125.71428571428572%'>maven(3)</a> <a href='/blog/categories/node-' style='font-size: 108.57142857142857%'>node,(1)</a> <a href='/blog/categories/note' style='font-size: 117.14285714285714%'>note(2)</a> <a href='/blog/categories/notes' style='font-size: 117.14285714285714%'>notes(2)</a> <a href='/blog/categories/octopress' style='font-size: 108.57142857142857%'>octopress(1)</a> <a href='/blog/categories/open-source' style='font-size: 108.57142857142857%'>open source(1)</a> <a href='/blog/categories/openmrs' style='font-size: 108.57142857142857%'>OpenMRS(1)</a> <a href='/blog/categories/optimization-' style='font-size: 108.57142857142857%'>optimization,(1)</a> <a href='/blog/categories/postgres' style='font-size: 108.57142857142857%'>postgres(1)</a> <a href='/blog/categories/python' style='font-size: 108.57142857142857%'>python(1)</a> <a href='/blog/categories/rails' style='font-size: 108.57142857142857%'>Rails(1)</a> <a href='/blog/categories/rails3' style='font-size: 108.57142857142857%'>Rails3(1)</a> <a href='/blog/categories/redhat' style='font-size: 108.57142857142857%'>redhat(1)</a> <a href='/blog/categories/ror' style='font-size: 108.57142857142857%'>ROR(1)</a> <a href='/blog/categories/ruby' style='font-size: 108.57142857142857%'>ruby(1)</a> <a href='/blog/categories/ruby-on-rails' style='font-size: 108.57142857142857%'>Ruby on Rails(1)</a> <a href='/blog/categories/scala-installation' style='font-size: 108.57142857142857%'>scala installation(1)</a> <a href='/blog/categories/search' style='font-size: 108.57142857142857%'>search(1)</a> <a href='/blog/categories/seo-' style='font-size: 108.57142857142857%'>seo,(1)</a> <a href='/blog/categories/shell' style='font-size: 108.57142857142857%'>shell(1)</a> <a href='/blog/categories/snap' style='font-size: 108.57142857142857%'>Snap(1)</a> <a href='/blog/categories/sqlite3' style='font-size: 117.14285714285714%'>sqlite3(2)</a> <a href='/blog/categories/startup' style='font-size: 108.57142857142857%'>startup(1)</a> <a href='/blog/categories/sublime' style='font-size: 108.57142857142857%'>sublime(1)</a> <a href='/blog/categories/terminal' style='font-size: 117.14285714285714%'>terminal(2)</a> <a href='/blog/categories/tomcat-' style='font-size: 108.57142857142857%'>Tomcat,(1)</a> <a href='/blog/categories/tools' style='font-size: 108.57142857142857%'>tools(1)</a> <a href='/blog/categories/ubuntu-' style='font-size: 108.57142857142857%'>ubuntu,(1)</a> <a href='/blog/categories/vagrant' style='font-size: 125.71428571428572%'>vagrant(3)</a> <a href='/blog/categories/web' style='font-size: 108.57142857142857%'>web(1)</a> <a href='/blog/categories/web-' style='font-size: 108.57142857142857%'>web,(1)</a> <a href='/blog/categories/博客' style='font-size: 108.57142857142857%'>博客(1)</a> </span>
 </section>
 
   

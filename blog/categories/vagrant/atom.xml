@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vagrant | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/vagrant/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2014-02-18T20:54:33-08:00</updated>
+  <updated>2014-07-11T00:46:40-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,67 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Vagrant with your Dev Vbox]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/03/28/vagrant-to-your-dev-vbox/"/>
+    <updated>2014-03-28T14:43:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/03/28/vagrant-to-your-dev-vbox</id>
+    <content type="html"><![CDATA[<p>To create a Ubuntu GUI Development VM (12.04 LTS i386)</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Command line </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ vagrant init&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ vagrant box add JujuBox http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-juju-vagrant-disk1.box&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ vagrant up&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ vagrant destroy&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Reference:
+<a href="https://juju.ubuntu.com/docs/config-vagrant.html">Using Juju with Vagrant</a>
+<a href="http://www.vagrantbox.es/">List of vagrant boxes</a></p>
+
+<p> <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ vagrant halt //shut down VM&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ vagrant reload // reload the box, may not fully work with VPN on&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h5>Adding existing box via Vagrant</h5>
+
+<p>```
+vagrant box add --name BOX_NAME BOX_NAME_WITH_POSSIBLE_PATH_IF_YOU_HAVE_IT.box
+vagrant init BOX_NAME
+vagrant up</p>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenMRS dev environment installation]]></title>
@@ -23,6 +84,8 @@
 <h2>#</h2>
 
 <p>127.0.0.1 | FAILED => to use the 'ssh' connection type with passwords, you must install the sshpass program</p>
+
+<p>install mysql-server</p>
 ]]></content>
   </entry>
   

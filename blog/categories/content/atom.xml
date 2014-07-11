@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: content | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/content/atom.xml" rel="self"/>
+  <link href="http://lynnequ.github.com/"/>
+  <updated>2014-07-11T00:46:40-07:00</updated>
+  <id>http://lynnequ.github.com/</id>
+  <author>
+    <name><![CDATA[Lynne Qu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SEO 101]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/03/31/seo-101/"/>
+    <updated>2014-03-31T16:43:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/03/31/seo-101</id>
+    <content type="html"><![CDATA[<h2>#</h2>
+
+<p>""View Page Source" would not contain the word "octopus". Similarly, if some of your content is created dynamically, the page source will not include all the content you will want the crawler to see.</p>
+
+<p> <strong>In other words "View Page Source" is exactly what the crawler gets.</strong></p>
+
+<p>  In current practice, "progressive enhancement" in the form of Hijax-links are often used</p>
+
+<p>When creating your links, format them so they'll offer a static link as well as calling a JavaScript function</p>
+
+<p><a href="ajax.htm?foo=32" onClick="navigate('ajax.html#foo=32'); return false">foo 32</a></p>
+
+<p>Note that the static link's URL has a parameter (?foo=32) instead of <strong>a fragment (#foo=32)</strong>, which is used by the AJAX code. This is important, <strong>as search engines understand URL parameters but often ignore fragments</strong>. Web developer Jeremy Keith labeled this technique as Hijax. Since you now offer static links, users and search engines can link to the exact content they want to share or reference.(<strong>Hijax</strong>)</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="ajax.htm?foo=32" onClick="navigate('ajax.html#foo=32'); return false">foo 32&lt;/a></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><a href="https://developers.google.com/webmasters/ajax-crawling/docs/learn-more">Google ajax crawling</a></p>
+
+<h4>Crawling simulator</h4>
+
+<p><a href="http://crawljax.com/">Crawljax</a></p>
+
+<p>Download, unzip, run</p>
+
+<pre><code>java -jar crawljax-web-3.5.jar
+</code></pre>
+
+<h4>Snapshots tools</h4>
+
+<p><a href="http://htmlunit.sourceforge.net/">htmlUnit</a></p>
+
+<p><a href="http://phantomjs.org">PhantomJS</a> : lightweight, fast generation</p>
+]]></content>
+  </entry>
+  
+</feed>

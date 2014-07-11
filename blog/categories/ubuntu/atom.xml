@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ubuntu, | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://lynnequ.github.com/"/>
+  <updated>2014-07-11T00:46:40-07:00</updated>
+  <id>http://lynnequ.github.com/</id>
+  <author>
+    <name><![CDATA[Lynne Qu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu tooling]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/04/01/ubuntu-tooling/"/>
+    <updated>2014-04-01T01:20:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/04/01/ubuntu-tooling</id>
+    <content type="html"><![CDATA[<h4>Terminal alternatives:</h4>
+
+<p><strong>Guake</strong>
+Slide window, less configuation, switch tabs shortcut, transparent etc.</p>
+
+<p><strong>Terminator</strong>
+Multi windows</p>
+
+<p><a href="http://www.omgubuntu.co.uk/2011/10/five-alternative-terminal-emulator-apps-for-ubuntu">Referece</a></p>
+]]></content>
+  </entry>
+  
+</feed>

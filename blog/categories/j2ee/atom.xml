@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: J2EE, | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/j2ee/atom.xml" rel="self"/>
+  <link href="http://lynnequ.github.com/"/>
+  <updated>2014-07-11T00:46:40-07:00</updated>
+  <id>http://lynnequ.github.com/</id>
+  <author>
+    <name><![CDATA[Lynne Qu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Create a simple J2EE web project with IntelliJ and Tomcat]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/04/01/create-a-simple-j2ee-web-project-with-intellij-and-tomcat/"/>
+    <updated>2014-04-01T15:21:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/04/01/create-a-simple-j2ee-web-project-with-intellij-and-tomcat</id>
+    <content type="html"><![CDATA[<p>As it's surprising hard to start from scratch to create a simple web project using jsp running on tomcat with IntelliJ, this post intends to leave a note for this boiler process.</p>
+
+<h4>Install Tomcat 7 on Mac (10.9.2)</h4>
+
+<p>Download: http://tomcat.apache.org/download-70.cgi#7.0.53</p>
+
+<p>Unzip</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mv apache-tomcat-7.0.53 /usr/local/Cellar/
+</span><span class='line'>$ mv apache-tomcat-7.0.53 tomcat
+</span><span class='line'>$ cd tomcat/bin
+</span><span class='line'>$ sh startup.sh</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Test it in http://localhost:8080/ to see if it works.</p>
+
+<p><code>$ sh shutdown.sh</code></p>
+
+<p>Edit <code>$TOMCAT_DIR/conf/tomcat-users.xml</code> to get admin access:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>$TOMCAT_DIR/conf/tomcat-users.xml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;manager-gui&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;user</span> <span class="na">username=</span><span class="s">&quot;admin&quot;</span> <span class="na">password=</span><span class="s">&quot;admin&quot;</span> <span class="na">roles=</span><span class="s">&quot;admin,manager-gui&quot;</span><span class="nt">/&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And restart the tomcat to gain the access with new credential.</p>
+
+<p><strong>Roles</strong>: "You can find the role names in the web.xml file of the Manager web application. The available roles are:"</p>
+
+<p><strong>manager-gui</strong> — Access to the HTML interface.</p>
+
+<p><strong>manager-status</strong> — Access to the "Server Status" page only.</p>
+
+<p><strong>manager-script</strong> — Access to the tools-friendly plain text interface that is described in this document, and to the "Server Status" page.</p>
+
+<p><strong>manager-jmx</strong> — Access to JMX proxy interface and to the "Server Status" page.</p>
+
+<p><a href="http://tomcat.apache.org/tomcat-7.0-doc/manager-howto.html">Tomcat 7 manager-howto</a></p>
+
+<h4>Addition:</h4>
+
+<h5>Add tomcat7 to IntelliJ</h5>
+
+<p>Add this as tomcat home directory /usr/local/Cellar/tomcat/ or the your specific link form your settings.</p>
+]]></content>
+  </entry>
+  
+</feed>

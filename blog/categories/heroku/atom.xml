@@ -4,7 +4,7 @@
   <title><![CDATA[Category: heroku | If you see it]]></title>
   <link href="http://lynnequ.github.com/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2014-02-18T20:54:33-08:00</updated>
+  <updated>2014-07-11T00:46:40-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Deploy and rename heroku app]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/07/11/deploy-and-rename-heroku-app/"/>
+    <updated>2014-07-11T00:34:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/07/11/deploy-and-rename-heroku-app</id>
+    <content type="html"><![CDATA[<h5>Deploy to heroku</h5>
+
+<pre><code>$ heroku create 
+$ git push heroku master
+$ foreman start // locally running server after you have Procfile
+$ git push origin master // your git account
+$ git push heroku master // when you want to deploy
+$ heroku ps:scale web=1
+$ heroku logs 
+$ heroku open
+</code></pre>
+
+<h5>Rename heroku app:</h5>
+
+<pre><code>$ git remote rm heroku
+$ git remote add heroku git@heroku.com:XXXX.git
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Switch DB from sqlite3 to postgres in Rails app]]></title>

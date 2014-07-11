@@ -4,7 +4,7 @@
   <title><![CDATA[If you see it]]></title>
   <link href="http://lynnequ.github.com/atom.xml" rel="self"/>
   <link href="http://lynnequ.github.com/"/>
-  <updated>2014-02-18T20:54:33-08:00</updated>
+  <updated>2014-07-11T00:46:40-07:00</updated>
   <id>http://lynnequ.github.com/</id>
   <author>
     <name><![CDATA[Lynne Qu]]></name>
@@ -12,6 +12,231 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Deploy and rename heroku app]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/07/11/deploy-and-rename-heroku-app/"/>
+    <updated>2014-07-11T00:34:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/07/11/deploy-and-rename-heroku-app</id>
+    <content type="html"><![CDATA[<h5>Deploy to heroku</h5>
+
+<pre><code>$ heroku create 
+$ git push heroku master
+$ foreman start // locally running server after you have Procfile
+$ git push origin master // your git account
+$ git push heroku master // when you want to deploy
+$ heroku ps:scale web=1
+$ heroku logs 
+$ heroku open
+</code></pre>
+
+<h5>Rename heroku app:</h5>
+
+<pre><code>$ git remote rm heroku
+$ git remote add heroku git@heroku.com:XXXX.git
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install learnyounode on Mac]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/05/17/install-learnyounode-on-mac/"/>
+    <updated>2014-05-17T13:16:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/05/17/install-learnyounode-on-mac</id>
+    <content type="html"><![CDATA[<pre><code>$ brew update 
+$ brew install node 
+$ node --version
+v0.10.28
+$ sudo npm install -g learnyounode
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Create a simple J2EE web project with IntelliJ and Tomcat]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/04/01/create-a-simple-j2ee-web-project-with-intellij-and-tomcat/"/>
+    <updated>2014-04-01T15:21:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/04/01/create-a-simple-j2ee-web-project-with-intellij-and-tomcat</id>
+    <content type="html"><![CDATA[<p>As it&#8217;s surprising hard to start from scratch to create a simple web project using jsp running on tomcat with IntelliJ, this post intends to leave a note for this boiler process.</p>
+
+<h4>Install Tomcat 7 on Mac (10.9.2)</h4>
+
+<p>Download: http://tomcat.apache.org/download-70.cgi#7.0.53</p>
+
+<p>Unzip</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mv apache-tomcat-7.0.53 /usr/local/Cellar/
+</span><span class='line'>$ mv apache-tomcat-7.0.53 tomcat
+</span><span class='line'>$ cd tomcat/bin
+</span><span class='line'>$ sh startup.sh</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Test it in http://localhost:8080/ to see if it works.</p>
+
+<p><code>$ sh shutdown.sh</code></p>
+
+<p>Edit <code>$TOMCAT_DIR/conf/tomcat-users.xml</code> to get admin access:</p>
+
+<figure class='code'><figcaption><span>$TOMCAT_DIR/conf/tomcat-users.xml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'>  <span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;manager-gui&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;role</span> <span class="na">rolename=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;user</span> <span class="na">username=</span><span class="s">&quot;admin&quot;</span> <span class="na">password=</span><span class="s">&quot;admin&quot;</span> <span class="na">roles=</span><span class="s">&quot;admin,manager-gui&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And restart the tomcat to gain the access with new credential.</p>
+
+<p><strong>Roles</strong>: &#8220;You can find the role names in the web.xml file of the Manager web application. The available roles are:&#8221;</p>
+
+<p><strong>manager-gui</strong> — Access to the HTML interface.</p>
+
+<p><strong>manager-status</strong> — Access to the &#8220;Server Status&#8221; page only.</p>
+
+<p><strong>manager-script</strong> — Access to the tools-friendly plain text interface that is described in this document, and to the &#8220;Server Status&#8221; page.</p>
+
+<p><strong>manager-jmx</strong> — Access to JMX proxy interface and to the &#8220;Server Status&#8221; page.</p>
+
+<p><a href="http://tomcat.apache.org/tomcat-7.0-doc/manager-howto.html">Tomcat 7 manager-howto</a></p>
+
+<h4>Addition:</h4>
+
+<h5>Add tomcat7 to IntelliJ</h5>
+
+<p>Add this as tomcat home directory /usr/local/Cellar/tomcat/ or the your specific link form your settings.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu tooling]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/04/01/ubuntu-tooling/"/>
+    <updated>2014-04-01T01:20:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/04/01/ubuntu-tooling</id>
+    <content type="html"><![CDATA[<h4>Terminal alternatives:</h4>
+
+<p><strong>Guake</strong>
+Slide window, less configuation, switch tabs shortcut, transparent etc.</p>
+
+<p><strong>Terminator</strong>
+Multi windows</p>
+
+<p><a href="http://www.omgubuntu.co.uk/2011/10/five-alternative-terminal-emulator-apps-for-ubuntu">Referece</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SEO 101]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/03/31/seo-101/"/>
+    <updated>2014-03-31T16:43:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/03/31/seo-101</id>
+    <content type="html"><![CDATA[<h2>#</h2>
+
+<p>&#8220;&#8221;View Page Source&#8221; would not contain the word &#8220;octopus&#8221;. Similarly, if some of your content is created dynamically, the page source will not include all the content you will want the crawler to see.</p>
+
+<p> <strong>In other words &#8220;View Page Source&#8221; is exactly what the crawler gets.</strong></p>
+
+<p>  In current practice, &#8220;progressive enhancement&#8221; in the form of Hijax-links are often used</p>
+
+<p>When creating your links, format them so they&#8217;ll offer a static link as well as calling a JavaScript function</p>
+
+<p><a href="ajax.htm?foo=32" onClick="navigate('ajax.html#foo=32'); return false">foo 32</a></p>
+
+<p>Note that the static link&#8217;s URL has a parameter (?foo=32) instead of <strong>a fragment (#foo=32)</strong>, which is used by the AJAX code. This is important, <strong>as search engines understand URL parameters but often ignore fragments</strong>. Web developer Jeremy Keith labeled this technique as Hijax. Since you now offer static links, users and search engines can link to the exact content they want to share or reference.(<strong>Hijax</strong>)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;a href="ajax.htm?foo=32" onClick="navigate('ajax.html#foo=32'); return false">foo 32&lt;/a></span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="https://developers.google.com/webmasters/ajax-crawling/docs/learn-more">Google ajax crawling</a></p>
+
+<h4>Crawling simulator</h4>
+
+<p><a href="http://crawljax.com/">Crawljax</a></p>
+
+<p>Download, unzip, run</p>
+
+<pre><code>java -jar crawljax-web-3.5.jar
+</code></pre>
+
+<h4>Snapshots tools</h4>
+
+<p><a href="http://htmlunit.sourceforge.net/">htmlUnit</a></p>
+
+<p><a href="http://phantomjs.org">PhantomJS</a> : lightweight, fast generation</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vagrant with your Dev Vbox]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/03/28/vagrant-to-your-dev-vbox/"/>
+    <updated>2014-03-28T14:43:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/03/28/vagrant-to-your-dev-vbox</id>
+    <content type="html"><![CDATA[<p>To create a Ubuntu GUI Development VM (12.04 LTS i386)</p>
+
+<figure class='code'><figcaption><span>Command line </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ vagrant init
+</span><span class='line'>
+</span><span class='line'>$ vagrant box add JujuBox http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-juju-vagrant-disk1.box
+</span><span class='line'>
+</span><span class='line'>$ vagrant up
+</span><span class='line'>
+</span><span class='line'>$ vagrant destroy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Reference:
+<a href="https://juju.ubuntu.com/docs/config-vagrant.html">Using Juju with Vagrant</a>
+<a href="http://www.vagrantbox.es/">List of vagrant boxes</a></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ vagrant halt //shut down VM 
+</span><span class='line'>
+</span><span class='line'>$ vagrant reload // reload the box, may not fully work with VPN on</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Adding existing box via Vagrant</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>vagrant box add --name BOX_NAME BOX_NAME_WITH_POSSIBLE_PATH_IF_YOU_HAVE_IT.box
+</span><span class='line'>vagrant init BOX_NAME
+</span><span class='line'>vagrant up
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing Maven and upgrade it]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/03/24/fixing-maven-and-upgrade-it/"/>
+    <updated>2014-03-24T14:10:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/03/24/fixing-maven-and-upgrade-it</id>
+    <content type="html"><![CDATA[<p>If you are using a older version of maven on Linux with dpkg package manager:</p>
+
+<p><strong>Uninstall maven</strong></p>
+
+<p><code>$ dpkg --get--selections</code> to list all dpkg packages.</p>
+
+<p><code>$sudo apt-get remove maven2</code> to remove package</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenMRS dev environment installation]]></title>
@@ -23,6 +248,8 @@
 <h2>#</h2>
 
 <p>127.0.0.1 | FAILED => to use the &#8216;ssh&#8217; connection type with passwords, you must install the sshpass program</p>
+
+<p>install mysql-server</p>
 ]]></content>
   </entry>
   
@@ -578,636 +805,6 @@ Here is how downgrade.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Simple erb template with ruby example]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/07/12/simple-erb-template-with-ruby-example/"/>
-    <updated>2013-07-12T12:35:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/07/12/simple-erb-template-with-ruby-example</id>
-    <content type="html"><![CDATA[
-
-<figure class='code'><figcaption><span>test.erb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='erb'><span class='line'><span class="x">Hello: </span><span class="cp">&lt;%=</span> <span class="no">Prov</span><span class="o">.</span><span class="n">show_hostname</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">)</span><span class="cp">%&gt;</span><span class="x"></span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>prov.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Prov</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">show_hostname</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
-</span><span class='line'>      <span class="s2">&quot;--------</span><span class="si">#{</span><span class="n">host</span><span class="si">}</span><span class="s2">-------&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="nb">puts</span> <span class="no">Prov</span><span class="o">.</span><span class="n">show_hostname</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>generate.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="nb">require</span> <span class="s1">&#39;erb&#39;</span>
-</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;./prov&#39;</span>
-</span><span class='line'><span class="n">renderer</span> <span class="o">=</span> <span class="no">ERB</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;test.erb&quot;</span><span class="p">))</span>
-</span><span class='line'><span class="nb">puts</span> <span class="n">renderer</span><span class="o">.</span><span class="n">result</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>$ ruby generate.rb</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Startup engineering course notes #1 Shell start]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/07/06/startup-engineering-course-notes/"/>
-    <updated>2013-07-06T09:12:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/07/06/startup-engineering-course-notes</id>
-    <content type="html"><![CDATA[<p>To know your shell better: <br/>
-<code>$ env</code><br/>
-<code>$ man bash</code><br/>
-<code>$ info man</code> #a bit more detail than man pages</p>
-
-<h2>STDIN, STDOUT, STDERR</h2>
-
-<p><code>$ curl fakeurl</code> # print error message to screen<br/>
-<code>$ curl fakeurl 2&gt; errs.txt</code> # redirecting STDERR with 2>
-<code>$ curl google.com fakeurl 1&gt; out1.txt 2&gt; out2.txt</code> # redirecting STDIN and STDOUT with 1> and 2></p>
-
-<h2>Command 101</h2>
-
-<p><code>$ touch file1</code> # not only used for create zero byte file but also change timestamp without affect the content</p>
-
-<p><code>$ echo line1 &gt; lines.txt</code> # add text to file via &#8220;>&#8221;, rewrite it</p>
-
-<p><code>$ echo line2 &gt;&gt; linex.txt</code> # append text to file via &#8220;>>&#8221;</p>
-
-<p><code>$ wc file</code> # word count, output will be line, word, byte, file name unless specifiy with arg<br/>
-<code>$ wc -l file</code> # only number of lines<br/>
-<code>$ wc -L file</code> # the longest line length</p>
-
-<p><code>$ yes | nl | head -100 &gt; demo3.txt</code> # nl: line number filtering, debugging and create quick datasets<br/>
-<code>$ nl *gbk | tail -l</code> # show the last line with line number</p>
-
-<h2>Text progressing</h2>
-
-<p><code>$ less file</code> # view large file, can scroll up and down with j and k or ctrl+n and ctrl+p</p>
-
-<h3>head</h3>
-
-<p><code>$ head -n2</code>; <code>$ head -50</code> # display the first n line in the prompt, by default is 10</p>
-
-<p><code>$ head -q *txt *gbk</code> # heads of multiple files w/o delimiters</p>
-
-<p><code>$ head -c50 *gbk</code> # first 50 characters</p>
-
-<h3>tail</h3>
-
-<p><code>$tail -n2 out1.txt</code> # display the last lines, by default 10 lines
-<code>$tail -n+2 out1.txt</code># start at second lines of the file</p>
-
-<p><code>$ yes | nl | head -n 10000000 &gt; foo &amp;</code> <br/>
-<code>$ tail -F foo</code> # run process in background and follow end of file</p>
-
-<h3>cat</h3>
-
-<p><code>$ cat demo.txt demo.txt demo.txt &gt; demo2.txt</code> # print/concatenate files, industrial strength file viwer, large file or file with weird bytes</p>
-
-<p><code>$ yes | head | cat - demo2.txt</code> # cat the input before the text in demo2.txt on the screen, didn&#8217;t change the file; cat demo2.txt - is after</p>
-
-<h3>cut</h3>
-
-<p><code>$ cut -f2,5 *ptt | head</code> # pull out columns of a file, 2nd and 5th column in this one</p>
-
-<p><code>$ cut -c1-5 *ptt | head</code> # pull out columns by characters, from 1st to 5th</p>
-
-<h3>paste</h3>
-
-<p><code>$  tail -n+3 *ptt | cut -f1 &gt; locs</code><br/>
-<code>$  tail -n+3 *ptt | cut -f5 &gt; genes</code><br/>
-<code>$ locs genes locs | head</code> # paste by columns</p>
-
-<h3>sort</h3>
-
-<p><code>$ sort genes | less</code> # default is alphabetic order<br/>
-<code>$ sort -r genes | less</code> # reverse<br/>
-<code>$ sort -R genes | less</code> # randomize<br/>
-<code>$ cut -f1 *ptt | tail -n+4 | sort | head</code> # used in pipe</p>
-
-<p><code>$ sort -k1 -rn</code> # -k: start a key at POS1 ; -r:reverse the result of comparisons; -n:numberic sort, compare according to string numberical value</p>
-
-<h3>uniq</h3>
-
-<p><code>$ cut -f2 *ptt | tail -n+4 | sort | uniq -c | sort -k1 -rn</code> #report or filter out repeated lines in a file; with -c, precede each output line with the count of the number of times the line occurred in the input, followed by a single space.</p>
-
-<h3>split</h3>
-
-<p><code>$ split -d -l 1000 *ptt subset.ptt.</code> # in linux, split has -d for using numeric suffixes instead of alphabetic; split file per 1000 lines</p>
-
-<h2>Downloading and Syncing</h2>
-
-<h3>wget</h3>
-
-<p><code>$ wget -w 2 -r -np -k -p http:www.stanford.edu/class/cs106</code> # recursively download an entire site, waiting 2 seconds between hits</p>
-
-<p>-np(&#8211;no-parent): it guarantees that only the files below a certain hierarchy will be downloaded.</p>
-
-<p>-k(&#8211;convert-links): After the download is complete, convert the links in the document to make them suitable for local viewing.  This affects not only the visible hyperlinks, but any part of the document that links to external content, such as embedded images, links to style sheets, hyperlinks to non-HTML content, etc.</p>
-
-<p>-p (&#8211;page-requisites): This option causes Wget to download all the files that are necessary to properly display a given HTML page.  This includes such things as inlined images, sounds, and referenced stylesheets.</p>
-
-<p><code>$ wget --help | less</code> # to know more</p>
-
-<h3>rsync</h3>
-
-<p>Synchronize local and remote files, transfer files between two machines.</p>
-
-<p>-avp : archive, versbose, progress</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ rsync -avp data1.txt awshost:~/
-</span><span class='line'>building file list ... done
-</span><span class='line'>data1.txt
-</span><span class='line'>
-</span><span class='line'>sent 9124 bytes  received 42 bytes  3666.40 bytes/sec
-</span><span class='line'>total size is 9000  speedup is 0.98
-</span><span class='line'>
-</span><span class='line'>$ rsync -avp data1.txt awshost:~/
-</span><span class='line'>building file list ... done
-</span><span class='line'>
-</span><span class='line'>sent 78 bytes  received 20 bytes  28.00 bytes/sec
-</span><span class='line'>total size is 9000  speedup is 91.84</span></code></pre></td></tr></table></div></figure>
-
-
-<p>&#8220;The rsync remote-update protocol allows rsync to transfer just the differences between two sets of files across the network connection, using an efficient checksum-search algorithm described in the technical report that accompanies this package.&#8221;</p>
-
-<h3>curl</h3>
-
-<p>For interacting with singl url<br/>
-<code>$ GHUSER="lynneq"</code># init a variable<br/>
-<code>$ curl -i https://api.github.com/uers/$GHUSER/$GHVAR</code> # an api call with variables</p>
-
-<h2>System, process information</h2>
-
-<p><code>$ uname -a</code><br/>
-<code>$ hostname</code> # determine name of the current machine<br/>
-<code>$ whoami</code> # current user</p>
-
-<p><code>$ sleep 10 &amp;</code><br/>
-<code>$ ps xw | grep sleep | grep -v "grep"</code> # show process are running and grep the key word ; grep -v flag to exclude any lines that contained the string grep, &#8220;foogrep&#8221; won&#8217;t be showed up<br/>
-<code>$ kill 11405</code> # kill process by its id</p>
-
-<pre><code>    $ sleep 60 &amp;
-    $ kill `ps xw | grep sleep | cut -f1 -d ' ' | head -1` # kill the process just started  
-</code></pre>
-
-<p><code>$ top</code> #most important processes</p>
-
-<h2>Storage and finding</h2>
-
-<p><code>$ tar -cvf genome.tar genome</code> # make an archive of files as .tar<br/>
-<code>$ gzip genome.tar</code> # compress the file as .tar.gz</p>
-
-<p><code>$ tar -xzvf genome.tar.gz</code> # unzip the file</p>
-
-<p><code>$ gunzip genome.tar.gz</code> # decompress the file from tar.gz to tar<br/>
-<code>$ zcat xx.fa.gz</code> # indentical to gunzip -c</p>
-
-<p><code>$ find /etc | nl</code> # find a file, non-indexed search</p>
-
-<p><code>$ sudo apt-get install -y locate</code>
-<code>$ sudo updatedb</code>
-<code>$ locate fstab</code> # find a file, indexed</p>
-
-<p><code>$ df -h</code> # df: system disk space, on mac with -h human readable</p>
-
-<p><code>$ du --max-depth=1 -b | sort -k1 -rn</code> # du: directory utilization. determine which subdirectories are taking up a lot of disk space</p>
-
-<h3>grep</h3>
-
-<p>Searching within the files:</p>
-
-<pre><code>    $ grep -l protein  *ptt # --files-with-matches, only the names of files containing selected lines are written to standard output.
-    NC_007779.ptt
-</code></pre>
-
-<p><code>$ grep -B 1 -A 1 protein *ptt</code> # print context that 1 line &#8216;B&#8217;efore and &#8216;A&#8217;fter where the match found</p>
-
-<p><code>$ grep 'protein.*' *ptt | sort | uniq</code> # regular expression</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android: ListView]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/07/02/android-listview/"/>
-    <updated>2013-07-02T22:03:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/07/02/android-listview</id>
-    <content type="html"><![CDATA[<p><a href="https://travis-ci.org/CapeDev/TrakeMoi" target="_blank">
-<img border="0" src="https://api.travis-ci.org/CapeDev/TrakeMoi.png" ></a></p>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Maven notes]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/06/25/maven-notes/"/>
-    <updated>2013-06-25T17:10:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/06/25/maven-notes</id>
-    <content type="html"><![CDATA[
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ mvn -v  
-</span><span class='line'>Apache Maven 3.0.3 (r1075438; 2011-02-28 09:31:09-0800)
-</span><span class='line'>Maven home: /usr/share/maven
-</span><span class='line'>Java version: 1.6.0_51, vendor: Apple Inc.
-</span><span class='line'>Java home: /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-</span><span class='line'>Default locale: en_US, platform encoding: MacRoman
-</span><span class='line'>OS name: "mac os x", version: "10.8.4", arch: "x86_64", family: "mac"</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>With Eclipse</h3>
-
-<p>Add this url to install m2e under &#8220;Install new software&#8221;.
-http://download.eclipse.org/technology/m2e/releases/</p>
-
-<figure class='code'><figcaption><span>Create Eclipse project by maven </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ mvn eclipse:clean eclipse:eclipse</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>With IntelliJ</h3>
-
-<p>Install the plugins:</p>
-
-<p><code>Maven 2 Integration</code><br/>
-<code>Maven Run Helper</code></p>
-
-<figure class='code'><figcaption><span>Create IntelliJ project by maven </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ mvn idea:clean idea:idea</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Noted Command</h3>
-
-<p>Running maven install without unit tests sometimes are usful cause it may take longer time for tests to finish and you want the artifact from mvn install.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ mvn -Dmaven.test.skip=true install</span></code></pre></td></tr></table></div></figure>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Setup new mac notes]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/06/25/setup-new-mac-notes/"/>
-    <updated>2013-06-25T02:02:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/06/25/setup-new-mac-notes</id>
-    <content type="html"><![CDATA[<h2>Config new system when you switch to another mac(10.8.4)</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"  
-</span><span class='line'>$ brew install wget  
-</span><span class='line'>$ brew install curl</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Basic terminal setup</h2>
-
-<figure class='code'><figcaption><span>~/.vimrc </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>" basic settings
-</span><span class='line'>set number
-</span><span class='line'>set hidden
-</span><span class='line'>set history=10000
-</span><span class='line'>set cursorline
-</span><span class='line'>hi CursorLine cterm=NONE ctermbg=lightblue ctermfg=darkyellow
-</span><span class='line'>set ruler
-</span><span class='line'>set cmdheight=2
-</span><span class='line'>set hlsearch
-</span><span class='line'>set tabstop=4
-</span><span class='line'>set shiftwidth=4
-</span><span class='line'>set softtabstop=4
-</span><span class='line'>set autoindent
-</span><span class='line'>set ignorecase smartcase
-</span><span class='line'>set showcmd
-</span><span class='line'>syntax on</span></code></pre></td></tr></table></div></figure>
-
-
-<p>iTerm2 theme : thayer <a href="https://github.com/baskerville/iTerm-2-Color-Themes">iterm2 themes</a></p>
-
-<figure class='code'><figcaption><span>~/.bash_profile </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>##system cmd 
-</span><span class='line'>alias ll="ls -Gl"
-</span><span class='line'>alias lll="ls -Gla"
-</span><span class='line'>
-</span><span class='line'>##terminal
-</span><span class='line'>export CLICOLOR=1
-</span><span class='line'># \h:\W \u\$
-</span><span class='line'>export PS1='\[\033[01;33m\]\u@\h\[\033[01;31m\] (\W) \$ \[\033[00m\]'
-</span><span class='line'># grep
-</span><span class='line'>alias grep='grep –color=always'
-</span><span class='line'>
-</span><span class='line'>##Android
-</span><span class='line'>export ANDROID_HOME='/Users/LynneQ/Documents/sdks/adt-bundle-mac-x86_64-20130522/sdk'
-</span><span class='line'>export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools
-</span><span class='line'>
-</span><span class='line'>##Customization
-</span><span class='line'>alias DocLL='cd /Users/LynneQ/Documents/blog/lynnequ.github.com'
-</span><span class='line'>
-</span><span class='line'>##Git
-</span><span class='line'>alias gst='git status'
-</span><span class='line'>alias gba='git branch -a'
-</span><span class='line'>alias gb='git branch'
-</span><span class='line'>alias gsts='git status --short'
-</span><span class='line'>alias gco='git commit -m'
-</span><span class='line'>alias gad='git add'
-</span><span class='line'>
-</span><span class='line'>[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Notes:</h4>
-
-<p><code>LynneQ:~ lqu$</code><br/>
-<strong>Definition:</strong> machine name, colon, present working directory(~) a sapce, the current user and dollar sign($) (# if the shell has super user)<br/>
-<a href="http://guides.macrumors.com/Terminal">Ref</a></p>
-
-<h2>Install sublime text 2 app</h2>
-
-<p>After dmg package installation, to make it usable within terminal.</p>
-
-<p><code>$ ln -s -F /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl</code></p>
-
-<p><code>$ subl test.py</code><br/>
-<code>$ subl path/to/folder</code></p>
-
-<h2>Re-setup Octopress blog</h2>
-
-<ol>
-<li>Copy the git repo to new location</li>
-<li>Go set up git credential</li>
-<li>To make rake generate/preview/deploy works</li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo gem install bundler 
-</span><span class='line'>$ sudo gem update --system
-</span><span class='line'>$ sudo bundle install
-</span><span class='line'>
-</span><span class='line'>Install rvm and upgrade ruby from 1.8.7 to 1.9.3
-</span><span class='line'>$ \curl -L https://get.rvm.io | bash  //Install rvm
-</span><span class='line'>$ source /Users/LynneQ/.rvm/scripts/rvm
-</span><span class='line'>$ rvm get stable
-</span><span class='line'>$ rvm requirements
-</span><span class='line'>$ rvm install 1.9.3
-</span><span class='line'>$ rvm list
-</span><span class='line'>$ ruby -v
-</span><span class='line'>ruby 1.8.7 (2012-02-08 patchlevel 358) [universal-darwin12.0]
-</span><span class='line'>
-</span><span class='line'>$ rvm use --default 1.9.3
-</span><span class='line'>Using /Users/LynneQ/.rvm/gems/ruby-1.9.3-p429
-</span><span class='line'>
-</span><span class='line'>$ ruby -v
-</span><span class='line'>ruby 1.9.3p429 (2013-05-15 revision 40747) [x86_64-darwin12.4.0]</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Unfornately, if you bundle install before upgrade to 1.9.3, you need to restart the shell, and do <code>bundle install</code> again.</p>
-
-<p><a href="http://cheat.errtheblog.com/s/rvm">Ref</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Tricky terminial note]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/06/24/tricky-terminial-note/"/>
-    <updated>2013-06-24T12:00:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/06/24/tricky-terminial-note</id>
-    <content type="html"><![CDATA[<h3>Copy from clipboard into file</h3>
-
-<ol>
-<li>Copy the content</li>
-<li>Go to the terminal</li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ pbpaste > test.py  
-</span><span class='line'>$ cat test.py</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Misc:</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ cat test.txt | pbcopy # copy things to system clipboard
-</span><span class='line'>$ echo hello | pbcopy # same as above
-</span><span class='line'>$ pbcopy &lt; test.txt # copy from a file, so you can use cmd + V
-</span><span class='line'>$ echo `pbpaste`  #you will see the content in the clipboard</span></code></pre></td></tr></table></div></figure>
-
-
-<p>[<strong>pbcopy</strong>] takes  the standard input and places it in the specified pasteboard.</p>
-
-<p>[<strong>pbpaste</strong>]removes  the data from the pasteboard and writes it to the standard output.</p>
-
-<h3>iTerm2 tricks</h3>
-
-<ol>
-<li>Autocomplete<br/>
-<code>cmd" + ;</code></li>
-<li>Show clipboard history<br/>
-<code>command+shift+h</code></li>
-<li>Enter/exit full screen (not for hotkey window)<br/>
-<code>cmd + enter</code></li>
-<li>Search under all tab<br/>
-<code>cmd + opt + e</code></li>
-<li>Search in the tab <br/>
-<code>cmd + f</code> <br/>
-<code>cmd + g</code>//next result</li>
-<li>Enable meta key
-Under iTerm 2 preference > profile > keys, set left option key acts as &#8220;+Esc&#8221;<br/>
-<code>alt + b</code></li>
-</ol>
-
-
-<h3>Terminal shortcuts</h3>
-
-<p><code>cmd + u</code> : delete till the start of line</p>
-
-<p><code>cmd + k</code> : delete till the end of line</p>
-
-<p><strong>Show files inside jar</strong><br/>
-<code>jar tf file.jar</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python Upgrade 2.7 to 3.2 on Mac]]></title>
-    <link href="http://lynnequ.github.com/blog/2013/06/21/python-upgrade-2-dot-7-to-3-dot-2-on-mac/"/>
-    <updated>2013-06-21T11:33:00-07:00</updated>
-    <id>http://lynnequ.github.com/blog/2013/06/21/python-upgrade-2-dot-7-to-3-dot-2-on-mac</id>
-    <content type="html"><![CDATA[<p>Well, honestly, this is the note to myself.</p>
-
-<p>Have you ever felt that I should know this and handle it like fast and smooth?</p>
-
-<p>Here is the something: upgrade python 2.7 to 3.2 on Mac(Moutain Lion 10.8.4).</p>
-
-<h3>Choices</h3>
-
-<h4>brew install</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ brew search python  
-</span><span class='line'>gst-python010  python       python24       python25       python26       python3    python31   python32
-</span><span class='line'>homebrew/apache/mod_python
-</span><span class='line'>$ brew install python32  
-</span><span class='line'>Error: Permission denied - /Library/Caches/Homebrew/Formula/python32.brewing</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>You may counter some fun issues, and I had references here.</strong></p>
-
-<p><a href="http://stackoverflow.com/questions/15489333/homebrew-mac-os-x-10-8-throwing-errors-no-such-file-to-load">HomeBrew Mac os x 10.8 throwing errors “no such file to load”</a></p>
-
-<p>To know what verison of python you have on your mac except System provide</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ ls /Library/Frameworks/Python.framework/Versions/  
-</span><span class='line'>3.3</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="http://docs.python.org/3/using/mac.html">Using Python on a Macintosh</a></p>
-
-<h4>python binary from the website</h4>
-
-<p><a href="http://www.python.org/download/releases/3.3.2/">Python 3.3.2 download</a> //Yea, I picked the lastest one here, not 3.2&#8230;</p>
-
-<p>And ah, magically, it installed, but when I typed <code>python</code> in iTerm, it still showing 2.7, why??</p>
-
-<h6>Here is where/how to get to your python 3.3</h6>
-
-<p><strong> 1. It&#8217;s a app-ish thing in your Applications folder, as IDLE and Python Laucher. </strong><br/>
-<strong> 2. Try </strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ python3 
-</span><span class='line'>$ python3 test.py</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>&#8220;Interesting&#8221; problem</h3>
-
-<p>After you install python 3.3, you have both 2.7 and 3.3 pythong versions coexist on your mac, what if you want to use library like httplib2 for your code but only 2.7 has it?</p>
-
-<p>Check the wiki page: <a href="https://code.google.com/p/httplib2/wiki/Install">httplib2 installation instruction</a></p>
-
-<p>Basically:</p>
-
-<ol>
-<li>Download the zip file, unzip it</li>
-<li><code>python3 setup.py install</code></li>
-</ol>
 
 ]]></content>
   </entry>

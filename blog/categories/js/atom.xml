@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: js, | If you see it]]></title>
+  <link href="http://lynnequ.github.com/blog/categories/js/atom.xml" rel="self"/>
+  <link href="http://lynnequ.github.com/"/>
+  <updated>2014-07-11T00:46:40-07:00</updated>
+  <id>http://lynnequ.github.com/</id>
+  <author>
+    <name><![CDATA[Lynne Qu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Install learnyounode on Mac]]></title>
+    <link href="http://lynnequ.github.com/blog/2014/05/17/install-learnyounode-on-mac/"/>
+    <updated>2014-05-17T13:16:00-07:00</updated>
+    <id>http://lynnequ.github.com/blog/2014/05/17/install-learnyounode-on-mac</id>
+    <content type="html"><![CDATA[<pre><code>$ brew update 
+$ brew install node 
+$ node --version
+v0.10.28
+$ sudo npm install -g learnyounode
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
